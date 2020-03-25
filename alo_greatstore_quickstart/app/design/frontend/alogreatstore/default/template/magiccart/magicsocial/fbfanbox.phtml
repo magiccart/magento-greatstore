@@ -1,0 +1,46 @@
+<?php
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2014-07-18 20:49:45
+ * @@Modify Date: 2015-03-12 12:05:45
+ * @@Function:
+ */
+?>
+<?php
+$helper = Mage::helper('magicsocial');
+if(!$helper->getGeneralCfg('enabled')) return;
+$fbfanbox = $helper->getFacebookCfg();
+if(isset($fbfanbox['enabled']) && $fbfanbox['enabled'])
+{
+    $box_content="";
+    if(is_numeric($fbfanbox['fb_page_url'])){
+        $box_content .='<iframe src="http://www.facebook.com/connect/connect.php?id='.$fbfanbox['fb_page_url'];
+    }else {
+        $box_content .='<iframe src="http://www.facebook.com/plugins/likebox.php?href='. urlencode($fbfanbox['fb_page_url']);
+    }
+    $confg = array('width', 'height', 'connections', 'header', 'stream');
+    foreach ($confg as $cfg) {
+        $box_content .= isset($fbfanbox[$cfg]) ? '&amp;'.$cfg.'='. $fbfanbox[$cfg] : '';
+    }
+	$confg2 = array('show_border', 'show_faces',);
+    $box_content .= '&amp;show_border=false';
+	$box_content .= '&amp;header=false';
+	//$box_content .= '&show_faces=false';
+    $box_content .= '" scrolling="no" frameBorder="0" allowTransparency="true" style="border:none; overflow:hidden; ';
+    
+    $box_content .= isset($fbfanbox['width']) ? ' width:'. $fbfanbox['width'] . 'px; ' : '';
+    $box_content .= isset($fbfanbox['height']) ? ' height:'. $fbfanbox['height'] . 'px; ' : '';
+    $box_content .= '"></iframe>';
+    
+    echo("<div id='fbfanbox'>");
+    echo($box_content);
+    //echo("<div style='font-size:9px'><a href='http://www.alothemes.com'>Magento Themes</a></div>");
+    echo("</div>");
+
+}
+?>
+

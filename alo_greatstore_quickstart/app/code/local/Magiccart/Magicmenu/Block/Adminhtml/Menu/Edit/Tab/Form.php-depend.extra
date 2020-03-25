@@ -1,0 +1,222 @@
+<?php
+/**
+ * Magiccart 
+ * @category  Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license   http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-05-28 10:10:00
+ * @@Modify Date: 2014-09-05 21:21:19
+ * @@Function:
+ */
+ ?>
+<?php
+
+class Magiccart_Magicmenu_Block_Adminhtml_Menu_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
+{
+
+  public function getCatTop()
+  {
+    $catTop = Mage::getModel('catalog/category')
+                    ->getCollection()
+                    ->addAttributeToSelect(array('entity_id','name'))
+                    ->addAttributeToFilter('level',2) // note: ->addAttributeToFilter('level',2) =! ->addLevelFilter(2)
+                    ->addIsActiveFilter()
+                    ->addOrderField('position');
+    $options = array(''=>Mage::helper('catalog')->__('Please select a category ...'));
+    foreach ($catTop as $cat) {
+      $options[$cat->getEntityId()] = $cat->getName();
+    }
+    return $options;
+  }
+  public function getStaticBlock()
+  {
+      $options = Mage::getResourceModel('cms/block_collection')->load()->toOptionArray();
+      array_unshift($options, array('value'=>'', 'label'=>Mage::helper('catalog')->__('Please select a static block ...')));
+      return $options;
+  }
+
+  protected function _prepareForm()
+  {
+      $form = new Varien_Data_Form();
+      $this->setForm($form);
+      $fieldset = $form->addFieldset('menu_form', array('legend'=>Mage::helper('magicmenu')->__('Category information')));
+
+      $type = $fieldset->addField('extra', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Extra Menu'),
+          'name'      => 'extra',
+          'values'    => array(
+                array('value' => 0, 'label' => Mage::helper('magicmenu')->__('No'),),
+                array('value' => 1, 'label' => Mage::helper('magicmenu')->__('Yes'),),
+          ),
+          'after_element_html' => '<p class="nm"><small>' . 'Create extra category add to Navigation' . '</small></p>',
+      ));
+
+	    $cat = $fieldset->addField('cat_id', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Category'),
+          'class'     => 'required-entry',
+          'required'  => true,
+          'name'      => 'cat_id',
+          'values'    => $this-> getCatTop(),
+          'after_element_html' => '<p class="nm"><small>' . 'Select top category' . '</small></p>',
+      ));
+
+      $cat_proportions = $fieldset->addField('cat_proportions', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Proportions: Category'),
+          'class'     => 'required-entry validate-greater-than-zero',
+          'required'  => true,
+          'name'      => 'cat_proportions',
+      ));
+      $cat_proportions->setAfterElementHtml(
+          '<p class="nm"><small>Proportions weight</small></p>
+            <script type="text/javascript">
+                checkExpirationPeriod = function() {
+                    if ($("'.$cat->getHtmlId().'").getValue() != "") {
+                        $("'.$cat_proportions->getHtmlId().'").up(1).appear();
+                    } else {
+                        $("'.$cat_proportions->getHtmlId().'").up(1).fade();
+                    }
+                }
+
+                Event.observe(window, "load", function() {
+                    Event.observe("'.$cat->getHtmlId().'", "change", checkExpirationPeriod);
+                    checkExpirationPeriod();
+                })
+            </script>
+          '
+      );
+
+      $name = $fieldset->addField('name', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Name'),
+          'required'  => true,
+          'class'     => 'required-entry',
+          'name'      => 'name',
+          'after_element_html' => '<p class="nm"><small>' . 'Name show in Navigation' . '</small></p>',
+      ));
+
+      // $content = $fieldset->addField('ext_content', 'select', array(
+      //     'label'     => Mage::helper('magicmenu')->__('Content'),
+      //     'name'      => 'ext_content',
+      //     'required'  => true,
+      //     'class'     => 'required-entry',
+      //     'values'    => $this->getStaticBlock(),
+      // ));
+
+      $top = $fieldset->addField('top', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Block Top'),
+          'name'      => 'top',
+          'values'    => $this->getStaticBlock(),
+          //'after_element_html' => '<p class="nm"><small>' . 'Select static Block show on Top category' . '</small></p>',
+      ));
+
+      $right = $fieldset->addField('right', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Block Right'),
+          'name'      => 'right',
+          'values'    => $this->getStaticBlock(),
+          //'after_element_html' => '<p class="nm"><small>' . 'Select static Block show on Right category' . '</small></p>',
+      ));
+
+      $fieldset->addField('right_proportions', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Proportions: Block Right'),
+          'class'     => 'required-entry validate-greater-than-zero',
+          'required'  => true,
+          'name'      => 'right_proportions',
+          'after_element_html' => '<p class="nm"><small>' . 'Proportions weight' . '</small></p>',
+      ));
+
+
+      $bottom = $fieldset->addField('bottom', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Block Bottom'),
+          'name'      => 'bottom',
+          'values'    => $this->getStaticBlock(),
+          //'after_element_html' => '<p class="nm"><small>' . 'Select static Block show under Bottom category' . '</small></p>',
+      ));
+
+      $left = $fieldset->addField('left', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Block Left'),
+          'name'      => 'left',
+          'values'    => $this->getStaticBlock(),
+          //'after_element_html' => '<p class="nm"><small>' . 'Select static Block show in Left category' . '</small></p>',
+      ));
+
+      $fieldset->addField('left_proportions', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Proportions: Block Left'),
+          'class'     => 'required-entry validate-greater-than-zero',
+          'required'  => true,
+          'name'      => 'left_proportions',
+          'after_element_html' => '<p class="nm"><small>' . 'Proportions weight' . '</small></p>',
+      ));
+
+      // depend form
+      $this->setChild('form_after', $this->getLayout()->createBlock('adminhtml/widget_form_element_dependence')
+
+          ->addFieldMap($type->getHtmlId(), $type->getName())
+          ->addFieldMap($cat->getHtmlId(), $cat->getName())
+          ->addFieldMap($top->getHtmlId(), $top->getName())
+          ->addFieldMap($left->getHtmlId(), $left->getName())
+          ->addFieldMap($right->getHtmlId(), $right->getName())
+          ->addFieldMap($bottom->getHtmlId(), $bottom->getName())
+          ->addFieldMap($name->getHtmlId(), $name->getName())
+          //->addFieldMap($content->getHtmlId(), $content->getName())
+
+          ->addFieldDependence($cat->getName(), $type->getName(), '0')
+          ->addFieldDependence($top->getName(), $type->getName(), '0')
+          ->addFieldDependence($left->getName(), $type->getName(), '0')
+          ->addFieldDependence($right->getName(), $type->getName(), '0')
+          ->addFieldDependence($bottom->getName(), $type->getName(), '0')
+          ->addFieldDependence($name->getName(), $type->getName(), '1')
+          //->addFieldDependence($content->getName(), $type->getName(), '1')
+      );
+      // depend form
+
+	/*
+      $fieldset->addField('active_from', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Active From'),
+          'required'  => false,
+          'name'      => 'active_from',
+      ));
+
+      $fieldset->addField('active_to', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Active To'),
+          'required'  => false,
+          'name'      => 'active_to',
+      ));
+	 */
+
+      $fieldset->addField('order', 'text', array(
+          'label'     => Mage::helper('magicmenu')->__('Menu Order'),
+          'class'     => 'validate-digits',
+          'required'  => false,
+          'name'      => 'order',
+          'after_element_html' => '<p class="nm"><small>' . 'Order show in Navigation' . '</small></p>',
+      ));
+     
+	    $fieldset->addField('status', 'select', array(
+          'label'     => Mage::helper('magicmenu')->__('Status'),
+          'name'      => 'status',
+          'values'    => array(
+              array(
+                  'value'     => 1,
+                  'label'     => Mage::helper('magicmenu')->__('Enabled'),
+              ),
+
+              array(
+                  'value'     => 2,
+                  'label'     => Mage::helper('magicmenu')->__('Disabled'),
+              ),
+          ),
+          'after_element_html' => '<p class="nm"><small>' . 'Show Static Block in Category' . '</small></p>',
+      ));
+	 
+      if ( Mage::getSingleton('adminhtml/session')->getMenuData() )
+      {
+          $form->setValues(Mage::getSingleton('adminhtml/session')->getMenuData());
+          Mage::getSingleton('adminhtml/session')->setMenuData(null);
+      } elseif ( Mage::registry('menu_data') ) {
+          $form->setValues(Mage::registry('menu_data')->getData());
+      }
+
+      return parent::_prepareForm();
+  }
+}
+

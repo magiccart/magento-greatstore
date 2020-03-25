@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2015-04-19 11:53:32
+ * @@Function:
+ */ -->
+<widgets>
+    <magiccategory type="magiccategory/widget_magiccategory" translate="name description">
+        <name>Magiccategory Widgets</name>
+        <description>Show products Home sellers</description>
+        <parameters>
+            <identifier translate="label description">
+                <label>Identifier Tab:</label>
+                <visible>1</visible>
+                <type>select</type>
+                <required>1</required>
+                <source_model>magiccategory/system_config_identifier</source_model>
+                <description>Identifier Tab</description>
+            </identifier>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                
+                <label>Template:</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label description">
+                        <value>magiccart/magiccategory/magiccategory.phtml</value>
+                        <label>default</label>
+                    </default>
+                </values>
+<!--                 <values>
+                    <magiccategory2 translate="label description">
+                        <value>magiccart/magiccategory/magiccategory2.phtml</value>
+                        <label>magiccategory2</label>
+                    </magiccategory2>
+                </values> -->
+            </template>
+        </parameters>
+    </magiccategory>
+</widgets>

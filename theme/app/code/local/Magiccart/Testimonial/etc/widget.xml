@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2014-08-06 23:35:35
+ * @@Function:
+ */ -->
+<widgets>
+    <testimonial type="testimonial/widget_slide" translate="name description">
+        <name>Testimonial Widgets</name>
+        <description>Testimonial Slider</description>
+        <parameters>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label">
+                        <value>magiccart/testimonial/slide.phtml</value>
+                        <label>testimonial</label>
+                    </default>
+                </values>
+            </template>
+        </parameters>
+    </testimonial>
+</widgets>

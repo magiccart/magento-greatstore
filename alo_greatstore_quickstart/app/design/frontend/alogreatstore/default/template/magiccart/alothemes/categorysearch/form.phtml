@@ -1,0 +1,62 @@
+<?php
+$block      = Mage::app()->getLayout()->createBlock('alothemes/search_form');
+$helper     = $this->helper('alothemes/search');
+$showSub    = $helper->getConfig('show_subcategories');
+$subLevel   = $helper->getConfig('subcategories_level');
+$indentationText = $helper->getConfig('indentation_text');
+?>
+<form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+    <div class="form-search clearfix">
+        <select class="ddslick"  id="<?php echo $helper->getCategoryParamName() ?>" name="<?php echo $helper->getCategoryParamName() ?>">
+            <option value=""><?php echo $this->__('Categories') ?></option>
+            <?php foreach ($block->getSearchableCategories() as $mainCategory): ?>
+                <option value="<?php echo $mainCategory->getEntityId() ?>"><?php echo $mainCategory->getName() ?></option>
+                <?php if ($showSub): ?>
+                    <?php if ($subLevel >= 2): ?>
+                        <?php foreach ($block->getSearchableSubCategories($mainCategory) as $category) : ?>
+                            <option value="<?php echo $category->getEntityId() ?>"><?php echo $indentationText . $category->getName() ?></option>
+                            <?php if ($subLevel >= 3): ?>
+                                <?php foreach ($block->getSearchableSubCategories($category) as $subcategory3) : ?>
+                                    <option value="<?php echo $subcategory3->getEntityId() ?>"><?php echo $indentationText . "&nbsp;" . $indentationText . $subcategory3->getName() ?></option>
+                                    <?php if ($subLevel >= 4): ?>
+                                        <?php foreach ($block->getSearchableSubCategories($subcategory3) as $subcategory4) : ?>
+                                            <option value="<?php echo $subcategory4->getEntityId() ?>"><?php echo $indentationText . "&nbsp;" . $indentationText . "&nbsp;" . $indentationText . $subcategory4->getName() ?></option>
+                                        <?php endforeach; ?>
+                                    <?php endif ?>
+                                <?php endforeach; ?>
+                            <?php endif ?>
+                        <?php endforeach; ?>
+                    <?php endif ?>
+                <?php endif ?>
+            <?php endforeach; ?>
+        </select>
+         <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" class="input-text" />
+         <input id="catsearch" type="hidden" name="cat" />
+        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><i class="icon-magnifier icons"></i></span></span></button>
+        <div id="search_autocomplete" class="search-autocomplete"></div>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+<?php if ($helper->isCategoryPage() || $helper->isSearchResultsPage()) : ?>
+    $$('select#<?php echo $helper->getCategoryParamName() ?> option').each(function(o) {
+        if (o.value == '<?php echo $block->getCurrentlySelectedCategoryId() ?>') {
+            o.selected = true;
+            throw $break;
+        }
+    });
+    escapedQueryText = '<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>';
+    if (escapedQueryText !== '') {
+        $('search').value = escapedQueryText;
+    }
+<?php endif; ?>
+    var searchForm = new Varien.searchForm('search_mini_form', 'search', '<?php echo $this->__('Search ...') ?>');
+    searchForm.initAutocomplete('<?php echo $this->helper('catalogsearch')->getSuggestUrl() ?>', 'search_autocomplete');
+    jQuery('#search_mini_form .ddslick').ddslick({
+        width: 160,
+        onSelected: function (opt) {
+            jQuery('#search_mini_form #catsearch').val(opt.selectedData.value)
+        }
+    });
+//]]>
+</script>

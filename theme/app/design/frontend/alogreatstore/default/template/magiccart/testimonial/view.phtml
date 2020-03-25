@@ -1,0 +1,58 @@
+<?php
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-31 15:41:21
+ * @@Modify Date: 2014-09-03 21:21:12
+ * @@Function:
+ */
+ ?>
+<?php if(!$this->config['enabled']) return;?>
+<?php $title = isset($this->config['title']) ? $this->config['title'] : ''; ?>
+<?php $selector     =   md5(rand()); //rand(0,666666); ?>
+
+<?php $testimonial = $this->_getTestimonial();
+?>
+<div class="customer-testimonials">
+    <div class="page-title">
+        <h1><?php echo $this->__($title);?></h1>
+        <?php //if($this->config['write_testimonial']):?>
+        <div class="submit-testimonial">
+                <button class="button" onclick="setLocation('<?php echo $this->getFormUrl(); ?>')">
+                    <span>
+                        <span>
+                            <?php echo $this->__('Write Your Testimonial');?>                  
+                        </span>
+                    </span>
+                </button>
+        </div>
+        <?php //endif ?>
+    </div>
+
+    <?php if ($testimonial): ?>
+            <li class="customer-testimonials-content" name="<?php echo $testimonial->getName(); ?>" id="<?php echo $testimonial->getName(); ?>">
+                    <div class="customer">
+                        <img class="avatar" src="<?php echo $this->getImage($testimonial)?>" alt="<?php echo $this->__($testimonial->getTitle()) ?>" title="<?php echo $this->__($testimonial->getTitle()) ?>" />
+                        <?php echo $testimonial->getName(); ?>
+                    </div>
+                    <div class="rating-box">
+                        <div class="rating" style="width:<?php echo ceil($testimonial->getRatingSummary() * 20) ?>%;"></div>
+                    </div>
+                    <div class="testimonial_text">
+                        &ldquo;<?php echo $testimonial->getText(); ?>&rdquo;&nbsp;
+                    </div>
+                    <div class="testimonial-source">
+                        <span class="testimonial-author"><?php echo $testimonial->getName(); ?></span>
+                        <span class="testimonial-date">
+                            <?php echo date('F d, Y', Mage::getModel('core/date')->gmtTimestamp($testimonial->getCreatedTime())); ?>
+                        </span>
+                    </div>
+            </li>
+    <?php else: ?>
+        <p class="note-msg"><?php echo $this->__('There are no testimonial matching the selection.') ?></p>
+    <?php endif ?>
+</div>
+

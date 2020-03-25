@@ -1,0 +1,118 @@
+<?php
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-08-08 22:57:12
+ * @@Modify Date: 2015-04-20 18:05:42
+ * @@Function:
+ */
+ ?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $helpLabels = $this->helper('alothemes/labels');
+    $catId = $this->getActive() ? $this->getActive() : $this->getRequest()->getParam('type');
+?>
+
+<div class="mage-magictabs mc-<?php echo $catId;?>">
+    <?php if(!$_productCollection->count()): ?>
+    <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+    <?php else: ?>
+    <?php 
+        $config = $this->getWidgetCfg(); 
+        $width  = $config['widthImages'];
+        $height  = $config['heightImages'];
+        $actions = isset($config['action']) ? $config['action'] : array();
+    ?>
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $_rowCount = isset($config['row']) ? $config['row'] : 1; //$this->getColumnCount(); ?>
+    <?php $j=0; $time = isset($config['productDelay']) ? $config['productDelay'] : 0; ?>
+    <?php $tag = ($_rowCount >1) ? 'div' : 'ul'; ?>
+    <<?php echo $tag ?> class="flexisel-content products-grid <?php echo $catId;?> zoomOut play">
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <?php if ($_rowCount > 1 && $i++%$_rowCount==0): ?>
+            <ul class="products-grid-rows">
+        <?php endif ?>
+            <?php $t = $j*$time; $t .='ms'; $j++; ?>
+
+                <li style="<?php echo "-webkit-animation-delay:$t;-moz-animation-delay:$t;-o-animation-delay:$t;animation-delay:$t" ?>;" class="item item-animate">
+                    <div class="per-product">
+                        <div class="images-container">
+						    <div class="product-hover">
+								<a class="overlay" href="<?php echo $_product->getProductUrl() ?>"></a>
+								<?php echo $helpLabels->getLabels($_product); //Product labels ?>
+								<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+									<img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($width , $height); ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+								
+								   <?php $imagehv = $_product->load('media_gallery')->getMediaGalleryImages()->getItemByColumnValue('position','2');
+									if($imagehv): $imagehv = $imagehv->getFile();
+									?>
+										<span class="product-img-back">
+											<img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image', $imagehv)->resize($width , $height); ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+										</span>
+									<?php endif ?>
+								</a>
+							</div>
+                            <div class="actions-no hover-box">
+                             <a class="detail_links" href="<?php echo $_product->getProductUrl() ?>"></a>
+                            <?php if($actions):?>
+                                <div class="actions">
+                                    <?php if(in_array("cart", $actions)):?>
+                                        <?php if($_product->isSaleable()): ?>
+                                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><i class="icon-bag icons"></i><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                        <?php else: ?>
+                                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                    
+                                </div>
+                                 <?php endif ?>
+                            </div>
+                        </div>
+                        <div class="products-textlink clearfix">
+                            <h2 class="product-name">
+                                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a>
+                            </h2>
+                            
+							<?php if(in_array("review", $actions)):?>
+								 <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+								<?php endif ?>
+							<div class="actions-no hover-box">
+                            <?php if($actions):?>
+                                <div class="actions">
+                                    <ul class="add-to-links">
+                                        <?php if(in_array("wishlist", $actions)):?>
+                                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                                <li class="pull-left-no"><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" title="<?php echo $this->__('Add to Wishlist') ?>" class="link-wishlist"><i class="fa fa-heart"></i><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                        <?php if(in_array("compare", $actions)):?>
+                                            <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                                                <li class="pull-right-no"><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare') ?>" class="link-compare"><i class="fa fa-retweet"></i><?php echo $this->__('Add to Compare') ?></a></li>
+                                            <?php endif; ?>
+                                            <li class="link-view"> 
+                                                <a title="<?php echo $this->__('Quick View') ?>" href="<?php echo $this->getUrl('magicshop/quickview/view') .'id/'.$_product->getId()?>" class="link-quickview"><i class="fa fa-eye"></i><?php echo $this->__('Quick View') ?>
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                    
+                                </div>
+                                 <?php endif ?>
+                            </div>
+                         </div>
+						 <?php echo $this->getPriceHtml($_product, true) ?>
+    				</div>
+                </li>
+            <?php if ($_rowCount > 1 && $i%$_rowCount==0 || $i==$_collectionSize): ?>
+                </ul>
+            <?php endif ?>
+        <?php endforeach ?>
+    </<?php echo $tag; ?>>
+<?php endif; ?>
+</div>
+
+

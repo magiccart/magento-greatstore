@@ -1,0 +1,30 @@
+<?php
+$helpTimer = $this->helper('alothemes/timer');
+if(!$helpTimer->getConfig('enabled')) return;
+$title    = $helpTimer->getConfig('title');
+
+$_product = $this->getProduct();
+$toDate = $_product->getSpecialToDate();
+$count  = rand(0,666666); //$this->getNum();
+?>
+<!--Condition for Timer Controllers goes here-->
+<?php if ($_product->getPrice() > $_product->getSpecialPrice()) : ?>
+<?php if ($_product->getSpecialPrice() != 0 || $_product->getSpecialPrice() != "") : ?>
+<?php if ($title) : ?>
+    <div id="heading<?php echo $count; ?> class="timer-heading"><?php echo $title ?></div>
+<?php endif; ?>
+    <div id="countbox_<?php echo $count; ?>" class="timer-view"></div>
+    <script type="text/javascript">
+        (function (){
+            var dthen = new Date("<?php echo Date("m/d/y", strtotime($toDate)).' 11:59:00 PM'; ?>");
+            var start_date = Date.parse(startMcTimer);
+            var dnow = new Date(start_date);
+            if(CountStepper>0) ddiff= new Date((dnow)-(dthen));
+            else ddiff = new Date((dthen)-(dnow));
+            var gsecs = Math.floor(ddiff.valueOf()/1000);
+            var iid = "countbox_<?php echo $count; ?>";
+            CountBack(gsecs,iid, mcTimer);
+            mcTimer++;
+        })();
+    </script>
+<?php endif;endif; ?>

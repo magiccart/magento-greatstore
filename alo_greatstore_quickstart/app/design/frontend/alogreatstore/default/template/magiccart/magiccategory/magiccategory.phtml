@@ -1,0 +1,78 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-05-08 22:57:12
+ * @@Modify Date: 2015-04-22 11:04:24
+ * @@Function:
+ */
+ ?>
+<?php if(!$this->getGeneralCfg('enabled')) return; ?>
+<?php if($this->getStatus() == 2) return; ?>
+<?php $selector = $this->generateRandomString(); //md5(rand()); //rand(0,666666); ?>
+
+<div class= "<?php echo $selector?> magiccategory">
+<?php
+$tabs = $this->getTabs();
+$ajax = json_encode($this->getProductCfg());
+if(count($tabs)): ?>
+    <div class="magic-category">
+		<div class="block-title-tabs clearfix">
+		<?php echo $this->getTitle() ?  '<h3 class="title">'.$this->__($this->getTitle()).'</h3>' : ''; ?>
+			<ul class="magictabs" data-ajax ='<?php echo $ajax ?>'>
+				<?php $active = $this->getTabActive();
+					$limit = $this->getNumProduct();
+					foreach ($tabs as $id => $name):
+						$status = ($id == $active) ? 'active loaded' : '';
+						echo '<li class="item '.$status.'" data-type ="'.$id.'"><span class ="title">'.$this->__($name).'</span></li>';
+					endforeach;
+				?>
+			</ul>
+		</div>
+	</div>
+<?php endif ?>
+	<div class="ajax_loading" style="display:none" data-url="<?php echo $this->getUrl('magiccategory/index/ajax')?>">
+		<img src="<?php echo $this->getSkinUrl('magiccart/plugin/images/loading.gif')?>" alt="<?php echo $this->__('Loading...');?>"/>
+	</div>
+	<?php 
+		$margin  = (int) $this->getData('marginColumn');
+		$slide   = json_encode($this->setFlexiselArray());
+		$options = json_encode($this->getItemsDevice());
+	?>
+	<div class="content-products" data-margin="<?php echo $margin ?>" data-slider='<?php echo $slide ?>' data-options='<?php echo $options; ?>'>
+		<?php echo $this->getContentActive('magiccart/magiccategory/product/grid.phtml');?>
+	</div>
+	<!-- MAP -->
+	<?php echo $this->getChildHtml('product.tooltip');?>
+	<!-- MAP -->
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+	jQuery(".<?php echo $selector?>").magicproduct({
+		selector : ".<?php echo $selector?>", // Selector product grid
+	});
+// 	var slider = $(".content-products .flexisel-content").bxSlider({
+// 	moveSlides: 2,
+// 	infiniteLoop:false,
+// 	maxSlides:'4',
+// 	// "slideWidth":"140",
+// 	mode:'vertical',
+// 	minSlides:2,	
+
+// 	// //minSlides: 2,
+// 	// maxSlides: 4,
+// 	// infiniteLoop: false,
+// 	// minSlides: 3,
+// 	// moveSlides: 2,
+// 	// mode: 'vertical',
+// 	// slideMargin: 10,
+
+
+// });
+});
+</script>
+

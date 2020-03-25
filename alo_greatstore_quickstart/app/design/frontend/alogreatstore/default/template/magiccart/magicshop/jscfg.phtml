@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	//<![CDATA[
+		if (typeof MC == 'undefined') MC = {};
+		MC.Quickview = <?php echo json_encode(Mage::helper('magicshop')->getQuickviewCfg()); ?>;
+
+		<?php if(Mage::getStoreConfig('magicshop/general/enabled')): ?>		
+			jQuery(document).ready(function($) {
+				jQuery(document).magiccart(<?php echo Mage::helper('magicshop')->jsParam($this)?>);
+			});
+		<?php endif; ?>
+	//]]
+</script>
+

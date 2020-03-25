@@ -1,0 +1,64 @@
+<?php
+/**
+ * Magiccart 
+ * @category  Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license   http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:21:05
+ * @@Modify Date: 2015-02-09 13:03:54
+ * @@Function:
+ */
+?>
+
+<?php 	
+if(! Mage::getStoreConfig('magicslider/general/enabled')) return;
+$bannerCollection = $this->_getCollection();
+if(($bannerCollection->count())<=0) return;
+$imageCollection = $this->_getMagicsliderImageCollection($bannerCollection); 		
+$width  = $this->getData('width');
+$height = $this->getData('height');
+$idHtml = $this->generateRandomString();
+?>
+<?php foreach ($imageCollection as $item) : ?>
+	<?php 
+		$content = $item['content']; 		
+		$images = $this->getSortedImages($content);
+	?>
+	<?php if(isset($images) && !empty($images) && count($images)>0) : ?>
+		<div class="magicslider">
+			<div id="<?php echo $idHtml ?>">
+			<?php $start = 'play start' ?>
+			<?php foreach($images as $image): ?>
+				<div class="item">
+					<a  href="<?php echo ( isset($image['link']) && $image['link'] ) ? ($image['link']) : '#'; ?>">
+						<img src="<?php echo $this->helper('magicslider')->resizeImg($image['file'], $width, $height);?>" alt="magicslider">
+					</a>
+					<?php if(isset($image['html']) && $image['html']) : ?>
+						<div class="bx-caption <?= $start ?>">
+							<?php echo $image['html'] ?>
+						</div>
+					<?php endif ?>
+				</div>
+				<?php $start = '' ?>
+			<?php endforeach;?>
+			</div>
+		</div>
+
+	<?php endif;?>
+<?php endforeach;?>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('#<?php echo $idHtml ?>').bxSlider({
+			auto: true,
+			captions: true,
+			<?php echo $this->getBxslider() ?>
+			onSlideBefore: function(el) {
+				el.siblings().find('.bx-caption').removeClass('play');
+				el.find('.bx-caption').addClass('play').addClass('start');				
+			},
+		});
+	});
+</script>
+

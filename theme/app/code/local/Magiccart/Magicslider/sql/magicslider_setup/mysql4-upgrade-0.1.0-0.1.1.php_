@@ -1,0 +1,30 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:21:05
+ * @@Modify Date: 2015-04-12 23:37:21
+ * @@Function:
+ */
+
+$this->startSetup();
+
+$this->run("
+    ALTER TABLE {$this->getTable('magicslider/magicslider')}
+    ADD COLUMN `identifier` VARCHAR(225) NOT NULL AFTER `slide_id`;
+ ");
+
+// $this->getConnection()
+//     ->addColumn($this->getTable('magicslider/magicslider'),
+//         'identifier',
+//         array(
+//             'type' => Varien_Db_Ddl_Table::TYPE_TEXT,
+//             'length' => 255,
+//             'nullable' => false,
+//             'comment' => 'Slider String Identifier'
+//         )
+//     );
+$this->endSetup();

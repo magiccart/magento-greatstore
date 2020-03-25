@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:42:49
+ * @@Modify Date: 2014-10-26 17:25:37
+ * @@Function:
+ */ -->
+
+ <config>
+	<menu>
+		<magiccart>
+			<title>Magiccart</title>
+			<sort_order>89</sort_order>
+			<children>
+				<magicslider module="magicslider">
+					<title>Magic Slider</title>
+					<sort_order>30</sort_order>
+					<action>magicslider/adminhtml_magicslider</action>
+				</magicslider>
+			</children>	
+		</magiccart>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicslider>
+                                        <title>Magic Slider</title>
+                                    </magicslider>
+                                </children>
+                            </config>
+                        </children>
+                    </magiccart>       
+                    <magiccart translate="title" module="magicslider">
+                        <title>Magiccart</title>
+                        <sort_order>89</sort_order>               
+                        <children>
+                            <magicslider translate="title" module="magicslider">
+                                <title>Magic Slider</title>
+                                <sort_order>30</sort_order>
+                                <children>
+                                    <configuration>
+                                        <title>Configuration</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/magicslider</action>
+                                    </configuration>
+                                </children>
+                            </magicslider>
+                        </children>
+                    </magiccart>   
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicslider>
+                                        <title>Magic Slider</title>
+                                    </magicslider>
+                                </children>
+                            </config>
+                        </children>
+                    </system>                 
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+

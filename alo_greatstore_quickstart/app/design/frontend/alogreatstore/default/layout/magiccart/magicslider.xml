@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:42:49
+ * @@Modify Date: 2015-02-10 13:26:46
+ * @@Function:
+ */ -->
+<layout version="0.1.0">
+	<magicsliderdefault>
+		<reference name="head">
+			<action method="addCss"><stylesheet>magiccart/plugin/css/animate.css</stylesheet></action>
+			<action method="addCss"><stylesheet>magiccart/plugin/css/jquery.bxslider.css</stylesheet></action>
+			<action method="addCss"><stylesheet>magiccart/magicslider/css/magicslider.css</stylesheet></action>
+			<action method="addJs" ifconfig="magicslider/general/jquery"><script>magiccart/jquery.min.js</script></action>
+            <action method="addJs" ifconfig="magicslider/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>
+            <action method="addJs" ifconfig="magicslider/general/enabled"><script>magiccart/plugin/jquery.easing.min.js</script></action>
+            <action method="addJs" ifconfig="magicslider/general/enabled"><script>magiccart/plugin/jquery.bxslider.js</script></action>
+		</reference>		
+	</magicsliderdefault>
+	<cms_index_index>
+		<update handle="magicsliderdefault" /> 
+<!-- 		<reference name="right">
+			<block type="magicslider/widget_slide" name="magicslider" template="magiccart/magicslider/magicslider.phtml">
+				<action method="setSlideId"><slide_id>1</slide_id></action>
+				<action method="setWidth"><width>200</width></action>
+				<action method="setHeight"><height>400</height></action>
+			</block>
+		</reference> -->	
+<!-- 		<reference name="content">
+			<block type="magicslider/widget_slide" name="magicslider" template="magiccart/magicslider/magicslider.phtml">
+				<action method="setData"><name>slide_id</name><value>1</value></action>
+				<action method="setData"><name>width</name><value>800</value></action>
+				<action method="setData"><name>height</name><value>600</value></action>
+			</block>
+		</reference> -->		
+	</cms_index_index>
+</layout> 

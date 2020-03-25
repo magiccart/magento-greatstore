@@ -1,0 +1,39 @@
+<?php if(!$this->config['enabled']) return;?>
+<?php $title = isset($this->config['title']) ? $this->config['title'] : ''; ?>
+<?php $selector = 'slider'.md5(rand()); //rand(0,666666); ?>
+<?php $brands = $this->getBrand(); if(!count($brands)) return;?>
+<div id="<?php echo $selector ?>">
+	<div class="block-title-tabs">
+		<?php echo $title ? '<h2 class="title item">' . '<span>' .$title. '</span>' . '</h2>' : '' ?>
+		<div class="bery-hr">
+			<div class="icon-wrapper">
+				<i class="fa">&nbsp;</i>
+				<i class="fa large">&nbsp;</i> 
+				<i class="fa">&nbsp;</i>
+			</div>
+		</div>
+	</div>
+    <ul class="magicbrand">
+    <?php foreach ($brands as $brand) :?>
+        <li>
+            <a href="<?php echo $brand->getUrl() ? $brand->getUrl() : '#' ?>">
+                <img class="brand img-responsive" src="<?php echo $this->getImage($brand)?>" alt="<?php echo $this->__($brand->getTitle()) ?>" title="<?php echo $this->__($brand->getTitle()) ?>" />
+            </a>
+        </li>
+    <?php endforeach ?>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    jQuery( document ).ready(function($) {
+        (function(selector){
+            var $content = $(selector);
+            var $slider  = $('.magicbrand', $content);
+            $slider.bxSlider({
+                <?php echo $this->setBxslider() ?>
+            });
+
+        })("#<?php echo $selector ?>");
+    });
+</script>
+

@@ -1,0 +1,775 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Greatstore Magento Theme Document</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="Alothemes">
+	<meta name="copyright" content="Alothemes">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-10-17T00:00:00+02:00">
+	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	<!--<script src="assets/js/jquery.min.js"></script>-->
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/logo.png);}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		 
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-tv-look">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li ><a href="#documenter_cover">Start</a></li>
+			<li><a href="#installation" title="Installation">I - Installation</a>
+				<ul class="sub">
+					<li><a href="#sub21">1 - Prepare your Magento</a></li>
+						<li><a href="#sub22">2 - Install</a>
+						<ul class="sub">
+							<li><a href="#sub23">2.1 Install quickstart</a></li>
+							<li><a href="#sub24">2.2 install template</a></li>
+							<li><a href="#sub25">2.3 Problems after installation.</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#magento_configuration" title="Magento configuration">II - Magento configuration</a>
+				<ul class="sub">
+					<li><a href="#sub31">1 - Caching system</a></li>
+					<li><a href="#sub32">2 - Index management</a></li>
+					<li><a href="#sub33">3 - How to enable the theme</a></li>
+					<li><a href="#sub34">4 - Logo</a></li>
+					<li><a href="#sub35">5 - Categories</a></li>
+					<li><a href="#sub36">6 - Products</a></li>
+					<li><a href="#sub37">7 - Attributes</a></li>
+					<li><a href="#sub38">8 - Content Management System (CMS)</a></li>
+					<li><a href="#sub39">9 - Translation / Localization</a></li>
+				</ul>
+			</li>
+			<li><a href="#alothemes_customization">III - Alothemes customization</a>
+				<ul class="sub">
+					<li><a href="#sub41">1 - Design packages</a></li>
+					<li><a href="#sub42">2 - Theme structure</a></li>
+					<li><a href="#sub43">3 - Fallback mechanism</a></li>
+					<li><a href="#sub44">4 - Summary</a></li>
+				</ul>
+			</li>
+			<li><a href="#theme_features_and_elements" title="THEME FEATURES AND ELEMENTS">IV - Theme Features And Elements</a>
+				<ul class="sub">
+					<li><a href="#sub51">1 - Home page</a></li>
+					<li><a href="#sub52">2 - Products grid page</a></li>
+					<li><a href="#sub53">3 - Products list page</a></li>
+					<li><a href="#sub54">4 - Product view</a></li>
+					<li><a href="#sub55">5 - Blocks Static</a>
+						<ul class="sub">
+							<li><a href="#sub56">5.1 - Edit Static Block</a></li>
+							<li><a href="#sub57">5.2 - Positions Static Block</a></li>
+						</ul>
+					</li>
+					<li><a href="#sub58">6 - Extension in template</a>
+						<ul class="sub">
+							<li><a href="#sub61">6.1 - Magicmenu</a></li>
+							<li><a href="#sub62">6.2 - Magicslider</a></li>
+							<li><a href="#sub63">6.3 - Magicproduct</a></li>
+							<li><a href="#sub64">6.4 - Magiccategory</a></li>
+							<li><a href="#sub65">6.5 - Magicshop</a></li>
+							<li><a href="#sub66">6.6 - Magicsocial</a></li>
+							<li><a href="#sub67">6.7 - Magicbrand</a></li>
+							<li><a href="#sub68">6.8 - Testimonial</a></li>
+							<li><a href="#sub69">6.9 - Blog</a></li>
+							<li><a href="#sub610">6.10 - ALO theme</a></li>
+							<li><a href="#sub611">6.11 - Colors theme</a></li>
+							<!-- <li><a href="#sub612">6.12 - Storelocator</a></li> -->
+						</ul>
+					</li>
+				</ul>
+			
+			</li>
+			<li><a href="#trouble_shooting" title="TROUBLE SHOOTING">V - Custom Support</a>
+				<ul class="sub">
+					<li><a href="#sub71">1 - Contacts</a></li>
+					<li><a href="#sub72">2 - Support</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div id="documenter_copyright"><a href="http://alothemes.com">Copyright alothemes.com 2014</a><br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+<div id="documenter_content">
+	<section id="documenter_cover">
+		<h1>Greatstore ALO Themes</h1>
+		<h2>Responsive Magento Theme Document</h2>
+		<div id="documenter_buttons">
+			<a href="http://alothemes.com/landing/greatstore/" class="btn btn-primary btn-large">Demo</a> <!-- <a href="#" class="btn btn-large">Purchase</a>  -->
+		</div>
+		<hr>
+		<ul>
+		<li><b>Created: 06/01/2015</b></li>
+		<li><b>Latest update: 06/01/2015</b></li>
+		<li><b>By: ALO Themes</b></li>
+		<!-- <li><b>Email Support: </b><a href="mailto:support@alothemes.com">support@alothemes.com</a></li> -->
+		<li><b>Ticket Support: </b><a href="http://alothemes.com/ticket">http://alothemes.com/ticket</a></li>
+		<li><b>Video Tutorial: </b><a href="https://www.youtube.com/channel/UC_xyPf-rd1QrMfBCxcvXuzg">Youtube</a></li>
+		<li><b>Customize Job: </b><strong>contact via Skype: nguyendong.st</strong></li>
+		</ul>
+	</section>
+	<section id="installation">
+		<div class="page-header"><h1>I - Installation</h1><hr class="notop"></div>
+		<section id="sub21"><h2>1 - Prepare your Magento</h2>
+			<ol>
+				<li><strong>It is recommended to install the theme on a test server before you install it in a live store.</strong></li>
+				<li><strong>Backup Magento files and the store database. Important: Creating backup before installation of any theme store extensions in Magento is extremely important,especially when are working on a live store.</strong></li>
+				<li>Disable Compilation Mode in System &gt;Tools &gt; Compilation.</li>
+				<li>
+					<b>Disable:</b>
+					<ul>
+						<li>
+							Magento Cache (refer to 4.1.2 Disable Cache For Details)</li>
+						<li>
+							Full page cache and caching module for Magento (such as Speedster)</li>
+						<li>
+							Any Additional cache on your server,PHP cache engines,APC,etc.&nbsp;<br>
+							<b>Important:</b>&nbsp;When developing your Magento store, in order to be able to see changes immediately, you should completely disable the cache.You can enable it after you finish configuring your store.</li>
+						<li>
+							Remove all possible custom modifications of the Magento &ldquo;base&rdquo; theme. &quot;alogreatstore&quot;(same as any Magento theme) relieson &ldquo;base&rdquo; theme,so any modifications of the &ldquo;base&rdquo; theme can change the default behavior of alogreatstore and break some functionality.You should never edit&ldquo;base&rdquo; theme&#39;s files.</li>
+						<li>
+							Log out from Magento admin panel. Do not just close the browser window: you need to click Log Out link to refresh the access control system.</li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+		<section id="sub22"><h2>2 - Install</h2>
+			<p>There are two ways to install a Magento Theme:</p>
+			<ul>
+				<li><b>Install quickstart:</b>&nbsp;By using this package, you will set the theme exactly as our Demo with sample data.</li>
+				<li><b>Install only template:</b>&nbsp;If you exist a magento website you can install only template.</li>
+			</ul>
+		</section>
+		<section id="sub23"><h3>2.1 Install quickstart</h3>
+			<h5>Please following steps below:</h5>
+			<h6><b>Step 1:</b> Create new database and import database sample (<strong>database.sql</strong> or <strong>database.sql.gz</strong>) in database folder.</h6>
+			<p>- Open your Browse and type : localhost/phpmyadmin</p>
+			- Then create database</p>
+			<p><img src="assets/images/install.jpg" /></p>
+			<p>-Click database you have created</p>
+			<p><img src="assets/images/install_2.jpg" /></p>
+			<h6><b>Step 2:</b>Upload the whole Quickstart package (app, js, skin &hellip; in&nbsp; <strong>alo_greatstore_quickstart_1.0</strong>&nbsp; folder ) to your server.</h6>
+			<p><strong>alo_greatstore_quickstart_1.0</strong>, we got:</p>
+			<p><img src="assets/images/install_3.jpg" /></p>
+			<p>Copy all of folder above to your Magento .</p>
+			<h6><b>Step 3:</b> Open browser and navigate to your site (where the quickstart uploaded) to load default Magento installer with the database you just created and import database sample.</h6>
+			<p>As an example, name of magento is <strong>magento.</strong></p>
+			<p><img src="assets/images/install_4.jpg" />
+			<p>Click button &ldquo;Continue&rdquo;.</p>
+			<h6><b>Step 4:</b> Step by step to follow the instructions.</h6>
+			<p><img src="assets/images/install_5.jpg" /></p>
+			<p>Click &ldquo;Continue&rdquo;. We got:</p>
+			<p><img src="assets/images/install_6.jpg" />
+			<p>- With database name : <strong>magento </strong>&ndash; database name you have just created</p>
+			<p>- User name : root</p>
+			<p>- User password : No need to fill in.</p>
+			<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Click &ldquo;Continue&rdquo; button.</p>
+			<p><img src="assets/images/install_7.jpg" />
+			<p>- Fill</p>
+			<p>Personal information : First Name, Las Name, Email</p>
+			<p>Login Information: Username, Password, Confirm Password</p>
+			<p>-Click &ldquo;Continue&rdquo; button</p>
+			<h6><b>Step 5:</b> Finish installer.</h6>
+			<h6><b>Step 6:</b> You can &ldquo;Go to frontend&rdquo; to go to Home page.</h6>
+			<p><b>(Important note ( at step 3 of installation - Configuration page) )</b></p>
+			<h6><b>Step 7:</b> Disable cache</h6>
+			<p>&Oslash; Login your magento admin</p>
+			<p>&Oslash; Clear all cache ( <strong>System &gt; Cache management &gt; Disabled all cache</strong> )</p>
+			<p><img src="assets/images/cache_2.jpg" /></p>
+			<p>After cache is disabled cache  management screen might look like this:</p>
+			<p><img src="assets/images/cache_3.jpg" /></p>
+			<h6><b>Step 8:</b> Reindex data</h6>
+			<p>Go to <strong><b>System IndexManagement</b></strong>.To rebuild you reindexes, selec tall,select<strong> Reindex Data</strong>and click <strong>Submit</strong> button</p>
+		</section>
+		<section id="sub24"><h3>2.2 install template</h3>
+			<p><b>If you exist a magento website you can install only template.</b></p>
+			<p>1. You use theme in folder <strong>theme_1.0</strong> upload the folders ( app, skin, js, media ...) from the theme package to the root directory ( www, public_html) of your magento software using an FTP client.</p>
+			<p><strong>Example: </strong>open folder: <strong>theme_1.0</strong></p>
+			<p>We got:</p>
+			<p><img src="assets/images/install_8.jpg" /></p>
+			<p><span>Copy all <b>app, js, lib, media, skin</b> above to your Magento.</span></p>
+			<p>2. Please go to Magento Admin: <b> Admin > Magiccart> Magicinstall > Magic Setup >Setup</p><br />
+			<p><img src="assets/images/install_9.jpg" /></p>
+			<!--p>3. If your magento has many store views : Choose <strong>All</strong>&nbsp;<strong>Store View</strong>&nbsp;-&gt; then click&nbsp;<strong>submit</strong>&nbsp;button</p-->
+			<p>3. Choose Scope Store active theme (or use default active theme for all store) and Choose theme then click&nbsp;<strong>submit</strong>&nbsp;button</p>
+			<p><img src="assets/images/install_10.jpg" /></p>
+			<!--p>&nbsp;If don&rsquo;t have many store views, choose <strong>Submit</strong> button :</p-->
+			<p><img src="assets/images/cache.jpg" /></p>
+			<p>4. Clear all cache ( <strong>System &gt; Cache management &gt; Disabled all cache</strong> )</p>
+			<p><img src="assets/images/cache_2.jpg" /></p>
+			<p>After cache is disabled cache management screen might look like this:</p>
+			<p><img src="assets/images/cache_3.jpg" /></p>
+		</section>
+		<section id="sub25"><h3>2.3. Problems after installation.</h3>
+			<p>If you encounter any problems after installation: flush Magento cache, log out from the admin panel, and log in again.Check again the installation steps and make sure you didn&#39;t omit any step. What can cause problems:</p>
+			<p>If you see bug: Column not found: 1054 Unknown column 'main_table.magic_label' in 'field list'. You need go to Admin Cpanel > System > Configuration > Catalog:</p>
+			<p>In 2 field "Use Flat Catalog Category" and "Use Flat Catalog Product" choose No and then "Save Config"</p>
+			<p>After You choose again Yes for 2 field this and "Save Config" magento will show message as image below</p>
+			<p><img src="assets/images/reindex-message.jpg" /></p>
+			<p>You click to link Index Management will go to table below after choose Sellect all and reindex wait finished and try refesh site:</p>
+			<p><img src="assets/images/reindex-again.jpg" /></p>
+			<p>a) Magento cache (or external cache) was not flushed after installation of the theme.</p>
+			<p>b) Compilation mode was not disabled before installation.</p>
+			<p>c) Some of the theme files were not uploaded.</p>
+			<p>d) File permissions issue</p>
+			<p>e) You have some third-party extensions which change/break theme&#39;s default behavior or cause some conflicts.</p>
+			<p>f) You edited theme files and accidentally removed or changed something in the files.</p>
+			<p>g) You have customized the theme by creating custom sub-theme and your modifications change/break the default behavior of the theme</p>
+			<p>h) You have some elements that left from your previous theme (e.g.in Magento&#39;s&quot;base&quot; theme in&nbsp;<strong>app/design/frontend/base</strong>/) and that changes/breaks the default be haviorof the theme.</p>
+			<p>Also check your log files invar/log/(log settings shouldbe enabled in the admin panel:<strong><b>System &gt;Configuration&gt;Developer</b></strong>for more information about possible errors.</p>
+		</section>
+	</section>
+	<section id="magento_configuration">
+		<div class="page-header"><h1>II - Magento configuration</h1><hr class="notop"></div>
+		<p>The following chapter describes some of the basic Magento settings and features. Please note that as authors of this theme we provide support only for the issues related strictly to the theme. Support for Magento configuration/ installation/ maintenance etc. is beyond the scope of our support. This chapter should be only treated as a starting point, more information about Magento can be found in Magento documentation : <a href="#_Magento_help">1.1.2 Magento help</a></p>
+		<section id="sub31"><h2>1 - Caching system</h2>
+			<p>When developing your Magento store,you want to see the changes you have implemented. Inorder tobe ableto see changes immediately, you should completely <strong>disable the cache</strong>.Youcan enable it after you finish configuring your store.</p>
+			<p>If the cache is enabled, always&nbsp;<strong>refresh the cache&nbsp;</strong>after making changes in the store/theme/extension configuration.</p>
+			<p>To access the cache management screen, go to <strong><b>System &gt;Cache Management</b></strong>.</p>
+			<h3>1.1 Flush cache</h3>
+				<p>Go to <strong><b>System &gt;Cache Management</b></strong>.Click the following buttons to completely clear the store cache:</p>
+				<p>Step1. Flush Magento Cache</p>
+				<p>Step2. Flush Cache Storage</p>
+				<p>Step3. Flush Catalog Images Cache</p>
+				<p>Step4. Flush JavaScript/CSSCache</p>
+				<p><img src="assets/images/cache.jpg" /></p>
+			<h3>1.2 Disable cache</h3>
+				<p>Go to <strong><b>System &gt;Cache Management</b></strong>. Click&nbsp;<strong>Select All&nbsp;</strong>link,select&nbsp;<strong>Disable&nbsp;</strong>in&nbsp;<strong>Actions&nbsp;</strong>field and click&nbsp;<strong>Submit&nbsp;</strong>button:</p>
+				<p>-<img src="assets/images/cache_2.jpg" /></p>
+				<p>After cache is disabled cache management screen might look like this:</p>
+				<p><img src="assets/images/cache_3.jpg" /></p>
+			<h3>1.3 Enable cache</h3>
+				<p>When the store is configured, you can enable caching system again.Go to&nbsp;<strong><b>System &gt; Cache Management</b></strong>. Click <strong>Select All&nbsp;</strong>link, select&nbsp;<strong>Enable </strong>in&nbsp;<strong>Actions&nbsp;</strong>field and click <strong>Submit </strong>button:</p>
+				<p><img src="assets/images/cache_4.jpg" /></p>
+			<h3>1.4 Refresh cache</h3>
+				<p>If the cache is enabled, after each configuration change, extension installation, upgrade or uninstallation always refresh the cache.To do this, go to <strong><b>System &gt;Cache Management</b></strong>. Click&nbsp;<strong>SelectAll&nbsp;</strong>link, select&nbsp;<strong>Refresh&nbsp;</strong>in&nbsp;<strong>Actions&nbsp;</strong>field and click <strong>Submit&nbsp;</strong>button:</p>
+				<p><img src="assets/images/cache_5.jpg" /></p>
+		</section>
+		<section id="sub32"><h2>2 - Index management</h2>
+			<p>Magento indexes most of its data in order to access it faster.If You make changes to your store such as editing products, adding categories, changing urls, etc. you will need to reindex the data so that the changes can show up on your frontend.</p>
+			<p>To access the index management screen,go to System &gt; Index Management.To rebuild your indexes, select all,select Reindex Data and click Submit button.</p>
+		</section>
+		<section><h2 id="sub33">3 - How to enable the theme</h2>
+			<p>In Magento you can enable the theme on many levels.You can set one theme for the entire store,but can also set different themes for different parts ofthe store (even for selected categories, products or CMS pages).</p>
+			<p>If you want all your store pages to look the same (to use the same theme),&nbsp;<strong>your theme should only be enabled&nbsp;</strong>in <b>System &gt;Configuration &gt;Design</b>(the same as it was described in the installation steps<strong>3. Installation</strong>).You need to remove all theme over rides from categories, products and CMS pages.</p>
+			<p>There are many places where a theme can be enabled. If you have just installed a fresh copy of Magento, those places will be empty. Other wise, please take a look at these sections of the admin panel:</p>
+			<p>&bull;&nbsp;&nbsp; <b>System &gt;Design</b></p>
+			<p>This section should beempty,deleteall existing entries:</p>
+			<p><img src="assets/images/Capture16.jpg" /></p>
+			<p>These fields should be left empty, do not select any theme here:</p>
+			<p>&nbsp;</p>
+			<ul>
+				<li>Catalog &gt;Manage Categories&gt; [category]&gt; Custom Design &gt;Custom Design</li>
+				<li>Catalog &gt;Manage Products&gt; [product] &gt; Design &gt; Custom Design</li>
+				<li>CMS &gt;Pages &gt;[page]&gt; Design &gt; Custom Theme
+					<p>Leave--Please Select--in thesefields,like on the following screenshot:</p>
+				</li>
+			</ul>
+			<p><img src="assets/images/Capture17.jpg" /></p>
+			<p>Remember to&nbsp;<strong>flush the cache&nbsp;</strong>after you change design settings.</p>
+		</section>
+		<section id="sub34"><h2>4 - Logo</h2>
+			<ul>
+				<li>Upload your logo to skin/frontend/alogreatstore/default/images/.</li>
+				<li>By default Magento theme displays logo from the file name logo.jpg. If you up loaded file with different name or different file format(e.g..png or.jpg)</li>
+				<li>Login your Magento Admin</li>
+				<li>go to System &gt; Configuration &gt; Design &gt; Header section and in the Logo Image Src field specify a path to your logo image</li>
+			</ul>
+		</section>
+		<section id="sub35"><h2>5 - Categories</h2>
+			<p><strong>Note:</strong></p>
+			<p><b>More info about categories in Magento can be found in :</b></p>
+			<p><a href="http://www.magentocommerce.com/knowledge-base/entry/tutorial-creating-and-managing-categories"><b>http://www.magentocommerce.com/knowledge-base/entry/tutorial-creating-and-managing-categories</b></a></p>
+			<p>To create and edit categories in Magento, navigate to&nbsp;<b>Catalog > Manage Categories</b></p>
+			<p><img src="assets/images/cat.jpg" /></p>
+			<p><b>Categories </b>section of the admin panel. After installation of Magento your category tree is almost empty, there is only the root category (name Default Category):</p>
+			<p><img src="assets/images/cat_1.jpg" /></p>
+			<p>The root category is not displayed in the frontend of the store &ndash;<strong>that&#39;s why your main menu is empty&nbsp;</strong>just after is talling Magento.You need to add some new top-level categories (also called subcategories because they are descendants of the root category).</p>
+			<p><strong>I</strong><strong>m</strong><strong>po</strong><strong>r</strong><strong>tant:</strong></p>
+			<p><b>A</b><b>l</b><b>l categories have to be <strong>descendants&nbsp;</strong>of the root category. Do not add categories outside of the root category tree.</b></p>
+			<p>To add a new category,select the root category by clicking on itand click <strong>Add</strong></p>
+			<p><strong>Subcategory </strong>button:</p>
+			<p><img src="assets/images/cat_2.jpg" /></p>
+			<p>Fill inall the required fields. Especialy set <strong>Is Active&nbsp;</strong>and&nbsp;<strong>Include in Navigation Menu&nbsp;</strong>fields to&nbsp;<strong>Yes</strong>, and click <strong>Save Category</strong>:</p>
+			<p><img src="assets/images/cat_3.jpg" /></p>
+			<p>This will create a new category (which will be displayed as a top-level category in the main menu on frontend):</p>
+			<p><img src="assets/images/cat_4.jpg" /></p>
+			<p><b>Note:</b> that this new category has to be a&nbsp;<strong>descendant of the root category</strong>&ndash; it has tobe one level lower than the root category:</p>
+			<p><img src="assets/images/cat_5.jpg" /><img src="assets/images/cat_6.jpg" /></p>
+			<p>If the category is not displayed in the frontend:<strong>reindex the data&nbsp;</strong>in <b>System &gt; Index</b></p>
+			<p><b>Management&nbsp;</b>and&nbsp;<strong>flush Magento cache</strong>.</p>
+			<h3>5.1 Category info</h3>
+			<p>For each category you can add some basic information which will be displaye don category page (above the products).Navigateto<strong> <b>Manage Categories</b></strong> and select a category:</p>
+			<ul><li style="list-style: square"><b>Description</b> - category description.Youcan enter textor HTML.</li>
+			<li style="list-style: square"><b>Image</b> – main category image. After image is uploaded and saved,an icon of the existing image will appear to the left of the button,and a <b>Delete Image</b> checkbox will appear tothe right.</li>
+			</ul>
+			<h3>5.2 Landing pages</h3>
+			<p>You can show your customers a landing page instead of the standard product listing page when they select the category. You can do so by enabling static block on your category page.Navigate to <b>Catalog >Manage  Categories</b>, select a category, open Display Settings tab and select appropriate valuein the <b>Display Mode </b> field.In the CMS Block drop-down, select which block you would like to display on category page. The list will include all existing static blocks.</p>
+
+			<h3>5.3 Depth of the menu</h3>
+			<p>In the main menu you can limit  number of displayed cetegory levels. To do that, go to
+			System >Configuration >Catalog and specify the dep thin Maximal Depth field.
+			For example, if you want to display only three levels of categories, enter 3 in Maximal Depthfield and  save the configuration.From now on,only three levels of  categories will be dis played in the main menu.
+			</p>
+			<h3>5.4	Categories in Layered Navigation ("ShopBy")</h3>
+			<p>You can display categories in Magento's Layered Navigation block ("Shop by"block) at the top of the left sidebar in category view.To display selected category in the Layered Navigation, go to <b>Catalog > ManageCategories</b>, click selected category and set <b>Is Anchor</b> field(in <b>Display Settings</b> tab) to <b>Yes</b>:</p>
+			<p><img src=assets/images/cat_7.jpg /></p>
+			<p>
+				From now on this category will be displayed in the Layered Navigation.If the category is not displayed in the frontend: <b>reindex the data in System > Index Management</b> and <b>refresh Magento cache</b>.
+			</p>
+		</section>
+		<section id="sub36"><h2>6 - Products</h2>
+			<h3>6.1 Options box</h3>
+			<p>For products which have options (like configurable productsor bundle products) you can change position of the options box on product  page. It can be displayed in the main column(next to the product images),or  in the column below images.Select a product in Catalog >Manage Products,open Designtaband select position in  Display Product Options Infield:</p>
+			<p><img src=assets/images/Capture25.jpg /></p>
+			<h3>6.2 &nbsp;&ldquo;Only X left&rdquo; indicator</h3>
+			<p>There is a quantity indicator displayed on the product page.It shows the quantity of items left in stock if the stock level is equal or below the threshold specified in the admin panel. The threshold can be set in Only X left Threshold field in System >Configuration >Inventory.<br />
+				For example, if you set the option to 20,all products with quantity equal or 
+			less than 20 will have the text Only X left  on the product page. <br />
+				For configurable products this text is click able and shows drop-downbox with quantities of all products associated with that product.</p>
+		</section>
+		<section id="sub37"><h2>7 - Attributes</h2>
+			<p>An attribute in Magento is defined as any property of a product,such as color,price,SKU, manufacturer, etc.There are two types of attributes: System Attributes (cannot bedeleted and every product must contain them) and Simple Attributes(which can be created by the store admin).Attributes are groupped in AttributeSets.
+			Here youcan find more info about Magento attributes:
+			<a href="http://www.magentocommerce.com/wiki/welcome_to_the_magento_user_s_guide/chapter_3#attributes">http://www.magentocommerce.com/wiki/welcome_to_the_magento_user_s_guide/chapter_3#attributes</a></p>
+			<h3>7.1 Attribute management</h3>
+				<p>To edit existing attributes, go to Catalog >Attributes>Manage Attributes and select an attribute from the list.To create a new attribute,click Add New Attribute button.There are many types of attributes which you  can create,one of the most useful is a dropdown attribute which lets you define a list of values that will be available when creating new products.</p>
+				<p><b>Important:</b><br />
+				After making any changes in the attributes and AttributeSets,you may need to reindex the data in your Magento (<b>3.2 Index management</b>)and flush the cache (3.1 Caching system).<br />
+				Let's see an example of a dropdown attribute manufacturer which stores a list of product brands.Fill in the form as follows:
+				<p><img src=assets/images/attribute.jpg /></p>
+				<p><img src=assets/images/attribute_2.jpg /></p>
+				<p>After you create the attribute, you need to add it to the Attribute Set which you use for your products.Attribute Sets are described in the next chapter.</p>
+			<h3>3.7.2  Attribute sets</h3>
+				<p>An Attribute Set is a collection of attributes, created to fit certain types of products. To add a new product in Magento you need to select an AttributeSet which will describe that product. You can create many custom Attribute Sets for different types of products.For example, if you sell t-shirtsand books,you could create 2 AttributeSets:one specific to t-shirts,one specific to books.The Attribute Set for t-shirts can include attributes such as color and size (which are not needed in the AttributeSet for books).</p>
+				<p><b>Important:</b>
+				After making any changes in the attributes and AttributeSets, you may need to reindex the data in your Magento (3.2 Index management)and flush the cache (3.1 Cachingsystem).<br />
+				Let's continue an example with manufacturer attribute. To add your attribute toan AttributeSet,go to Catalog>Attributes >Manage Attribute Sets,select an Attribute Set (default one is named Default). You will see Unassigned Attributes section with a list of available attributes.You can associate attributes to your Attribute Set by clicking and drag in an attribute in to the Groups section.To disassociate an attribute,simply drag it back to the Unassigned Attributes list.</p>
+				<p><img src=assets/images/attribute_3.jpg /></p>
+				<p>Click Save Attribute Set button after you finish. You can add your custom attributes to many AttributeSets.<
+				Then,go to Catalog >Manage Products and open a product.If the product is 
+				based on the Attribute Set which contain your manufacturer attribute, you will see a list of manufacturers which may look like this:</p>
+				<p><img src=assets/images/attribute_4.jpg /></p>
+				<p>If you added manufacturer attribute to that AttributeSet, but you don't see the field with the list of manufacturers, you may need to reindex the data in your Magento and flush the cache.</p>
+		</section>
+		
+		<section id="sub38"><h2>8 - Content Management System (CMS)</h2>
+			<h3>8.1  WYSIWYG editor</h3>
+				<p>WYSIWYG(What You See Is What You Get) editor is a convenient way to add content to pages and static blocks in Magento.<br />
+				<b>Important:</b>
+				WYSIWYG should only be used to edit text, never use it to edit HTML. Remember to always turn off WYSIWYG editor when you want to edit HTML or Magento's CMS tags in the page/block content.Otherwise WYSIWYG editor can break your content.<br />
+				Infact the best way to useWYSIWYG is to turn it on only when it is needed. Go to
+				System >Configuration >Content Management and set it as Disabled by Default.<br />
+				After that, if needed, WYSIWYG can always be turned on with Show/Hide Editor button above the page/block content field:</p>
+				<p><img src=assets/images/Capture29.jpg /></p>
+
+			<h3>8.2 Static blocks</h3>
+				<p>Static blocks in Magento are simple portions of content that can be displayed throughout the site. To manage static blocks, go to CMS >Static Blocks section in the admin panel.
+				</p>
+				<p>To create a static block,go to CMS > Static Blocks,click Add New Block button and follow these steps:</p>
+				<ol>
+					<li>In <b>Identifier</b> field enter an identifier of one of the static blocks. Make sure the identifier is lower-case and separated by underscores to follow Magento’s standards</li>
+					<li>Enter the title in <b>Block Title</b></li>
+					<li>Select <b>the Store</b> View to which this block will apply.</li>
+					<li>Select <b>Enabled</b>  in the Status field. Disabled means that the block is not displayed in the frontend.</li>
+					<li>Insert your Content(it can be textor HTML )and click Save Block. Here’s an example:<br />
+					<span><img src=assets/images/Capture30.jpg /></span>
+					</li>
+				</ol>
+				<p>For more details on creating static blocks please refer to Magento user guide: static blocks.</p>
+
+			<h3>8.3 CMS markup tags</h3>
+				<p>There are some special mark up tags– a bits of text surrounded by double curly braces– which have a special meaning in Magento.You can use those tags either in static blocks or CMS pages.
+				For example,this tag:<br />
+				<b>{{storeurl=''”}}</b><br />
+				will be replaced with the store’s base URL.
+				It might be useful when you want to display a link on one of your pages.You can use this tag to dynamically build all of your links (you don't need to hard-code any links).Thanks to that you will not need tore build your links after you move your store to a new domain.
+				For example, if your store domain is www.example.com, the following tag placed in the page content:<br />
+				<b>{{storeurl='path/to/page/about-us'}}</b>
+				will be replaced with this URL:
+				<a href="http://www.example.com/path/to/page/about-us/">http://www.example.com/path/to/page/about-us/</a>
+				For more information, please refer to this article, where you can find a comprehensive list of available tags: <span style="text-decoration: underline;"><i>CMS markup tags</i></span></p>
+		</section>
+		
+		<section id="sub39"><h2>9 - Translation / Localization</h2>
+			<h3>Interface translation</h3>
+			<p>This theme introduces a few additional interface character strings.
+			For example “Special Price” label is replaced with shorter “Now only” label. Strings are located in <b>app/design/frontend/alogreatstore/default/locale/en_US/translate.csv</b>. This file can be used to translate the interface into other languages.<br />
+			<b>Example:</b><br />
+			To translate the interface into Spanish follow these in structions:
+			</p>
+			<ul>
+			<li>Createa new folder for your translation.For Spanish language it will be
+				<b>app/design/frontend/default/alogreatstore/locale/es_ES.</b>
+			</li>
+			<li>Copy translate.csv from <b>app/design/frontend/alogreatstore/default/locale/en_ES.</b><br />
+				And paste it into created folder <b>app/design/frontend/alogreatstore/default/locale/es_ES.</b></li>
+			<li>Open <b>app/design/frontend /alogreatstore/default/locale/es_ES/translate.csv</b> in Open Office Calc(or other text editor like Notepad++, PSPad).<br />
+				<b>Note:</b>
+				The editor should be capable to save file in UTF-8 encoding. Do not use
+			Excel, it can break file structure. Read more about useful tools:<br />
+				<a href="http://www.magentocommerce.com/wiki/groups/166/useful_tools_to_work_w%20ith_translations">http://www.magentocommerce.com/wiki/groups/166/useful_tools_to_work_w%20ith_translations</a>
+			</li>
+			<li>If you open translate.csv in Open Office Calc it might look like this:<br />
+				<img src="assets/images/translate.jpg" /><br />
+				The first column contains the original character strings.It should be left intact.In the second column you can place your translation ofeach string.
+			</li>
+			<li>Some strings contains%dor%sentries.These entries should be left intact in the translated strings.</li>
+			</ul>
+		</section>
+	</section>
+
+	<section id="alothemes_customization"><div class="page-header"><h1>III - Alothemes customization</h1><hr class="notop"></div>
+		<p>Please note that Magento theme customization is far beyond the scope of this user guide. This chapter is only for informational purposes, you should treat it as a starting point. Before you start to customize the theme you need to be sure that you know what you're doing.</p><br />
+		<p>Magento is based on a theming concept referred to as parent / child theming – changes in the theme can be implemented without modifying the original. Magento “base” theme serves as a parent theme for a custom theme.</p>
+		<p>The correct way to customize the theme in Magento is to create your own sub-theme of the default theme in the design package.You should never editor original design package files.Files That Need To be changed can be copied from the default theme of the design package to your custom sub-theme inside that package.</p>
+		<p>This way can over ride any file of the design package. And you can be sure that when something goes wrong you can simply delete your custom sub-theme without breaking the original files.</p>
+		
+		<section id="sub41"><h2>1 - Design packages</h2>
+		<p>Themes in Magento are grouped together into design packages(in earlier versions called interfaces).By default Magento Community Edition has two packages named"base" and "default".</p>
+		<p><b>Note:</b>
+		Do not edit files in the "base" package and do not create customsub-themes inside the "base" package.
+		</p>
+		<p>Every design package in Magento comes with a default theme named "default" which is the main theme in the design package.When administrator assigns a package to the store, Magento automatically looks for the theme named "default" in that package.</p>
+		<p>Design package can also contain variations of the"default" theme. This variations are
+		often called sub-themes because they inherit all the files from the "default" theme (from the same package) and from the "base" package. Inside the sub-theme you can over ride any file of the "default" theme. Sub-theme can even consists of a single file– other files will be inherited from the "default" theme from the package.This is called a fallback mechanism because Magento Always falls back to the next theme in the hierarchy to find the
+		requested file.Fallback is described later in this chapter.</p>
+		</section>
+		<section id="sub42"><h2>2 - Theme structure</h2>
+			<p>Magento themes consists of many files like HTML templates,CSS stylesheets,images, etc. All files are split between two directories:</p>
+			<ul>
+				<li>
+					<b>app/design/frontend/default/theme_name/</b>
+					Templates directory– contains the layout files, HTML templates and translations
+				</li>
+				<li>
+					<b>skin/frontend/default/theme_name/</b>
+					Skin directory– contains CSS stylesheets, images and theme-specific JavaScript files<br />
+					<p>where theme_name indicates the theme name.</p>
+				</li>
+			</ul>
+			<p>Template files are organized as follows:</p>
+			<ul>
+				<li>layout– directory contains XML files which define page structure</li>
+				<li>template– directory contains template files (.phtml),a mix of HTML and PHP</li>
+				<li>locale– directory contains CSV files with translation strings</li>
+			</ul>
+			<p>Skin files are organized as follows:</p>
+			<ul>
+				<li>css– directory contains CSS files</li>
+				<li>images– directory contains images</li>
+				<li>js– directory contains theme-specific JavaScript files</li>
+			</ul>
+		</section>
+		<section  id="sub43"><h3>3 - Fallback mechanism</h2>
+			<p>Understanding fallback mechanismis very important when you want to customize the theme,solet's see a simple example.</p>
+			<p>Let's say we have a design package named "hello world" with custom sub-themenamed "new". Package files are organized as follows:</p>
+			<ul>
+				<li>app/design/frontend/helloworld/new/</li>
+				<li>skin/frontend/helloworld/new/</li>
+			</ul>
+			<p>Let's also assume that your custom sub-theme contains a CSS file called "menu.css" located in <b>skin/frontend/helloworld/new/css/menu.css</b></p>
+			<p>If your custom theme requests "menu.css" but Magento can't find it in your custom sub- theme in skin/frontend/helloworld/new/css/menu.css, Magento will try to find that file in the next theme in the hierarchy. Next theme in the hierarchy is the "default" theme in "helloworld" package so Magento will search in <b>skin/frontend/helloworld/default/css/menu.css.</b></p>
+			<p>If the file is not there, Magento will continue until it locates the file. Next theme The hierarchy is the "default" theme in "base"package:<br />
+			<b>skin/frontend/base/default/css/menu.css</b>. The "default" theme in the "base" package is the final fallback point in the hierarchy.
+			</p>
+			<p>Let's take a look again at the entire fallback hierarchy:</p>
+			<ol>
+				<li>Look for the requested file in custom sub-theme: <b>skin/frontend/helloworld/new/</b></li>
+				<li>If not found, look for the file in the "default" theme in the design package:
+				<b>skin/frontend/helloworld/default/</b></li>
+				<li>If not found, look for the file in the "default" theme in "base" design package: <b>skin/frontend/base/default/</b>
+				</li>
+			</ol>
+				<p>The first theme in hierarchy the theme that assign through the admin panel (in <b>System >Configuration >Design</b>).The	last theme hierarchy is the "default" theme in "base" design package.
+			<br />
+			Thanks to the fallback mechanism there is no need to copy all the default theme files to your custom sub-theme when you want to make some changes your theme. You Only copy over the files that you want to edit. Other files will be inherited from the "default" theme in the package and from the "base" package.</p>
+			<p>The most important advantages of the fallback mechanism:</p>
+			<ul>
+				<li>Selected Functionality Can Be shared between many themes</li>
+				<li>Less code to maintain</li>
+				<li>Custom themes are updated-proof:you don't edit original files,so your changes are not overwritten after theme updated</li>
+			</ul>
+		</section>	
+		<section id="sub44"><h2>4 - Summary</h2>
+			<p>Themes in Magento are grouped together into design packages.</p>
+			<ul>
+				<li>By default Magento comes with the package named "base" which contains all the files that control Magento's default behavior.</li>
+				<li>Every design package in Magento comes with a default theme named "default" which is the main theme of the design package.</li>
+				<li>Design package can contain variations (sub-themes) of the "default" theme.They inheritall the files from the "default" theme (from the same package)and from the "base" package.</li>
+				<li>The correct way to customize the theme in Magento Is to create your own sub-  theme. You Should never edit original design package files. Files that need To be changed can be copied to your custom sub-theme.</li>
+				<li>This way you can override any file of any design package. And you can be sure that when some thing goes wrong you can simply delete your custom sub- theme without breaking the original files.</li>
+				<li>Magento use fallback mechanism to make custom themes easier to maintain and upgrade-proof.</li>
+				<li>The first theme in the fallback hierarchy is the theme that assign through the adminpanel(in System >Configuration >Design).The last theme in hierarchy is the "default" theme in "base" design package.</li>
+				<li>If the requested file is not found in your custom sub-theme, Magento will try to find that file in the "default" theme from the package. If the file is not found, Magento will call the file from the "base" package.</li>
+				<li>The directory structure inside the sub-theme must replicate the directory structure of the default theme.</li>
+			</ul>
+		</section>
+	</section>
+	
+	
+	<section id="theme_features_and_elements"><div class="page-header"><h1>THEME FEATURES AND ELEMENTS</h1><hr class="notop"></div>
+			<p>In this chapter you can find description and configuration details of selected elements of this theme, such as home page, built-instatic blocks, CSS classes etc.</p>
+			<p><strong>Note:</strong></p>
+			<p><b>This list of all settings available in the <strong>System &gt; Configuration</strong> section of the admin panel can be found in the next chapters.</b></p>
+			<section id="sub51"><h2>1 - Home page</h2>
+				<p>- Positions all block static (Admin > CMS > Static Block ) and Modules ( Admin > Magiccart ) in homepage.</p>
+				<p><img src="home_structure.png" /></p>
+				<p>After the theme is installed, you can import sample versions of the home page.</p>
+				<p>To manage pages in Magento, go to CMS > Pages section. By default in Magento a page with URL Key home is displayed as the store’s home page. One of a few sample home pages which you can import, has the following URL key: look-home-page. So to display that page as a home page in your store, you need to change its URL key to simple home.</p>
+				<p><b>Note:</b>
+				If the page with that URL key already exists (which is true in most of Magento installations) you will need to delete existing page or change its url key.
+				Alternatively you can indicate which CMS page you want to use as your home page. To do that, go to System > Configuration > General > Web > Default Pages tab and select the desired page in the CMS Home Page field.
+				</p>
+					<ol><li><b>Home page layout</b><br />
+				For every CMS page in Magento you can select page layout-the number of columns: one, two,or three columns. To change the layout of the home page, goto CMS >Pages, select the page,select one of the options in the Layout field and click Save Page button:
+					</li>
+						<li><b>Home page content</b><br />
+				To edit the content of the homepage,go to CMS >Pages and open the active homepage. Content can be found in the main field ofthe Content tab:<br />
+					<img src="assets/images/Capture51.jpg" /><br />
+					<b>Important</b><br />
+				Always turn off WYSIWYG editor when you want to edit HTML or Magento's CMS tags in the page/block content.Otherwise WYSIWYG editor will break the content. Refer to 3.8.1 WYSIWYG editor for more details.
+				</li>
+				</ol>
+			</section>
+			<section id="sub52"><h2>2 - Products Grid page</h2>
+				<p><img src=assets/images/list1.jpg /></p>
+			</section>
+			<section id="sub53"><h2>3 - Products list page</h2>
+				<p><img src=assets/images/list2.jpg /></p>
+			</section>
+			<section id="sub54"><h2>4 - Product view</h2>
+				<p><img src=assets/images/detail.jpg /></p>
+			</section>
+			<section id="sub55"><h2>5 - Widget</h2>
+				<h4>5.1 Use Widget in page or static block</h4>
+				<ul>
+					<p>Widgets are the most exciting features in the magento. You can use that to display different content block within your page, such as Latest Products/New Products/Best Seller Products or any CMS Static Block.</p>
+					<p><strong>widget icon in CMS page or in static block:</strong></p>
+					<img src=assets/images/widgeticon.jpg /><br />
+					<p>While you double click to widget it will show option of widget</p>
+					Example with Magicslider Widgets:
+					<img src=assets/images/widgetslide.jpg /><br />
+					<p>Our extensions in theme based on the widget it is inserted into the page or static block. If you want to change the configuration you can find it in the page or static block and change it.</p>
+					<p><strong>We have add the widget in our theme as Facebook Fanbox Widgets, Latesttweet Widgets, Magicbrand Widgets, Magiccategory Widgets, Magicproduct Widgets, Magicslider Widgets, Testimonial Widgets </strong>
+					</p>
+
+
+					<img src=assets/images/widget.jpg /><br />
+				</ul>
+			</section>
+			<section id="sub58"><h2>6 - Extension in template</h2>
+				<section id="sub61"><h3>6.1 Magicmenu<h3>
+					<h4>6.1.1 Look in frontend</h4>
+						<img src=assets/images/magicmenu.jpg />
+					<h4>6.1.2 Configuration</h4>
+						<p>
+							You must log in <b>Admin > System > Configuration > Magic Menu</b> to config. It might look like this:
+						</p>
+						<img src=assets/images/magicmenu_configuration.jpg />
+						<p>You can change settings or edit. after that, click save Config to finish.</p>
+					<h4>6.1.3 Manage Menu</h4>
+						<p>You must log in <b>Admin > Magiccart > Magic Menu > Manage Menu</b>. It might look like this:</p>
+						<img src=assets/images/managemenu.jpg />
+						<p>You can Add New or edit. after that, click save to finish.</p>
+					<h4>6.1.3 Manage Extra Menu</h4>
+						<p>You must log in <b>Admin > Magiccart > Magic Menu > Manage Extra Menu</b>. It might look like this:</p>
+						<img src=assets/images/managemenu2.jpg />
+						<p>You can Add New or edit. after that, click save to finish.</p>
+				</section>
+				<section id="sub62"><h3>6.2 Magicslider<h3>
+					<h4>6.2.1 Look in frontend</h4>
+						<img src=assets/images/magicslider.jpg />
+					<h4>6.2.2 Configuration</h4>
+						<ul>
+							<li><b>config:</b>
+								You must log in: <b> Admin > System > Configuration > Magiccart > Magicslider</b>. It might look like this:<br />
+								<img src=assets/images/magicslider_cfg.jpg /><br />
+								you can change settings. after that, click "save Config" to finish.
+							</li>
+							<li><b>Slide manage:</b>
+								You must log in: <b> Admin > Magiccart > Magicslider</b>. It might look like this:<br />
+								<img src=assets/images/magicslider_manage.jpg /><br />
+								you can change add, edit or delete item.
+							</li>
+							<li><b>Items manage:</b>
+								You must log in: <b> Admin > Magiccart > Magicslider</b>. It might look like this:<br />
+								<img src=assets/images/magicslider_manage_items.jpg /><br />
+								you can change add, edit or delete item.
+							</li>
+						</ul>
+				</section>		
+				<section id="sub63"><h3>6.3 Magicproduct<h3>
+					<h4>6.3.1 Look in frontend</h4>
+						<img src=assets/images/magicproduct.jpg />
+					<h4>6.3.2 Widget Configuration</h4>
+						<li><b>Config:</b>you must log in: <b> Admin > CMS > Pages > home_greatstore</b>:<br />
+						<p>you can double click</p>
+						<p>It might look like this:<br /></p>
+						<img src=assets/images/magicproduct_cfg.jpg /><br />
+						<p>you can change settings. after that, click "Insert Wiget".</p>
+						<p>After that, click "Save Page" to finish.</p>
+						</li>
+					<h4>6.3.3 Manage Magicproduct</h4>
+						<li><b>Config:</b>you must log in: <b> Admin > Magiccart > Magicproduct > Edit</b><br />
+						<p>It might look like this:<br /></p>
+						<img src=assets/images/magicproduct_manage.jpg /><br />
+						<p>you can change settings. After that, click "Save Magicproduct" to finish</p>
+						</li>
+				</section>
+				<section id="sub64"><h3>6.4 Magiccategory<h3>
+					<h4>6.4.1 Look in frontend</h4>
+						<img src=assets/images/magiccategory.jpg />
+				</section>	
+				<section id="sub65"><h3>6.5 Magicshop<h3>
+					<h4>6.5.1 Look in Frontend</h4>
+						<p><b>Ajaxcart</b></p>
+						<img src=assets/images/magicshop_ajaxcart.jpg /><br />
+						<p><b>Quickview</b></p>
+						<img src=assets/images/magicshop_quickview.jpg /><br />
+				</section>
+				<section id="sub66"><h3>6.6 Magicsocial<h3>
+					<h4>6.6.1 Look in frontend</h4>
+						<img src=assets/images/magicsoical_like.jpg />
+						<img src=assets/images/magicsoical_tweets.jpg />
+					<h4>6.6.2 Configuration</h4>
+						<p>If you want to config Magicsocial, please log in: <b> Admin > System > Configuration > Magiccart > Magicsocial</b>. It might look like this:<br />
+						<img src=assets/images/magicsocial_cfg.jpg /><br />
+						<p>After that, please click <b>"Save config" To finish.</b></p>
+				</section>
+				<section id="sub67"><h3>6.7 Magicbrand<h3>
+					<h4>6.7.1 Look in Frontend</h4>
+						<img src=assets/images/magicbrand.jpg /><br />
+					<h4>6.7.1 Configuration</h4>
+						<p>If you want to config Magicbrand, please log in: <b> Admin > System > Configuration > Magiccart > Magic Brand</b> It might look like this:</p><br />
+						<img src=assets/images/magicbrand_cfg.jpg /><br />
+						<p>If you want add change, edit or delete item in Magicbrand, please log in:<b> Admin > Magiccart > Magic Brand</b>. it might look like this:</p><br />
+						<img src=assets/images/magicbrand_grid.jpg /><br />
+						<p>
+						To add new brand logo,please Click" Add New". <br />
+						To Edit item, please select item and edit.<br />
+						After that, Please Click <b>Save Brand</b> To finish!</p>
+				</section>
+				<section id="sub68"><h3>6.8 Testimonial<h3>
+					<h4>6.8.1 Look in Frontend</h4>
+						<img src=assets/images/testimonial.jpg />
+					<h4>6.8.2 Configuration</h4>
+						<ul>
+							<li><b>Config:</b> You can log in: <b> Admin > Configuration > Magiccart > Testimonial</b>.
+								You can change all settings. After that, click "<b>Save Config</b>" to finish.
+							</li>
+							<li><b>Manage Testiminials:</b>
+								Please log in: <b>Admin > Magiccart > Testimonial</b>. It might look like this:
+								<img src=assets/images/testimonial_grid.jpg /><br />
+								You can add, edit or delete item in testimonial. After that, click <b>Save Testimonial</b> to finish.
+							</li>
+						</ul>
+				</section>
+				<section id="sub69"><h3>6.9 Blog<h3>
+					<h4>6.9.1 Look in frontend</h4>
+						<img src=assets/images/blog.jpg />
+					<h4>6.9.2 Configuration</h4>
+						<ul>
+							<li><b>Config:</b> You can log in: <b> Admin > Configuration > Magiccart > BLog</b>.
+								You can change all settings. After that, click "<b>Save Config</b>" to finish.
+							</li>
+							</li>
+							<li>you can add post in: <b> Admin > Magiccart > Blog > Add Post</li>
+							<li>you can Edit post in: <b> Admin > Magiccart > Blog > Post</li>
+							<p>After that, click "Save Post" to finish.</p>
+						</ul>
+				</section>
+				<section id="sub610"><h3>6.10 ALO Themes<h3>
+					<h4>6.10.1 Configuration</h4>
+						<ul>
+							<li><b>Config:</b> You can log in: <b> Admin > Configuration > Magiccart > ALO Themes</b>.
+								You can change all settings. After that, click "<b>Save Config</b>" to finish.
+								<img src=assets/images/alothemes_cfg.jpg /><br />
+							</li>
+						</ul>
+				</section>
+				<section id="sub611"><h3>6.11 Colors Theme<h3>
+					<h4>6.11.1 Configuration</h4>
+						<ul>
+							<li><b>Config:</b> You can log in: <b> Admin > Configuration > Magiccart > ALO Themes</b>.
+								You can change all settings. After that, click "<b>Save Config</b>" to finish.
+								<img src=assets/images/color_theme.jpg /><br />
+							</li>
+						</ul>
+				</section>
+				<!--
+				<section id="sub612"><h3>6.12 Storelocator<h3>
+					<h4>6.12.1 Admin</h4>
+						<ul>
+							<li><b>Config:</b> You can log in: <b> Admin > Magiccart > Storelocator > Manager Store</b>.
+								<img src=assets/images/storelocator.jpg /><br />
+							</li>
+						</ul>
+				</section>
+				-->
+			</section>
+	</section>
+	<section id="trouble_shooting"><div class="page-header"><h1>V - Custom Support</h1><hr class="notop"></div>
+		<section id="sub71"><h2>1 - Contact</h2>
+			<!-- <p>- <b>Skype:</b> alothemes.mc (I’m available to support my items via Skype)</p> -->
+			<!-- <p>- <b>Email Support: </b><a href="mailto:support@alothemes.com">support@alothemes.com</a></p> -->
+			<p>- <b>Ticket Support: </b><a href="http://alothemes.com/ticket">http://alothemes.com/ticket</a></p>
+		</section>
+		<section id="sub72"><h2>2 - Support</h2>
+			<!-- <p>You can download PSD source :  </p> -->
+			<p>If you have found any bugs or have some other problems with this theme .If the problem is not covered there,you can contact us in mail <a href="mailto:support@alothemes.com">support@alothemes.com</a>. We will respond as soon as possible (within 24 – 48 hours, usually much faster).</p>
+			<p>Author of the extension should provide detail edit struction about how to integrate the extension with any custom theme.</p>
+		</section>
+	</section>
+		<h1 style="text-align: center; margin-top: 50px;">Thank for Purchase!</h1>
+
+	</div>
+</body>
+</html>

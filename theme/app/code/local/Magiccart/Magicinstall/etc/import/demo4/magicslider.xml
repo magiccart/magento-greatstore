@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <magicslider>
+    <slide>
+      <title><![CDATA[Slide Home 4]]></title>
+      <identifier><![CDATA[slide_home4]]></identifier>
+      <content><![CDATA[[{"url":"http:\/\/192.168.5.104\/great_store\/media\/magiccart\/magicslider\/\/d\/e\/demo4_slide3.jpg","file":"\/d\/e\/demo4_slide3.jpg","label":"","position":"3","disabled":0,"removed":0,"html":"<div class=\"container\">\n\t<div class=\"text-slide text-slide2\">\n\t\t<h3 class=\"caption1\">specail<\/h3>\n\t\t<h3 class=\"caption2\">big sale for season<\/h3>\n\t\t<h2 class=\"caption3\">new collection for women<\/h2>\n\t\t<a href=\"#\" class=\"btn-shop\">Shop Now<\/a>\n\t<\/div>\n<\/div>","link":""},{"url":"http:\/\/192.168.5.104\/great_store\/media\/magiccart\/magicslider\/\/d\/e\/demo4_slide2.jpg","file":"\/d\/e\/demo4_slide2.jpg","label":"","position":"2","disabled":0,"removed":0,"html":"<div class=\"container\">\n\t<div class=\"text-slide text-slide2\">\n\t\t<h3 class=\"caption1\">specail<\/h3>\n\t\t<h3 class=\"caption2\">big sale for season<\/h3>\n\t\t<h2 class=\"caption3\">new collection for women<\/h2>\n\t\t<a href=\"#\" class=\"btn-shop\">Shop Now<\/a>\n\t<\/div>\n<\/div>","link":""},{"url":"http:\/\/192.168.5.104\/great_store\/media\/magiccart\/magicslider\/\/d\/e\/demo4_slide1.jpg","file":"\/d\/e\/demo4_slide1.jpg","label":"","position":"1","disabled":0,"removed":0,"html":"<div class=\"container\">\n\t<div class=\"text-slide\">\n\t\t<h3 class=\"caption1\">fashionfor men<\/h3>\n\t\t<h3 class=\"caption2\"><strong>30%<\/strong>off<\/h3>\n\t\t<h2 class=\"caption3\">winter collection<\/h2>\n\t\t<div class=\"bg-slide\"><\/div>\n\t<\/div>\n<\/div>","link":""}]]]></content>
+      <status><![CDATA[1]]></status>
+      <config><![CDATA[a:6:{s:5:"width";s:4:"1920";s:6:"height";s:4:"1080";s:8:"controls";s:1:"1";s:5:"pager";s:1:"1";s:5:"pause";s:4:"6000";s:5:"speed";s:3:"800";}]]></config>
+    </slide>
+  </magicslider>
+</root>

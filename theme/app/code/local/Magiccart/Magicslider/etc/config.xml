@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:42:49
+ * @@Modify Date: 2015-04-12 23:24:54
+ * @@Function:
+ */ -->
+<config>
+    <modules>
+        <Magiccart_Magicslider>
+            <version>0.1.1</version>
+        </Magiccart_Magicslider>
+    </modules>
+    <frontend>
+        <routers>
+            <magicslider>
+                <use>standard</use>
+                <args>
+                    <module>Magiccart_Magicslider</module>
+                    <frontName>magicslider</frontName>
+                </args>
+            </magicslider>
+        </routers>
+        <layout>
+            <updates>
+				<magicslider>
+                    <file>magiccart/magicslider.xml</file>
+                </magicslider>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<magicslider>
+				<use>admin</use>
+				<args>
+					<module>Magiccart_Magicslider</module>
+					<frontName>magicslider</frontName>
+				</args>
+			</magicslider>
+        </routers>
+    </admin>
+    <adminhtml>
+		<layout>
+			<updates>
+				<magicslider>
+					<file>magiccart/magicslider.xml</file>
+				</magicslider>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <magicslider>
+                <class>Magiccart_Magicslider_Model</class>
+                <resourceModel>magicslider_mysql4</resourceModel>
+            </magicslider>
+            <magicslider_mysql4>
+                <class>Magiccart_Magicslider_Model_Mysql4</class>
+                <entities>
+                    <magicslider>
+                        <table>magiccart_magicslider</table>
+                    </magicslider>
+                </entities>
+            </magicslider_mysql4>
+        </models>
+        <resources>
+            <magicslider_setup>
+                <setup>
+                    <module>Magiccart_Magicslider</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </magicslider_setup>
+            <magicslider_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </magicslider_write>
+            <magicslider_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </magicslider_read>
+        </resources>
+        <blocks>
+            <magicslider>
+                <class>Magiccart_Magicslider_Block</class>
+            </magicslider>
+        </blocks>
+        <helpers>
+            <magicslider>
+                <class>Magiccart_Magicslider_Helper</class>
+            </magicslider>
+        </helpers>
+    </global>
+    <default>
+        <magicslider>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>  
+            </general>
+        </magicslider>
+     </default>
+</config>

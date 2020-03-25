@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magiccart_Alothemes>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Magiccart_Alothemes>
+    </modules>
+</config> 

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-02-12 22:21:57
+ * @@Function:
+ */ 
+-->
+<layout version="0.1.0">
+
+    <cms_index_index>
+        <update handle="magicproductdefault" /> 
+        <!-- <reference name="content">
+            <block type="magicproduct/widget_magicproduct" name="magicproduct_widget" template="magiccart/magicproduct/magicproduct.phtml">
+                <action method="setData"><name>types</name><value>latest</value></action>
+                <action method="setData"><name>widthImages</name><value>180</value></action>
+                <action method="setData"><name>heightImages</name><value>180</value></action>
+                <action method="setData"><name>action</name><value>cart,compare,wishlist,review</value></action>
+            </block>
+        </reference> -->
+    </cms_index_index>
+    <magicproductdefault>
+        <reference name="head" ifconfig="magicproduct/general/enabled">
+            <action method="addCss"><stylesheet>magiccart/plugin/css/animate.css</stylesheet></action>
+            <action method="addCss"><stylesheet>magiccart/plugin/css/jquery.bxslider.css</stylesheet></action>
+            <!-- <action method="addCss"><stylesheet>magiccart/magicproduct/css/magicproduct.css</stylesheet></action> -->
+            <action method="addItem" ifconfig="sales/msrp/enabled"><type>skin_js</type><name>js/msrp.js</name></action>
+            <action method="addJs"><script>magiccart/jquery.min.js</script></action>         
+            <action method="addJs"><script>magiccart/jquery.noconflict.js</script></action>
+            <action method="addJs"><script>magiccart/plugin/jquery.bxslider.js</script></action>
+            <action method="addJs"><script>magiccart/magicproduct.js</script></action>
+        </reference>        
+    </magicproductdefault>
+    <magicproduct_index_product>
+        <reference name="content">
+            <block type="magicproduct/product_list" name="magicproduct_list" template="catalog/product/list.phtml">
+                <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+				<action method="setColumnCount"><count>4</count></action>
+                <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+            </block>
+        </reference>
+    </magicproduct_index_product>
+
+    <magicproduct_index_ajax>  
+        <reference name="root">
+            <action method="setTemplate" ifconfig="magicproduct/general/enabled"><template>magiccart/magicproduct/ajax.phtml</template></action>
+
+            <!-- <block type="magicproduct/product_list" name="product_list" template="magiccart/magicproduct/product/list.phtml" /> -->
+            <block type="magicproduct/product_grid" name="magicproduct_grid" template="magiccart/magicproduct/product/grid.phtml" />
+            <block type="magicproduct/product_grid" name="magicproduct_grid_timer" template="magiccart/magicproduct/product/gridtimer.phtml" />
+            <!-- <block type="magicproduct/widget_magicproduct" name="product_list">
+                <action method="setTemplate"><value>magiccart/magicproduct/product/extlist.phtml</value></action>
+                <action method="getContentActive"/>
+            </block> -->
+            <!-- <block type="magicproduct/product_list" name="item_slider" template="magiccart/magicproduct/itemslider.phtml" /> -->
+        </reference>
+    </magicproduct_index_ajax>
+
+</layout> 
+

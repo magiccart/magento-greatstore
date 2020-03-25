@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<widgets>
+<!--     <blog_list type="blog/last" translate="name description" module="blog">
+        <name>Blog: Latest Posts</name>
+        <description>Adds a list of latest post from Blog</description>
+        <parameters>
+            <blocks_count>
+                <label>How many blocks to show</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </blocks_count>
+            <categories>
+                <label>Categories to show</label>
+                <type>multiselect</type>
+                <source_model>blog/system_config_source_categories</source_model>
+                <visible>1</visible>
+                <required>1</required>
+            </categories>
+        </parameters>
+    </blog_list> -->
+    <blog_slide type="blog/slide" translate="name description" module="blog">
+        <name>Blog: Latest Posts Blog Widget</name>
+        <description>Adds a list of latest post from Blog</description>
+        <parameters>
+            <title translate="label description">
+                <label>Title for Blog:</label>
+                <visible>1</visible>
+                <value>Latest Posts Blog</value>
+                <type>text</type>
+                <description>Title Blog</description>
+            </title>
+<!--             <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template:</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label description">
+                        <value>magiccart/blog/widget_slide.phtml</value>
+                        <label>default</label>
+                    </default>
+                </values>
+            </template> -->
+            <categories>
+                <label>Categories to show</label>
+                <type>multiselect</type>
+                <source_model>blog/system_config_source_categories</source_model>
+                <visible>1</visible>
+                <required>1</required>
+            </categories>
+            <blocks_count>
+                <label>Number blocks limit</label>
+                <type>text</type>
+                <visible>1</visible>
+                <value>5</value>
+                <required>1</required>
+            </blocks_count>
+            <slide translate="label description">
+                <label>Slide:</label>
+                <visible>1</visible>
+                <value>0</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <description>Slide products</description>
+            </slide>
+            <vertical translate="label description">
+                <label>Slide Vertical:</label>
+                <visible>1</visible>
+                <value>0</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Vertical or default Horizontal Slide</description>
+            </vertical>
+            <controls translate="label description">
+                <label>Show Next/Back control:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Automatically</description>
+            </controls>
+            <pager translate="label description">
+                <label>Show Pager control:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Automatically</description>
+            </pager>
+            <auto translate="label description">
+                <label>Auto Play:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Automatically</description>
+            </auto>
+            <speed translate="label description">
+                <label>Play Speed:</label>
+                <visible>1</visible>
+                <value>3000</value>
+                <type>text</type>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Play Speed</description>
+            </speed>
+            <pause translate="label description">
+                <label>Pause:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Pause:</description>
+            </pause>
+<!--             <infiniteLoop translate="label description">
+                <label>Carousel Slider:</label>
+                <visible>0</visible>
+                <value>0</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Carousel Slider</description>
+            </infiniteLoop> -->
+            <row translate="label description">
+                <label>Display Row in Slide:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_row</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Number row product show in Slide</description>
+            </row>
+            <portrait translate="label description">
+                <label>Display in Screen 480:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 1 -> 480</description>
+            </portrait>
+            <landscape translate="label description">
+                <label>Display in Screen 640:</label>
+                <visible>1</visible>
+                <value>2</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 481 -> 640</description>
+            </landscape>
+            <tablet translate="label description">
+                <label>Display in Screen 768:</label>
+                <visible>1</visible>
+                <value>3</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 641 -> 768</description>
+            </tablet>
+            <desktop translate="label description">
+                <label>Display in Screen 992:</label>
+                <visible>1</visible>
+                <value>4</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 769 -> 992</description>
+            </desktop>
+            <visibleItems translate="label description">
+                <label>Display Visible Items:</label>
+                <visible>1</visible>
+                <value>6</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description><![CDATA[Number product show case remaining & in Vertical]]></description>
+            </visibleItems>
+            <marginColumn translate="label description">
+                <label>Margin column:</label>
+                <visible>1</visible>
+                <value>10</value>
+                <type>text</type>
+                <!-- <depends><slide><value>0</value></slide></depends> -->
+                <description>Margin between column product</description>
+            </marginColumn>
+            <productDelay translate="label description">
+                <label>Product Delay:</label>
+                <visible>1</visible>
+                <value>500</value>
+                <type>text</type>
+                <depends><slide><value>0</value></slide></depends>
+                <description>Delay between products</description>
+            </productDelay>
+			
+			 <showimg translate="label description">
+                <label>Show Images:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Show img</description>
+            </showimg>
+            <widthImages translate="label description">
+                <label>Width of Images:</label>
+                <visible>1</visible>
+                <value>200</value>
+                <type>text</type>
+                <description>Width of Images product:</description>
+            </widthImages>
+            <heightImages translate="label description">
+                <label>Height of Images:</label>
+                <visible>1</visible>
+                <value>250</value>
+                <type>text</type>
+                <description>Height of Images product:</description>
+            </heightImages>
+        </parameters>
+    </blog_slide>
+</widgets>

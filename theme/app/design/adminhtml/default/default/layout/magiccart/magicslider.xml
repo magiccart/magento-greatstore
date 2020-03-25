@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:42:49
+ * @@Modify Date: 2014-09-22 14:03:34
+ * @@Function:
+ */ -->
+<layout version="0.1.0">
+	<default> 
+		<reference name="head"> 
+			<action method="setCanLoadExtJs"><flag>1</flag></action> 
+			<action method="setCanLoadTinyMce"><flag>1</flag></action>
+			<action method="addJs"><script>prototype/prototype.js</script></action> 
+			<action method="addJs"><script>mage/adminhtml/variables.js</script></action> 
+			<action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action> 
+			<action method="addJs"><script>lib/flex.js</script></action> 
+			<action method="addJs"><script>lib/FABridge.js</script></action> 
+			<action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action> 
+			<action method="addJs"><script>mage/adminhtml/browser.js</script></action> 
+			<action method="addJs"><script>prototype/window.js</script></action>
+			<action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+			<action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>
+		</reference> 
+    </default>
+    <magicslider_adminhtml_magicslider_index>
+		<update handle="editor_index_index"/>
+        <reference name="content">
+            <block type="magicslider/adminhtml_magicslider" name="magicslider" />
+        </reference>
+    </magicslider_adminhtml_magicslider_index>
+</layout>

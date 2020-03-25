@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2015-04-19 00:26:26
+ * @@Function:
+ */ -->
+<widgets>
+    <magicproduct type="magicproduct/widget_magicproduct" translate="name description">
+        <name>Magicproduct Widgets</name>
+        <description>Show products Home sellers</description>
+        <parameters>
+            <identifier translate="label description">
+                <label>Identifier Tab:</label>
+                <visible>1</visible>
+                <type>select</type>
+                <required>1</required>
+                <source_model>magicproduct/system_config_identifier</source_model>
+                <description>Identifier Tab</description>
+            </identifier>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                
+                <label>Template:</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label description">
+                        <value>magiccart/magicproduct/magicproduct.phtml</value>
+                        <label>default</label>
+                    </default>
+                </values>
+				<values>
+                    <magicproductcustom translate="label description">
+                        <value>magiccart/magicproduct/magicproduct_custom.phtml</value>
+                        <label>magicproductcustom</label>
+                    </magicproductcustom>
+                </values>
+<!--             <values>
+                    <timer translate="label description">
+                        <value>magiccart/magicproduct/magicproducttimer.phtml</value>
+                        <label>Product timer for sale</label>
+                    </timer>
+                </values> -->
+            </template>
+        </parameters>
+    </magicproduct>
+</widgets>

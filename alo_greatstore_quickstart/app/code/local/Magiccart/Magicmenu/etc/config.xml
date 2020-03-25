@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-04-08 09:58:01
+ * @@Function:
+ */ 
+-->
+<config>
+	<modules>
+		<Magiccart_Magicmenu>
+			<version>0.1.0</version>
+		</Magiccart_Magicmenu>
+	</modules>
+	<frontend>
+		<routers>
+			<magicmenu>
+				<use>stardard</use>
+				<args>
+					<module>Magiccart_Magicmenu</module>
+					<frontName>magicmenu</frontName>
+				</args>
+			</magicmenu>
+		</routers>
+		<layout>
+			<updates>
+				<magicmenu>
+					<file>magiccart/magicmenu.xml</file>
+				</magicmenu>
+			</updates>
+		</layout>
+	</frontend>
+	<admin>
+		<routers>
+			<magicmenu>
+				<use>admin</use>
+				<args>
+					<module>Magiccart_Magicmenu</module>
+					<frontName>magicmenu</frontName>
+				</args>
+			</magicmenu>
+		</routers>
+	</admin>
+	<adminhtml>
+		<layout>
+			<updates>
+				<magicmenu>
+					<file>magiccart/magicmenu.xml</file>
+				</magicmenu>
+			</updates>
+		</layout>
+	</adminhtml>
+	<global>
+		<models>
+			<magicmenu>
+				<class>Magiccart_Magicmenu_Model</class>
+				<resourceModel>magicmenu_mysql4</resourceModel>
+			</magicmenu>
+			<magicmenu_mysql4>
+				<class>Magiccart_Magicmenu_Model_Mysql4</class>
+				<entities>
+					<menu>
+						<table>magiccart_magicmenu</table>
+					</menu>
+				</entities>
+			</magicmenu_mysql4>
+		</models>
+		<resources>
+			<magicmenu_setup>
+				<setup>
+					<module>Magiccart_Magicmenu</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</magicmenu_setup>
+			<magicmenu_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</magicmenu_write>
+			<magicmenu_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</magicmenu_read>
+		</resources>
+		<blocks>
+			<magicmenu>
+				<class>Magiccart_Magicmenu_Block</class>
+			</magicmenu>
+		</blocks>
+		<helpers>
+			<magicmenu>
+				<class>Magiccart_Magicmenu_Helper</class>
+			</magicmenu>
+		</helpers>
+	</global>
+    <default>
+        <magicmenu>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>
+            </general>
+            <topmenu>
+                <enabled>1</enabled>
+                <sticker>1</sticker>
+                <home>1</home>
+                <demo>1</demo>
+                <mainCat>1</mainCat>
+                <extraCat>1</extraCat>
+                <label>1</label>
+                <description>1</description>
+                <thumbnail>1</thumbnail>
+                <width_thumb>50</width_thumb>
+                <height_thumb>50</height_thumb>
+            </topmenu>
+            <vmenu>
+                <enabled>1</enabled>
+                <home>0</home>
+                <mainCat>1</mainCat>
+                <extraCat>0</extraCat>
+                <label>0</label>
+                <description>1</description>
+                <thumbnail>1</thumbnail>
+                <width_thumb>50</width_thumb>
+                <height_thumb>50</height_thumb>
+            </vmenu>
+            <amenu>
+                <enabled>1</enabled>
+            </amenu>
+        </magicmenu>
+    </default>
+</config>
+

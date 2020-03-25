@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-08-04 10:59:47
+ * @@Function:
+ */ 
+-->
+<config>
+	<menu>
+		<magiccart>
+			<title>Magiccart</title>
+			<sort_order>89</sort_order>
+			<children>
+				<alothemes module="alothemes">
+					<title>ALO Themes</title>
+					<sort_order>0</sort_order>
+					<action>adminhtml/system_config/edit/section/alothemes</action>
+				</alothemes>
+                <support module="alothemes">
+                    <title><![CDATA[Support & Version]]></title>
+                    <sort_order>500</sort_order>
+                    <action>alothemes/adminhtml_support</action>
+                </support>
+			</children>	
+		</magiccart>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <config>
+                                <children>
+                                    <alothemes>
+                                        <title>ALO Themes</title>
+                                    </alothemes>
+                                </children>
+                            </config>
+                        </children>
+                    </magiccart>       
+                    <magiccart translate="title" module="alothemes">
+                        <title>Magiccart</title>
+                        <sort_order>89</sort_order>               
+                        <children>
+                            <alothemes translate="title" module="alothemes">
+                                <title>ALO Themes</title>
+                                <sort_order>10</sort_order>
+                                <children>
+                                    <configuration>
+                                        <title>Configuration</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/alothemes</action>
+                                    </configuration>
+                                </children>
+                            </alothemes>
+                        </children>
+                    </magiccart> 
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <alothemes>
+                                        <title>ALO Themes</title>
+                                    </alothemes>
+                                    <alodesign>
+                                        <title>Theme Design</title>
+                                    </alodesign>
+                                </children>
+                            </config>
+                        </children>
+                    </system>                   
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+

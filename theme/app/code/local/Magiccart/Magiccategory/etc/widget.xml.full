@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2009-08-20 02:17:14
+ * @@Function:
+ */ -->
+<widgets>
+    <magiccategory type="magiccategory/widget_magiccategory" translate="name description">
+        <name>Magiccategory Widgets</name>
+        <description>Show products Home sellers</description>
+        <parameters>
+            <title translate="label description">
+                <label>Title Tab:</label>
+                <visible>1</visible>
+                <value>Magic Category</value>
+                <type>text</type>
+                <description>Title for group tab category</description>
+            </title>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                
+                <label>Template:</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label description">
+                        <value>magiccart/magiccategory/magiccategory.phtml</value>
+                        <label>default</label>
+                    </default>
+                </values>
+<!--                 <values>
+                    <magiccategory2 translate="label description">
+                        <value>magiccart/magiccategory/magiccategory2.phtml</value>
+                        <label>magiccategory2</label>
+                    </magiccategory2>
+                </values> -->
+            </template>
+            <category_ids translate="label description">
+                <label>Category selected:</label>
+                <visible>1</visible>
+                <type>multiselect</type>
+                <required>1</required>
+                <source_model>magiccategory/system_config_category</source_model>
+                <description>Category show in tab</description>
+            </category_ids>
+            <active translate="label description">
+                <label>Tab Active:</label>
+                <visible>1</visible>
+                <type>select</type>
+                <source_model>magiccategory/system_config_category</source_model>
+                <description>Category product first loaded</description>
+            </active>
+            <types translate="label description">
+                <label>Product Collection:</label>
+                <visible>1</visible>
+                <type>select</type>
+                <required>1</required>
+                <source_model>magiccategory/system_config_type</source_model>
+                <description>The product collection</description>
+            </types>
+            <limit translate="label description">
+                <label>Limit Product:</label>
+                <visible>1</visible>
+                <value>10</value>
+                <type>text</type>
+                <required>1</required>
+                <description>Limit number of products show on widget</description>
+            </limit>
+            <slide translate="label description">
+                <label>Slide:</label>
+                <visible>1</visible>
+                <value>0</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <description>Slide products</description>
+            </slide>
+            <vertical translate="label description">
+                <label>Slide Vertical:</label>
+                <visible>1</visible>
+                <value>0</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Vertical or default Horizontal Slide</description>
+            </vertical>
+            <controls translate="label description">
+                <label>Show Next/Back control:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Automatically</description>
+            </controls>
+            <pager translate="label description">
+                <label>Show Pager control:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Automatically</description>
+            </pager>
+            <auto translate="label description">
+                <label>Auto Play:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Slide Automatically</description>
+            </auto>
+            <speed translate="label description">
+                <label>Play Speed:</label>
+                <visible>1</visible>
+                <value>3000</value>
+                <type>text</type>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Play Speed</description>
+            </speed>
+            <pause translate="label description">
+                <label>Pause:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Pause:</description>
+            </pause>
+<!--             <infiniteLoop translate="label description">
+                <label>Carousel Slider:</label>
+                <visible>0</visible>
+                <value>0</value>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Carousel Slider</description>
+            </infiniteLoop> -->
+            <row translate="label description">
+                <label>Display Row in Slide:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_row</source_model>
+                <depends><slide><value>1</value></slide></depends>
+                <description>Number row product show in Slide</description>
+            </row>
+            <portrait translate="label description">
+                <label>Display in Screen 480:</label>
+                <visible>1</visible>
+                <value>1</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 1 -> 480</description>
+            </portrait>
+            <landscape translate="label description">
+                <label>Display in Screen 640:</label>
+                <visible>1</visible>
+                <value>2</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 481 -> 640</description>
+            </landscape>
+            <tablet translate="label description">
+                <label>Display in Screen 768:</label>
+                <visible>1</visible>
+                <value>3</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 641 -> 768</description>
+            </tablet>
+            <desktop translate="label description">
+                <label>Display in Screen 992:</label>
+                <visible>1</visible>
+                <value>4</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description>Number product show in screen 769 -> 992</description>
+            </desktop>
+            <visibleItems translate="label description">
+                <label>Display Visible Items:</label>
+                <visible>1</visible>
+                <value>6</value>
+                <type>select</type>
+                <source_model>magicproduct/system_config_column</source_model>
+                <description><![CDATA[Number product show case remaining & in Vertical]]></description>
+            </visibleItems>
+            <marginColumn translate="label description">
+                <label>Margin column:</label>
+                <visible>1</visible>
+                <value>10</value>
+                <type>text</type>
+                <!-- <depends><slide><value>0</value></slide></depends> -->
+                <description>Margin between column product</description>
+            </marginColumn>
+            <productDelay translate="label description">
+                <label>Product Delay:</label>
+                <visible>1</visible>
+                <value>500</value>
+                <type>text</type>
+                <depends><slide><value>0</value></slide></depends>
+                <description>Delay between products</description>
+            </productDelay>
+            <widthImages translate="label description">
+                <label>Width of Images:</label>
+                <visible>1</visible>
+                <value>200</value>
+                <type>text</type>
+                <description>Width of Images product:</description>
+            </widthImages>
+            <heightImages translate="label description">
+                <label>Height of Images:</label>
+                <visible>1</visible>
+                <value>250</value>
+                <type>text</type>
+                <description>Height of Images product:</description>
+            </heightImages>
+            <action translate="label description">
+                <label>Show Action product:</label>
+                <visible>1</visible>
+                <value>cart,compare,wishlist</value>
+                <type>multiselect</type>
+                <source_model>magicproduct/system_config_action</source_model>
+                <description>Show Action product</description>
+            </action>
+        </parameters>
+    </magiccategory>
+</widgets>

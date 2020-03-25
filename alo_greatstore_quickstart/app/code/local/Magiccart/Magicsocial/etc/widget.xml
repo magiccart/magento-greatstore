@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-15 19:12:28
+ * @@Modify Date: 2014-07-20 14:21:00
+ * @@Function:
+ */ 
+-->
+<widgets>
+    <magicfacebook type="magicsocial/widget_fbfanbox" translate="name description">
+        <name>Facbook Fanbox Widgets</name>
+        <description>Facebook Fanbox</description>
+        <parameters>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label">
+                        <value>magiccart/magicsocial/fbfanbox.phtml</value>
+                        <label>Facebook Fanbox</label>
+                    </default>
+                </values>
+            </template>
+        </parameters>
+    </magicfacebook>
+    <magictwitter type="magicsocial/widget_latesttweet" translate="name description">
+        <name>Latesttweet Widgets</name>
+        <description>Latesttweet</description>
+        <parameters>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type> 
+                <values>
+                    <default translate="label">
+                        <value>magiccart/magicsocial/tweet.phtml</value>
+                        <label>Latesttweet</label>
+                    </default>
+                </values>
+            </template>
+        </parameters>
+    </magictwitter>
+</widgets>
+

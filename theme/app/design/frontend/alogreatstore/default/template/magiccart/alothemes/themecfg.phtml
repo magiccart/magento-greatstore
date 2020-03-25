@@ -1,0 +1,31 @@
+<?php echo $this->getThemecfg() ?>
+
+<?php
+$helpTimer = $this->helper('alothemes/timer');
+if(!$helpTimer->getConfig('enabled')) return;
+$titleColor    = $helpTimer->getConfig('titleColor');
+$caption 		= $helpTimer->getConfig('caption');
+$captionColor 	= $helpTimer->getConfig('captionColor');
+$timerColor 	= $helpTimer->getConfig('timerColor');
+?>
+<script type="text/javascript">
+<?php if ($caption) : ?>
+	var DisplayFormat = "<div class='timer-day box'><span class='day'>%%D%%</span><span class='title'><?php echo $this->__('Days') ?></span></div><div class='timer-hour box'><span class='hour'>%%H%%</span><span class='title'><?php echo $this->__('Hours') ?></span></div><div class='timer-min box'><span class='min'>%%M%%</span><span class='title'><?php echo $this->__('Mins') ?></span></div><div class='timer-sec box'><span class='sec'>%%S%%</span><span class='title'><?php echo $this->__('Secs') ?></span></div>";
+<?php else : ?>
+	var DisplayFormat = "<span class='day'>%%D%%</span><span style='margin:0px 4px'>:</span><span class='hour'>%%H%%</span><span style='margin:0px 4px'>:</span><span class='min'>%%M%%</span><span style='margin:0px 4px'>:</span><span class='sec'>%%S%%</span>";
+<?php endif; ?>
+<?php $locale = new Mage_Core_Model_Locale; ?>
+var startMcTimer = "<?php echo Date("m/d/y h:i:s A", strtotime($locale->date(null, null, "en_US", true))); ?>";
+</script>
+<!--Dynamic style changes goes here-->
+<style type="text/css">
+	.timer-heading{
+		color:#<?php echo $titleColor; ?>;
+/*		font-size: 18px;
+		font-weight:bold;
+		padding-top:15px;
+		clear: both;*/
+	}
+    .timer-view{color: #<?php echo $timerColor; ?>;}
+    .timerdate{color: #<?php echo $captionColor; ?>;}
+</style>

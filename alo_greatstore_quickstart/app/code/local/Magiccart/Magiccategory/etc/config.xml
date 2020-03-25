@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart <team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-15 23:15:05
+ * @@Modify Date: 2014-10-13 15:48:08
+ * @@Function:
+ */ -->
+<config>
+    <modules>
+        <Magiccart_Magiccategory>
+            <version>0.1.0</version>
+        </Magiccart_Magiccategory>
+    </modules>
+    <frontend>
+        <routers>
+            <magiccategory>
+                <use>standard</use>
+                <args>
+                    <module>Magiccart_Magiccategory</module>
+                    <frontName>magiccategory</frontName>
+                </args>
+            </magiccategory>
+        </routers>
+        <layout>
+            <updates>
+                <magiccategory>
+                    <file>magiccart/magiccategory.xml</file>
+                </magiccategory>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <magiccategory>
+                <use>admin</use>
+                <args>
+                    <module>Magiccart_Magiccategory</module>
+                    <frontName>magiccategory</frontName>
+                </args>
+            </magiccategory>
+        </routers>
+    </admin>
+    <global>
+        <models>
+            <magiccategory>
+                <class>Magiccart_Magiccategory_Model</class>
+                <resourceModel>magiccategory_resource</resourceModel>
+            </magiccategory>
+            <magiccategory_resource>
+                <class>Magiccart_Magiccategory_Model_Resource</class>
+                <!-- <deprecatedNode>magiccategory_model_mysql4</deprecatedNode> -->
+            </magiccategory_resource>
+        </models>
+        <resources>
+            <magiccategory_setup>
+                <setup>
+                    <module>Magiccart_Magiccategory</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </magiccategory_setup>
+            <magiccategory_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </magiccategory_write>
+            <magiccategory_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </magiccategory_read>
+        </resources>
+        <blocks>
+            <magiccategory>
+                <class>Magiccart_Magiccategory_Block</class>
+            </magiccategory>
+        </blocks>
+        <helpers>
+            <magiccategory>
+                <class>Magiccart_Magiccategory_Helper</class>
+            </magiccategory>
+        </helpers>
+    </global>
+    <default>
+        <magiccategory>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>
+                <rootFilter>1</rootFilter>
+            </general>
+        </magiccategory>
+    </default>
+</config>
+

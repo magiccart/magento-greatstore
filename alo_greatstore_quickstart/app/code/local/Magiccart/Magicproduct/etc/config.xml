@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart <team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-15 23:15:05
+ * @@Modify Date: 2015-04-14 17:26:21
+ * @@Function:
+ */ -->
+<config>
+    <modules>
+        <Magiccart_Magicproduct>
+            <version>0.1.5</version>
+        </Magiccart_Magicproduct>
+    </modules>
+    <frontend>
+        <routers>
+            <magicproduct>
+                <use>standard</use>
+                <args>
+                    <module>Magiccart_Magicproduct</module>
+                    <frontName>magicproduct</frontName>
+                </args>
+            </magicproduct>
+        </routers>
+        <layout>
+            <updates>
+                <magicproduct>
+                    <file>magiccart/magicproduct.xml</file>
+                </magicproduct>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <magicproduct>
+                <use>admin</use>
+                <args>
+                    <module>Magiccart_Magicproduct</module>
+                    <frontName>magicproduct</frontName>
+                </args>
+            </magicproduct>
+        </routers>
+    </admin>
+    <global>
+        <models>
+            <magicproduct>
+                <class>Magiccart_Magicproduct_Model</class>
+                <resourceModel>magicproduct_resource</resourceModel>
+            </magicproduct>
+            <magicproduct_resource>
+                <class>Magiccart_Magicproduct_Model_Resource</class>
+                <!-- <deprecatedNode>magicproduct_model_mysql4</deprecatedNode> -->
+            </magicproduct_resource>
+        </models>
+        <resources>
+            <magicproduct_setup>
+                <setup>
+                    <module>Magiccart_Magicproduct</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </magicproduct_setup>
+            <magicproduct_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </magicproduct_write>
+            <magicproduct_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </magicproduct_read>
+        </resources>
+        <blocks>
+            <magicproduct>
+                <class>Magiccart_Magicproduct_Block</class>
+            </magicproduct>
+        </blocks>
+        <helpers>
+            <magicproduct>
+                <class>Magiccart_Magicproduct_Helper</class>
+            </magicproduct>
+        </helpers>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <magicproduct>
+                        <class>Magiccart_Magicproduct_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </magicproduct>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <default>
+        <magicproduct>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>
+                <rootFilter>0</rootFilter>
+            </general>
+        </magicproduct>
+    </default>
+</config>
+

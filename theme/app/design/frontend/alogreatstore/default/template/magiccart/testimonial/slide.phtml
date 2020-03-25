@@ -1,0 +1,86 @@
+<?php
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-31 15:41:21
+ * @@Modify Date: 2015-05-04 17:14:32
+ * @@Function:
+ */
+ ?>
+<?php if(!$this->config['enabled']) return;?>
+<?php $title = isset($this->config['title']) ? $this->config['title'] : ''; ?>
+<?php $varchar = isset($this->config['varchar']) ? $this->config['varchar'] : 500; ?>
+<?php $selector = $this->generateRandomString(); //md5(rand()); //rand(0,666666); ?>
+<div>
+<?php 
+    $testimonials = $this->getTestimonials();
+    if(count($testimonials)) : ?>
+        <div id="<?php echo $selector ?>">
+		    <div class="block-title-tabs">
+                <?php echo $title ? '<h3 class="title"><span>'.$this->__($title).'</span></h3>' : '' ?>
+			</div>
+            <ul class="testimonial">
+            <?php foreach ($testimonials as $testimonial) :?>
+                <li class="background-testimonial<?php echo $this->__($testimonial->getId()) ?>">
+                    <?php if($this->config['avatarDisplay']): ?>
+                        <div class="customer">
+                                <img class="avatar" src="<?php echo $this->getImage($testimonial)?>" alt="<?php echo $this->__($testimonial->getTitle()) ?>" title="<?php echo $this->__($testimonial->getTitle()) ?>" />
+                        </div>
+                    <?php endif ?>
+                    <div class="testimonial_text">
+						<p class="title-name"><?php echo $testimonial->getName(); ?></p>
+						
+						<?php if($this->config['starDisplay']): ?>
+							<div class="rating-box"><div class="rating" style="width:<?php echo ceil($testimonial->getRatingSummary() * 20) ?>%;"></div></div>
+						<?php endif ?>
+						<span class="sub-text">
+								<?php 
+									$text   = $testimonial->getText();
+									if(strlen($text) <= $varchar):
+								?>
+									&ldquo;<?php echo $text ?>&rdquo;&nbsp;
+								<?php else: ?>
+									&ldquo;<?php echo substr($text, 0,  $varchar); ?>&rdquo;&nbsp;...&nbsp;
+									<a href="<?php echo $this->getUrl('testimonial/index/view/id/'.$testimonial->getTestimonialId()); ?>"><?php echo $this->__('more'); ?></a>
+								<?php endif ?>
+						</span>
+						<div class="company-testimonial">
+							<h2><?php echo $testimonial->getWebsite(); ?></h2>
+							<span><?php echo $testimonial->getCompany(); ?></span>
+						</div>
+                    </div>
+                </li>
+            <?php endforeach ?>
+            </ul>
+        </div>
+<?php else : ?> 
+        <p class="testimonial_text">
+            <?php echo $this->__('Hey!! How did you find my site and my products? Please leave your valued feedback here to make us serve you better.');?>
+        </p>
+<?php endif ?>
+    <div class="actions">
+    <?php if($testimonials->count() > 0) { ?>
+  <!--       <a href="<?php echo $this->getUrl('testimonial'); ?>"><?php echo $this->__('View All Testimonials'); ?></a> -->
+    <?php } else { ?>
+        <a href="<?php echo $this->_getWriteUrl()?>"><?php echo $this->__('Write Testimonial'); ?></a>
+    <?php } ?>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery( document ).ready(function($) {
+        (function(selector){
+            var $content = $(selector);
+            var $slider  = $('.testimonial', $content);
+            $slider.bxSlider({
+                moveSlide: 1,
+                mode: 'fade',
+                <?php echo $this->getBxslider() ?>
+            });
+
+        })("#<?php echo $selector ?>");
+    });
+</script>
+

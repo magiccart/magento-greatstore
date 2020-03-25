@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2014-10-26 17:26:56
+ * @@Function:
+ */ -->
+<config>
+	<menu>
+		<magiccart>
+			<title>Magiccart</title>
+			<sort_order>89</sort_order>
+			<children>
+				<testimonial module="testimonial">
+					<title>Testimonial</title>
+					<sort_order>90</sort_order>
+					<action>testimonial/adminhtml_testimonial</action>
+				</testimonial>
+			</children>	
+		</magiccart>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <config>
+                                <children>
+                                    <testimonial>
+                                        <title>Testimonial</title>
+                                    </testimonial>
+                                </children>
+                            </config>
+                        </children>
+                    </magiccart>       
+                    <magiccart translate="title" module="testimonial">
+                        <title>Magiccart</title>
+                        <sort_order>89</sort_order>               
+                        <children>
+                            <testimonial translate="title" module="testimonial">
+                                <title>Testimonial</title>
+                                <sort_order>90</sort_order>
+                                <children>
+                                    <configuration>
+                                        <title>Configuration</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/testimonial</action>
+                                    </configuration>
+                                </children>
+                            </testimonial>
+                        </children>
+                    </magiccart>   
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <testimonial>
+                                        <title>Testimonial</title>
+                                    </testimonial>
+                                </children>
+                            </config>
+                        </children>
+                    </system>                 
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+

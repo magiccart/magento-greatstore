@@ -1,0 +1,104 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if(count($this->getItemCollection()->getItems())): ?>
+<?php
+    $width  = Mage::getStoreConfig('alothemes/list/widthImages'); //290;
+    $height = Mage::getStoreConfig('alothemes/list/heightImages'); //370;
+    $helpLabels = $this->helper('alothemes/labels');
+    $numProduct = 4;
+?>
+<div class="box-collateral block box-up-sell">
+	<div class="block-title">
+		<h3><span class="title-top"><?php echo $this->__('Upsell Products') ?></span></h3>
+	</div>
+    <div class="title-divider"><span>&nbsp;</span></div>
+    <div class="products-grid" id="upsell-product-custom">
+    <?php $this->setColumnCount(3); // uncomment this line if you want to have another number of columns. also can be changed in layout ?>
+    <?php $this->resetItemsIterator() ?>
+    <?php // for($_i=0;$_i<$this->getRowCount();$_i++): ?>
+        <ul class="up-sell-detail row">
+        <?php for($_j=0;$_j < $numProduct; $_j++): ?>
+            <?php if($_item=$this->getIterableItem()): ?>
+            <li class="item col-lg-12 col-md-12 col-sm-12 col-xs-4 col-mobile-6 col-mobile-12">
+                <div class="per-product per-product-custom">
+					<div class="images-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    					 <div class="product-hover">
+							<a class="overlay" href="<?php echo $_item->getProductUrl() ?>"></a>
+                          <?php // echo $helpLabels->getLabels($_item); //Product labels ?>
+    						<a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize($width, $height) ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+                            
+                            <?php $imagehv = $_item->load('media_gallery')->getMediaGalleryImages()->getItemByColumnValue('position','2');
+                                    if($imagehv): $imagehv = $imagehv->getFile();
+                                    ?>
+                                        <span class="product-img-back">
+                                            <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image', $imagehv)->resize($width , $height); ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>" />
+                                        </span>
+                                    <?php endif ?>
+                            </a>
+    					 </div>
+                        <div class="actions-no hover-box">
+                            <div class="actions">
+                                <?php /* if($_item->isSaleable()): ?>
+                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><i class="fs1 fa fa-shopping-cart"></i><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <?php else: ?>
+                                    <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                <?php endif; */ ?>
+                                 <ul class="add-to-links">
+                                    <?php /* if ($this->helper('wishlist')->isAllow()) : ?>
+                                        <li class="pull-left-no"><a href="<?php echo $this->helper('wishlist')->getAddUrl($_item) ?>" title="<?php echo $this->__('Add to Wishlist') ?>" class="link-wishlist"><i class="fa fa-heart"></i><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                    <?php endif; ?>
+                                    <?php if($_compareUrl=$this->getAddToCompareUrl($_item)): ?>
+                                        <li class="pull-right-no"><a href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare') ?>" class="link-compare"><i class="fa fa-retweet"></i><?php echo $this->__('Add to Compare') ?></a></li>
+                                    <?php endif; */ ?>
+									<li class="link-view"> 
+                                            <a title="<?php echo $this->__('Quick View') ?>" href="<?php echo $this->getUrl('magicshop/quickview/view') .'id/'.$_item->getId()?>" class="link-quickview"><i class="fa fa-eye"></i><?php echo $this->__('Quick View') ?></a>
+                                            </li>
+                                </ul>
+                                <?php //echo $this->getReviewsSummaryHtml($_item) ?>
+                                <?php //echo $this->getReviewsSummaryHtml($_item, 'short') ?>
+                            </div>
+                        </div>
+                     </div>
+                    
+                    <div class="products-textlink col-lg-8 col-md-8 col-sm-12 col-xs-12 product-featured-custom clearfix">
+						<h3 class="product-name"><a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
+						<?php echo $this->getReviewsSummaryHtml($_item, 'short') ?>
+					</div>
+                    <?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
+					
+                </div>
+            </li>
+            <?php else: ?>
+            <td class="empty">&nbsp;</td>
+            <?php endif; ?>
+        <?php endfor; ?>
+        </ul>
+    <?php // endfor; ?>
+    </div>
+    <script type="text/javascript">decorateTable('upsell-product-table')</script>
+</div>
+<?php endif ?>

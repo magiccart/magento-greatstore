@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-25 15:03:33
+ * @@Modify Date: 2015-11-06 17:19:18
+ * @@Function:
+ */
+ -->
+<config>
+    <modules>
+        <Magiccart_Magicinstall>
+            <version>0.1.0</version>
+        </Magiccart_Magicinstall>
+    </modules>
+    <frontend>
+        <routers>
+            <magicinstall>
+                <use>standard</use>
+                <args>
+                    <module>Magiccart_Magicinstall</module>
+                    <frontName>magicinstall</frontName>
+                </args>
+            </magicinstall>
+        </routers>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <magicinstall after="Mage_Adminhtml">Magiccart_Magicinstall</magicinstall>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <global>
+        <models>
+            <magicinstall>
+                <class>Magiccart_Magicinstall_Model</class>
+            </magicinstall>
+        </models>
+        <blocks>
+            <magicinstall>
+                <class>Magiccart_Magicinstall_Block</class>
+            </magicinstall>
+        </blocks>
+        <helpers>
+            <magicinstall>
+                <class>Magiccart_Magicinstall_Helper</class>
+            </magicinstall>
+        </helpers>
+    </global>
+</config>
+

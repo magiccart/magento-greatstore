@@ -1,0 +1,84 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+    $cfg = $this->helper('alothemes')->getDetailCfg();
+    $_src = $this->helper('catalog/image')->init($_product, 'image');
+    $width  = 600; // get in config
+    $height = 600; // get in config
+    if($width) $_src->resize($width, $height);
+?>
+<p class="product-image">
+    <a href="<?php echo $_src ?>" class="cloud-zoom" rel="transparentImage: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==', useWrapper: false, showTitle: <?php echo $cfg['showTitle'] ?>, zoomWidth:'<?php echo $cfg['zoomWidth'] ?>', zoomHeight:'<?php echo $cfg['zoomHeight'] ?>', adjustY:0<?php //echo $cfg['adjustY'] ?>, adjustX:<?php echo $cfg['adjustX'] ?>">
+        <?php
+        $_img = '<img class="image img-responsive" style="width: '.$cfg['imageWidth'].'px; height:px;" src="'.$_src.'" alt="'.$this->escapeHtml($this->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+        ?>
+    </a>
+</p>
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <h2><?php echo $this->__('More Views') ?></h2>
+    <ul class="galleryimages" data-slide="<?php echo $cfg['thumbSlide'] ?>">
+    <?php foreach ($this->getGalleryImages() as $_image): ?>
+        <li>
+		  <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($width, $height); ?>"  alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>"/>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+		$('.cloud-zoom, .cloud-zoom-gallery').CloudZoom(); //CloudZoom( {position: 'inside'});
+        var $thumbslide = $(".galleryimages");
+        var $typeslide  = $thumbslide.data('slide');
+        if($typeslide){
+            var isVertical = false;
+            if($typeslide == 'vertical') isVertical = true;
+            $(".galleryimages").flexisel({margin: 10, clone: true, vertical: isVertical});
+        }
+        $('.galleryimages li').click(function() {
+            var img   = $('img', $(this)).attr("src");
+            var title = $('img', $(this)).attr("title");
+            var zoom  = $('.cloud-zoom');
+            zoom.attr("href", img);
+            $('img', zoom).attr("src", img);
+            $('img', zoom).attr("title", title);
+            $('img', zoom).attr("alt", title);
+            $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+        });
+    });
+</script>

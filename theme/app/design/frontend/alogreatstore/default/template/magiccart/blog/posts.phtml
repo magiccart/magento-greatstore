@@ -1,0 +1,14 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td style="width:50%;"><h3 class="icon-head head-blog"><?php echo Mage::helper('blog')->__('Blog Post Manager') ?></h3></td>
+            <td class="a-right">
+                <?php echo $this->getAddNewButtonHtml() ?>
+            </td>
+        </tr>
+    </table>
+</div>
+<?php echo $this->getStoreSwitcherHtml() ?>
+<div>
+    <?php echo $this->getGridHtml(); ?>
+</div>

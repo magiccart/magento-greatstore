@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Magiccart_Magicshop>
+            <version>0.1.0</version>
+        </Magiccart_Magicshop>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <magicshop>
+                    <file>magiccart/magicshop.xml</file>
+                </magicshop>
+            </updates>
+        </layout>
+        
+        <routers>
+            <magicshop>
+                <use>standard</use>
+                <args>
+                    <module>Magiccart_Magicshop</module>
+                    <frontName>magicshop</frontName>
+                </args>
+            </magicshop>
+        </routers>
+    </frontend>  
+    
+    <global>        
+        <blocks>
+            <magicshop>
+                <class>Magiccart_Magicshop_Block</class>
+            </magicshop>
+
+        </blocks>    
+        <helpers>
+            <magicshop>
+                <class>Magiccart_Magicshop_Helper</class>
+            </magicshop>
+        </helpers>        
+    </global>
+   <default>
+        <magicshop>
+            <general>
+				<enabled>1</enabled>
+             </general>
+            <quickview>
+                <dialogWidth>800</dialogWidth>
+                <zoomWidth>265</zoomWidth>
+                <zoomHeight>265</zoomHeight>
+                <!-- <zoom_position>right</zoom_position>        -->
+                <vertical>1</vertical>
+            </quickview>
+        </magicshop>
+    </default>
+</config>
+

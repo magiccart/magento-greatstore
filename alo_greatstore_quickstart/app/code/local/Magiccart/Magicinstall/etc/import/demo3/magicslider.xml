@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <magicslider>
+    <slide>
+      <title><![CDATA[Slide Home 3]]></title>
+      <identifier><![CDATA[slide_home3]]></identifier>
+      <content><![CDATA[[{"url":"http:\/\/192.168.5.104\/great_store\/media\/magiccart\/magicslider\/\/d\/e\/demo3_slide1.jpg","file":"\/d\/e\/demo3_slide1.jpg","label":"","position":"1","disabled":0,"removed":0,"html":"<div class=\"container\">\n\t<div class=\"text-slide text-slide2\">\n\t\t<h3 class=\"caption1\">introducing<\/h3>\n\t\t<h3 class=\"caption2\">shoes fashion ct60<\/h3>\n\t\t<h2 class=\"caption3\">Inspired by New York. Crafted in Switzerland.<br\/>\nFrom the inventors of the New York Minute.<\/h2>\n\t\t<h4 class=\"caption4\">Discover The Collection<\/h4>\n\t<\/div>\n<\/div>","link":""},{"url":"http:\/\/192.168.5.104\/great_store\/media\/magiccart\/magicslider\/\/d\/e\/demo3_slide2.jpg","file":"\/d\/e\/demo3_slide2.jpg","label":"","position":"2","disabled":0,"removed":0,"html":"<div class=\"container\">\n\t<div class=\"text-slide text-slide2 text-slide-right\">\n\t\t<h3 class=\"caption1\">introducing<\/h3>\n\t\t<h3 class=\"caption2\">bag fashion ct60<\/h3>\n\t\t<h2 class=\"caption3\">Inspired by New York. Crafted in Switzerland.<br\/>\nFrom the inventors of the New York Minute.<\/h2>\n\t\t<h4 class=\"caption4\">Discover The Collection<\/h4>\n\t<\/div>\n<\/div>","link":""},{"url":"http:\/\/192.168.5.104\/great_store\/media\/magiccart\/magicslider\/\/d\/e\/demo3_slide3.jpg","file":"\/d\/e\/demo3_slide3.jpg","label":"","position":"3","disabled":0,"removed":0,"html":"<div class=\"container\">\n\t<div class=\"text-slide text-slide2\">\n\t\t<h3 class=\"caption1\">introducing<\/h3>\n\t\t<h3 class=\"caption2\">New fashion ct60<\/h3>\n\t\t<h2 class=\"caption3\">Inspired by New York. Crafted in Switzerland.<br\/>\nFrom the inventors of the New York Minute.<\/h2>\n\t\t<h4 class=\"caption4\">Discover The Collection<\/h4>\n\t<\/div>\n<\/div>","link":""}]]]></content>
+      <status><![CDATA[1]]></status>
+      <config><![CDATA[a:6:{s:5:"width";s:4:"1920";s:6:"height";s:3:"900";s:8:"controls";s:1:"1";s:5:"pager";s:1:"1";s:5:"pause";s:4:"6000";s:5:"speed";s:3:"800";}]]></config>
+    </slide>
+  </magicslider>
+</root>

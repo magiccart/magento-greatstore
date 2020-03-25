@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-03-23 11:01:05
+ * @@Function:
+ */ 
+-->
+<layout version="0.1.0">
+    <default>
+        <update handle="alothemesdefault" /> 
+        <block type="alothemes/themecfg" name="themecfg" template="magiccart/alothemes/themecfg.phtml"/>
+        <reference name="head">
+            <action method="append" ifconfig="alothemes/general/enabled">
+                <block>themecfg</block>
+            </action>
+        </reference>
+        <reference name="top.search">
+            <action method="setTemplate" ifconfig="alothemes/categorysearch/enabled">
+                <template>magiccart/alothemes/categorysearch/form.phtml</template>
+            </action>
+        </reference>
+    </default>
+    <alothemesdefault>
+        <reference name="head">
+            <action method="addCss"><stylesheet>magiccart/plugin/css/jquery.bxslider.css</stylesheet></action>
+            <action method="addJs" ifconfig="alothemes/general/jquery"><script>magiccart/jquery.min.js</script></action>         
+            <action method="addJs" ifconfig="alothemes/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>
+            <action method="addJs" ifconfig="alothemes/categorysearch/enabled"><script>magiccart/plugin/jquery.ddslick.js</script></action>
+            <action method="addJs" ifconfig="magicslider/general/enabled"><script>magiccart/plugin/jquery.easing.min.js</script></action>
+            <action method="addJs" ifconfig="magicslider/general/enabled"><script>magiccart/plugin/jquery.bxslider.js</script></action>
+            <action method="addJs" ifconfig="alothemes/general/enabled"><script>magiccart/jquery.alothemes.js</script></action>
+            <action method="addItem" ifconfig="configswatches/general/enabled"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem" ifconfig="configswatches/general/enabled"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+            <action method="addItem" ifconfig="configswatches/general/enabled"><type>skin_js</type><name>js/configurableswatches/swatches-product.js</name></action>
+            <action method="addItem"><type>skin_js</type><script>js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js</script></action>
+        </reference>
+    </alothemesdefault>
+    <cms_index_index>
+        <reference name="head">
+            <action method="addJs" ifconfig="alothemes/general/jquery"><script>magiccart/jquery.min.js</script></action>
+            <action method="addJs" ifconfig="alothemes/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>
+        </reference>
+            <block type="newsletter/subscribe" name="popup.newsletter" template="magiccart/alothemes/newsletter/subscribe.phtml"/>
+        <reference name="content">
+            <action method="insert" ifconfig="alothemes/newsletter/enabled">
+                <block>popup.newsletter</block>
+            </action>
+        </reference>
+    </cms_index_index>
+
+    <catalog_product_view>
+        <update handle="alothemesdefault" /> 
+        <reference name="product.info.upsell">
+            <action method="setTemplate">
+                <template>magiccart/alothemes/catalog/product/list/upsell-custom.phtml</template>
+            </action>
+            <action method="setColumnCount"><columns>8</columns></action>
+            <action method="setItemLimit"><type>upsell</type><limit>10</limit></action>
+        </reference>
+		 <reference name="right">
+			<block type="catalog/product_list_upsell" before="-" name="product.info.upsell" as="upsell_products" template="magiccart/alothemes/catalog/product/list/upsell.phtml">
+				<action method="setColumnCount"><columns>6</columns></action>
+				<action method="setItemLimit"><type>upsell</type><limit>6</limit></action>
+			</block>
+		</reference>		
+		<reference name="product.info.related">
+            <action method="setTemplate">
+                <template>magiccart/alothemes/catalog/product/list/related.phtml</template>
+            </action>
+			<action method="setColumnCount"><columns>4</columns></action>
+            <action method="setItemLimit"><type>related</type><limit>3</limit></action>
+        </reference>
+    </catalog_product_view>
+
+    <!-- Slider for Cross-sells -->
+    <checkout_cart_index>
+        <update handle="alothemesdefault" /> 
+    </checkout_cart_index>
+    <!-- Slider for Cross-sells -->
+
+</layout>
+

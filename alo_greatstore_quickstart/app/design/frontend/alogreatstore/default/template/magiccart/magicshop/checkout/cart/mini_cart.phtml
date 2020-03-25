@@ -1,0 +1,69 @@
+<?php
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-04-22 14:40:13
+ * @@Function:
+ */ 
+?>
+<?php $_cartQty = $this->getSummaryCount() ?>
+<?php $_items = $this->getRecentItems(); ?>
+<div class="mini-maincart">
+	<div class="cartSummary">
+	<div class="crat-icon">
+        <span class="icon-bag icons"></span>
+        <p class="mt-cart-title"><?php echo $this->__('My Cart') ?></p>
+	</div>
+    <div class="cart-header">		
+		 <?php if($_cartQty > 0): ?>
+        <span class="item"><?php echo ($_cartQty >1) ? $_cartQty .' ': $_cartQty ?></span>
+    <?php else : ?>
+		<span class="zero">0 <?php //echo $this->__('item') ?></span>
+    <?php endif?>
+	    <p class="cart-tolatl">
+			<span class="toltal"><?php echo $this->__('Total:') ?></span>
+			<span><?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?></span>
+		</p>
+    </div>	
+	</div>
+	<div class="mini-contentCart" style="display:none">
+		<?php if(count($_items)): ?>
+        <div class="block-content">
+            <p class="block-subtitle"><?php echo $this->__('Recently added item(s)') ?></p>
+            <ol id="cart-sidebar" class="mini-products-list clearfix">
+                <?php foreach($_items as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach; ?>
+            </ol>
+            <p class="subtotal">
+                <?php if ($this->canApplyMsrp()): ?>
+                    <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
+                <?php else: ?>
+                    <span class="label"><?php echo $this->__('Subtotal:') ?></span> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+                    <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+                        <br />(<?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)
+                    <?php endif; ?>
+                <?php endif; ?>
+            </p>
+            <div class="actions">
+                <a href="<?php echo $this->getUrl('checkout/cart') ?>" class="view-cart">
+                    <?php echo $this->__('View cart') ?>
+                </a>
+                <a href="<?php echo $this->getCheckoutUrl() ?>"><?php echo $this->__('Checkout') ?></a>
+                <?php  echo $this->getChildHtml('extra_actions')  ?>
+            </div>
+            <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
+        </div>
+
+		<?php else: ?>
+		<div class="block-content">
+			<p class="empty"><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+		</div>
+		<?php endif ?>	
+	</div>
+</div>
+

@@ -1,0 +1,71 @@
+<?php
+if(!Mage::helper('blog')->isEnabled()) return;
+$_hpImages = Mage::helper('blog/images');
+$rows 	= $this->getRow() ? $this->getRow() : 1;
+$width  = $this->getData('widthImages') ? $this->getData('widthImages') : 135;
+$height = $this->getData('heightImages') ? $this->getData('heightImages') : 135;
+?>
+
+<?php if ($posts = $this->getRecent()):  $i = 1;?>
+<?php $selector = $this->generateRandomString(); //md5(rand()); //rand(0,666666); ?>
+<?php 
+	$margin  = (int) $this->getData('marginColumn');
+	$slide   = json_encode($this->setFlexiselArray());
+	$options = json_encode($this->getItemsDevice());
+?>
+<?php $showimg = $this->getData('showimg'); ?>
+	<div class="<?php echo $selector?>">
+		<div class="blogtabs block-title-tabs">
+			<h3 class="item active loaded section-title title_left" data-type ="blog"><span><?php echo $this->__($this->getTitle()) ?></span>
+			</h3>
+			<h2 class="title-italic">Welcome to our story</h2>
+			<div class="bery-hr">
+				<div class="icon-wrapper">
+					<i class="fa">&nbsp;</i>
+					<i class="fa large">&nbsp;</i> 
+					<i class="fa">&nbsp;</i>
+				</div>
+			</div>
+		</div>
+		<div class="content-blog" data-margin="<?php echo $margin ?>" data-slider='<?php echo $slide ?>' data-options='<?php echo $options; ?>'>
+			<div class="mc-blog">
+				<ul class="flexisel-content">
+					<?php foreach ($posts as $post): ?>
+						<li class="item">
+						   <div class="postcontent">
+								<?php if ($showimg==1):?>
+							    <div class="blog-image image-container">
+									<a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getImage() ? '<img  class="img-responsive" src="'. $_hpImages->resizeImg(basename($post->getImage()), $width, $height) .'" alt="imgBlog"/>' : ''; ?></a>
+								    
+								</div>
+								<?php endif ?>
+								<div class="post-date">
+								   <i class="fa fa-pencil-square-o"></i><?php echo '<span class="title">' .$this->__('By'). '</span>' .' '.$post->getUser(); ?>
+								   <i class="fa fa-calendar"></i><span><?php echo date("d M Y", $date) ?></span>
+								   <span class="comments"><?php echo $post->getCommentCount().' '. $this->__('comments') ?></span>
+								   <i class="fa fa-comments"></i>
+								</div>
+								<div class="blog_short_text">
+								   <a href="<?php echo $post->getAddress(); ?>" ><?php echo '<span class="title">'.$post->getTitle().'</span>' ?></a>
+									
+									
+									<div class="shortcontent-text">
+										<p class="short-text"><?php echo $this->getContentBlogSidebar(strip_tags($post->getShortContent()),80);?>...<a href="<?php echo $post->getAddress(); ?>"> read more >></a></p>
+									</div>
+								</div>
+							</div>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>			
+		</div>
+	</div>
+<?php endif ?>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+	jQuery(".<?php echo $selector?>").magicproduct({
+		tabs  : '.blogtabs',
+		product  : '.content-blog',
+	});
+});
+</script>

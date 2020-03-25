@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2015-05-08 15:37:34
+ * @@Function:
+ */ -->
+<config>
+	<modules>
+		<Magiccart_Testimonial>
+			<version>0.1.0</version>
+		</Magiccart_Testimonial>
+	</modules>
+	<frontend>
+		<routers>
+			<testimonial>
+				<use>stardard</use>
+				<args>
+					<module>Magiccart_Testimonial</module>
+					<frontName>testimonial</frontName>
+				</args>
+			</testimonial>
+		</routers>
+		<layout>
+			<updates>
+				<testimonial>
+					<file>magiccart/testimonial.xml</file>
+				</testimonial>
+			</updates>
+		</layout>
+	</frontend>
+	<admin>
+		<routers>
+			<testimonial>
+				<use>admin</use>
+				<args>
+					<module>Magiccart_Testimonial</module>
+					<frontName>testimonial</frontName>
+				</args>
+			</testimonial>
+		</routers>
+	</admin>
+	<global>
+		<models>
+			<testimonial>
+				<class>Magiccart_Testimonial_Model</class>
+				<resourceModel>testimonial_mysql4</resourceModel>
+			</testimonial>
+			<testimonial_mysql4>
+				<class>Magiccart_Testimonial_Model_Mysql4</class>
+				<entities>
+					<testimonial>
+						<table>magiccart_testimonial</table>
+					</testimonial>
+				</entities>
+			</testimonial_mysql4>
+		</models>
+		<resources>
+			<testimonial_setup>
+				<setup>
+					<module>Magiccart_Testimonial</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</testimonial_setup>
+			<testimonial_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</testimonial_write>
+			<testimonial_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</testimonial_read>
+		</resources>
+		<blocks>
+			<testimonial>
+				<class>Magiccart_Testimonial_Block</class>
+			</testimonial>
+		</blocks>
+		<helpers>
+			<testimonial>
+				<class>Magiccart_Testimonial_Helper</class>
+			</testimonial>
+		</helpers>
+	</global>
+    <default>
+        <testimonial>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>
+                <title>Testimonial</title>
+                <topLink>0</topLink>
+                <allowGuest>1</allowGuest>
+                <autoApprove>1</autoApprove>
+                <varchar>200</varchar>
+                <per_page>9,15,30,45,50</per_page>
+				<thanks><![CDATA[Your testimonial was successfully posted and waiting for approval.]]></thanks>
+                <!-- Setting Display Slider -->
+                <controls>0</controls>
+                <pager>1</pager>
+                <pause>5000</pause>
+                <auto>1</auto>
+                <speed>800</speed>
+                <vertical>0</vertical>
+
+                <!-- Setting Display Testimonial -->
+                <portrait>1</portrait>
+                <landscape>1</landscape>
+                <tablet>1</tablet>
+                <maxSlides>1</maxSlides>
+                <starDisplay>0</starDisplay>
+                <avatarDisplay>0</avatarDisplay>
+                <widthImages>150</widthImages>
+                <heightImages>170</heightImages>
+            </general>
+    	</testimonial>
+    </default>
+</config>
+

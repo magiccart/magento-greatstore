@@ -1,0 +1,20 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2014-05-08 22:57:12
+ * @@Modify Date: 2015-02-12 22:43:54
+ * @@Function:
+ */
+ ?>
+<?php
+	$info = $this->getRequest()->getParam('info');
+	if(isset($info['timer']) && $info['timer']){
+		echo $this->getChildHtml('magicproduct_grid_timer');
+	} else {
+		echo $this->getChildHtml('magicproduct_grid');
+	}
+?>

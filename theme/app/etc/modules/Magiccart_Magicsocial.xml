@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-15 18:58:47
+ * @@Modify Date: 2014-07-15 23:32:39
+ * @@Function:
+ */ 
+-->
+<config>
+	<modules>
+		<Magiccart_Magicsocial>
+			<active>true</active>
+			<codePool>local</codePool>	
+		</Magiccart_Magicsocial>
+	</modules>
+</config>

@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-15 19:12:28
+ * @@Modify Date: 2014-11-04 22:38:32
+ * @@Function:
+ */ 
+-->
+<config>
+    <tabs>
+        <magiccart translate="label">
+            <label>Magiccart</label>
+            <sort_order>100</sort_order>
+        </magiccart>
+    </tabs>
+    <sections>
+        <magicsocial translate="label" module="magicsocial">
+            <label>Magic Social</label>
+            <tab>magiccart</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>160</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Magic Social</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enabled: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </enabled>
+                        <jquery translate="label comment">
+                            <label>Add jQuery: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </jquery>
+                    </fields>
+                </general>
+                <social translate="label">
+                    <label>Social Media</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_position translate="label">
+                            <label>Setting Display</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_position>
+                        <enabled translate="label comment">
+                            <label>Enable Social Media </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show Icon Social Media</comment>                            
+                        </enabled>
+                        <position translate="label comment">
+                            <label>Social Media Button Position</label>
+                            <depends><enabled>1</enabled></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>magicsocial/system_config_source_position</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Position Left or Right</comment>
+                        </position>
+                        <effect translate="label comment">
+                            <label>Social Media Button Effect</label>
+                            <depends><enabled>1</enabled></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>magicsocial/system_config_source_effect</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Select Effect</comment>
+                        </effect>
+                        <marginTop translate="label comment">
+                            <label>Social Media Button Margin Top</label>
+                            <depends><enabled>1</enabled></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Provide Margin in PX</comment>
+                        </marginTop>
+                        <heading_link translate="label">
+                            <label>Setting Social</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_link>
+                        <facebook_title translate="label">
+                            <label>Facebook Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Facebook Title</comment>
+                        </facebook_title>
+                        <facebook_url translate="label">
+                            <label>Facebook URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Facebook URL like https://www.facebook.com</comment>
+                        </facebook_url>
+                        <linkedin_title translate="label">
+                            <label>Linkedin Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Linkedin Title</comment>
+                        </linkedin_title>
+                        <linkedin_url translate="label">
+                            <label>Linkedin URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Linkedin URL like https://www.linkedin.com</comment>
+                        </linkedin_url>
+                        <twitter_title translate="label">
+                            <label>Twitter Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Twitter Title</comment>
+                        </twitter_title>
+                        <twitter_url translate="label">
+                            <label>Twitter URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Twitter URL like https://www.twitter.com</comment>
+                        </twitter_url>
+                        <youtube_title translate="label">
+                            <label>Youtube Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Youtube Title</comment>
+                        </youtube_title>
+                        <youtube_url translate="label">
+                            <label>Youtube URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Youtube URL like https://www.youtube.com</comment>
+                        </youtube_url>
+                        <googleplus_title translate="label">
+                            <label>Google + Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Google + Title</comment>
+                        </googleplus_title>
+                        <googleplus_url translate="label">
+                            <label>Google + URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Google + URL like https://www.plus.google.com</comment>
+                        </googleplus_url>
+                        <pinterest_title translate="label">
+                            <label>Pinterest Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Pinterest Title</comment>
+                        </pinterest_title>
+                        <pinterest_url translate="label">
+                            <label>Pinterest URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Pinterest URL like https://www.pinterest.com</comment>
+                        </pinterest_url>
+                        <instagram_title translate="label">
+                            <label>Instagram Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Instagram Title</comment>
+                        </instagram_title>
+                        <instagram_url translate="label">
+                            <label>Instagram URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Instagram URL like http://instagram.com</comment>
+                        </instagram_url>
+                        <tumblr_title translate="label">
+                            <label>Tumblr Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Instagram Title</comment>
+                        </tumblr_title>
+                        <tumblr_url translate="label">
+                            <label>Tumblr URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>105</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Instagram URL like https://www.tumblr.com</comment>
+                        </tumblr_url>
+                        <flickr_title translate="label">
+                            <label>Flickr Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Flickr Title</comment>
+                        </flickr_title>
+                        <flickr_url translate="label">
+                            <label>Flickr URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>115</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter Flickr URL like http://www.flickr.com</comment>
+                        </flickr_url>
+                        <web_title translate="label">
+                            <label>Website Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Website Title</comment>
+                        </web_title>
+                        <web_url translate="label">
+                            <label>Website URL</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-clean-url</validate>
+                            <sort_order>125</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-url</validate>
+                            <comment>Enter any Website URL like http://www.alothemes.com.</comment>
+                        </web_url>
+                        <webmail_title translate="label">
+                            <label>Email Address Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter Email Address Title</comment>
+                        </webmail_title>
+                        <webmail translate="label">
+                            <label>Your Email Address</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-email</validate>
+                            <sort_order>135</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-email</validate>
+                            <comment>Enter Your Email Address.</comment>
+                        </webmail>
+                    </fields>
+                </social>
+                <facebook translate="label">
+                    <label>Facebook Fanbox</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable FBFanBox</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <fb_page_url translate="label">
+                             <label>Facebook Page URL</label>
+                            <frontend_type>text</frontend_type>                            
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </fb_page_url>
+                        
+                        <width translate="label">
+                            <label>Width of the box in pixel</label>
+                            <frontend_type>text</frontend_type>                            
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Width of the box in pixel</comment>
+                        </width>
+                        
+                        <height translate="label">
+                            <label>Height of the box in pixel</label>
+                            <frontend_type>text</frontend_type>                            
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Height of the box in pixel</comment>
+                        </height>
+                        
+                        <connection translate="label">
+                            <label>Connections</label>
+                            <frontend_type>text</frontend_type>                            
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show a sample of this many users who have liked this page</comment>
+                        </connection>
+                        
+                        <stream translate="label">
+                            <label>Streams</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show the profile stream for the public profile</comment>
+                        </stream>
+                        
+                        <header translate="label">
+                            <label>Header</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show the 'find us on Facebook' bar at top</comment>
+                        </header>
+                    </fields>
+                </facebook>
+                <twitter translate="label">
+                    <label>OUR LATEST TWEETS</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_oAuth translate="label">
+                            <label>Twitter / oAuth Settings</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_oAuth>
+                        <enabled translate="label">
+                            <label>Enable Latest Twitter</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <twitterid translate="label">
+                            <label>Twitter ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twitterid>
+                        <consumerkey translate="label">
+                            <label>Consumer Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </consumerkey>
+                        <consumersecret translate="label">
+                            <label>Consumer Secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </consumersecret>
+                        <accesstoken translate="label">
+                            <label>Access Token</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </accesstoken>
+                        <accesstokensecret translate="label">
+                            <label>Access Token Secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </accesstokensecret>
+                        <heading_display translate="label">
+                            <label>Display Settings</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_display>
+                        <numberoftweets translate="label">
+                            <label>Number of tweets to show</label>
+                            <frontend_type>text</frontend_type>                            
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </numberoftweets>
+                        <showlinks translate="label">
+                            <label>Show links in tweet</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showlinks>
+                        <usenofollow translate="label">
+                            <label>Use nofollow tag in links</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </usenofollow>
+                        <opennew translate="label">
+                            <label>Open links in new window</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </opennew>
+                        <attags translate="label">
+                            <label>Link up @ tags?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attags>
+                        <hashtags translate="label">
+                            <label>Link up # tags?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hashtags>
+                        <showfollow translate="label">
+                            <label>Show twitter follow button?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showfollow> 
+                    </fields>
+                </twitter>
+            </groups>
+        </magicsocial>
+    </sections>
+</config>

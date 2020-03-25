@@ -1,0 +1,35 @@
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author:Magiccart<team.magiccart@gmail.com>
+ * @@Create Date:2014-08-20 14:47:18
+ * @@Modify Date: 2015-04-18 14:26:00
+ * @@Function:*/
+ 
+.nav-accordion{width:100%}
+ul.nav-accordion{line-height:0.5em;list-style:none;margin:0;padding:15px 0 0;}
+ul.nav-accordion li{position:relative;}
+ul.nav-accordion li.last { border-bottom: 0 none;}
+ul.nav-accordion li a{border-bottom: 1px solid #efefef;display:block;font-size:13px;line-height:35px;margin:0;padding:0 0 0 10px;text-align:left;text-decoration:none;text-shadow:none;text-transform:capitalize;color:#333;outline:medium none}
+ul.nav-accordion li a span{font-size: 13px;}
+ul.nav-accordion li.active  a{}
+ul.nav-accordion li a:hover{color: #6b869d;}
+ul.nav-accordion li ul li a{padding:0 0 0 10px;margin-left: 10px;}
+ul.nav-accordion ul{display:none;margin:0;padding:0}
+ul.nav-accordion ul li{clear:both;margin:0;padding:0}
+ul.nav-accordion ul li a{font-size:14px;outline:none;padding-left:15px;text-transform:capitalize;}
+ul.nav-accordion ul li.active{font-weight:normal;}
+ul.nav-accordion ul ul li a{font-size:14px;margin-left:20px}
+ul.nav-accordion ul ul ul li a{margin-left:20px}
+ul.nav-accordion li span.expand{background-color:#f5f5f5;cursor:pointer;display:block;font-size:0;height:23px;position:absolute;right:5px;top:6px;width:23px;z-index:1}
+ul.nav-accordion li span.collapse{background-color:#f5f5f5;cursor:pointer;display:block;font-size:0;height:23px;position:absolute;right:5px;top:6px;width:23px;z-index:1}
+ul.detail-parent{margin:0;padding:0 0 0 17px}
+.navbar .btn-navbar{background-image:none!important;border-radius:2px 2px 2px 2px;box-shadow:none!important;float:left!important;margin:9px!important;padding-left:10px!important;padding-right:10px!important}
+.navbar .brand{font-size:130%!important;font-weight:bold!important;margin:0!important;padding-left:20px!important;text-shadow:none!important;text-transform:uppercase!important}
+.navbar .btn-navbar .icon-bar{background-color:#FFFFFF!important}
+ul.nav-accordion li.level0 > a > span > .cat-label{position:inherit}
+ul.nav-accordion li.level0 > a > span > .pin-bottom:before{position:inherit;right:6px;top:22px;width:0;height:0;content:"";border-style:solid;border-width:0}
+ul.nav-accordion li span.expand:before{content: "";font-family: FontAwesome; display: inline-block;font-size: 14px;text-align: center;width: 24px;line-height: 22px;}
+ul.nav-accordion li span.collapse:before{content: "";font-family: FontAwesome; display: inline-block;font-size: 14px;text-align: center;width: 24px;line-height: 22px;}

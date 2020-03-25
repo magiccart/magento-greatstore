@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<root>
+  <blocks>
+    <cms_block>
+      <title><![CDATA[Footer Links]]></title>
+      <identifier><![CDATA[footer_links]]></identifier>
+      <content><![CDATA[
+<ul>
+    <li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+    <li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+<li class="last privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+</ul>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Footer Links Company]]></title>
+      <identifier><![CDATA[footer_links_company]]></identifier>
+      <content><![CDATA[
+<div class="links">
+    <div class="block-title">
+        <strong><span>Company</span></strong>
+    </div>
+    <ul>
+        <li><a href="{{store url=""}}about-magento-demo-store/">About Us</a></li>
+        <li><a href="{{store url=""}}contacts/">Contact Us</a></li>
+        <li><a href="{{store url=""}}customer-service/">Customer Service</a></li>
+        <li><a href="{{store url=""}}privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+    </ul>
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Cookie restriction notice]]></title>
+      <identifier><![CDATA[cookie_restriction_notice_block]]></identifier>
+      <content><![CDATA[<p>This website requires cookies to provide all of its features. For more information on what data is contained in the cookies, please see our <a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy page</a>. To accept cookies from this site, please click the Allow button below.</p>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Testimonials]]></title>
+      <identifier><![CDATA[testimonials]]></identifier>
+      <content><![CDATA[<div>{{widget type="testimonial/widget_slide" template="magiccart/testimonial/slide.phtml"}}</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Brands]]></title>
+      <identifier><![CDATA[brands]]></identifier>
+      <content><![CDATA[<div>{{widget type="magicbrand/widget_brand" template="magiccart/magicbrand/magicbrand.phtml"}}</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Footer Social]]></title>
+      <identifier><![CDATA[block_footer_social]]></identifier>
+      <content><![CDATA[<ul class="list-inline">
+	<li><a href="#" class="social-link"><i class="fa fa-facebook"><span class="hidden">facebook</span></i></a></li>
+	<li><a href="#" class="social-link"><i class="fa fa-twitter"><span class="hidden">twitter</span></i></a></li>
+	<li><a href="#" class="social-link"><i class="fa fa-linkedin"><span class="hidden">linkedin</span></i></a></li>
+	<li><a href="#" class="social-link"><i class="fa fa-rss"><span class="hidden">rss</span></i></a></li>
+	<li><a href="#" class="social-link"><i class="fa fa-dribbble"><span class="hidden">dribbble</span></i></a></li>
+</ul>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block New Product]]></title>
+      <identifier><![CDATA[block_new_product]]></identifier>
+      <content><![CDATA[{{widget type="magicproduct/widget_magicproduct" identifier="main_products_02" template="magiccart/magicproduct/magicproduct.phtml"}}]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Product Home]]></title>
+      <identifier><![CDATA[block_product_home]]></identifier>
+      <content><![CDATA[<div class="col-xs-6 col-sm-6 col-md-3 no-left-gutter">
+	{{widget type="magicproduct/widget_magicproduct" identifier="main_top_rated" template="magiccart/magicproduct/magicproduct_custom.phtml"}}
+</div>
+<div class="col-xs-6 col-sm-6 col-md-3">
+	{{widget type="magicproduct/widget_magicproduct" identifier="most_viewed" template="magiccart/magicproduct/magicproduct_custom.phtml"}}
+</div>
+<div class="col-xs-6 col-sm-6 col-md-3">
+	{{widget type="magicproduct/widget_magicproduct" identifier="bestseller" template="magiccart/magicproduct/magicproduct_custom.phtml"}}
+</div>
+<div class="col-xs-6 col-sm-6 col-md-3 no-right-gutter">
+	<div class="banner-right">
+		<img  class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-right.jpg"}}" alt="" />
+		<div class="banner-right-content">
+			<h2>sale off</h2>
+		</div>
+	</div>
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block static image left]]></title>
+      <identifier><![CDATA[static_image_left]]></identifier>
+      <content><![CDATA[<div class="banner-right">
+		<img  class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-right.jpg"}}" alt="" />
+		<div class="banner-right-content">
+			<h2>sale off</h2>
+		</div>
+	</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Menu Bottom]]></title>
+      <identifier><![CDATA[block_menu_bottom]]></identifier>
+      <content><![CDATA[<div class="col-xs-12 col-sm-6 col-md-6 menu-bottom-left">
+<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/menu-bottom-left.jpg"}}" alt="" />
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 menu-bottom-right">
+<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/menu-bottom-right.jpg"}}" alt="" />
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Menu Right]]></title>
+      <identifier><![CDATA[block_menu_right]]></identifier>
+      <content><![CDATA[<div class="menu-images-right">
+<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/menu-block-right.jpg"}}" alt="" />
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Slide Home demo2]]></title>
+      <identifier><![CDATA[slide]]></identifier>
+      <content><![CDATA[{{widget type="magicslider/widget_slide" identifier="slide_home2" template="magiccart/magicslider/magicslider.phtml"}}]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Footer Top Demo2]]></title>
+      <identifier><![CDATA[block_footer_top]]></identifier>
+      <content><![CDATA[<div class="block-top-new">
+	<h3 class="block-title"><label>Newsletter Signup</label></h3>
+<div class="bery-hr">
+	<div class="icon-wrapper">
+		<i class="fa">&nbsp;</i>
+		<i class="fa large">&nbsp;</i> 
+		<i class="fa">&nbsp;</i>
+	</div>
+</div>
+	<div class="collapsible mobile-collapsible">
+		<div class="block-newletter">{{block type="core/template" template="newsletter/subscribe.phtml"}}</div>
+	</div>
+	<ul class="list-inline">
+		<li><a href="#" class="social-link"><i class="fa fa-facebook"><span class="hidden">facebook</span></i></a></li>
+		<li><a href="#" class="social-link"><i class="fa fa-twitter"><span class="hidden">twitter</span></i></a></li>
+		<li><a href="#" class="social-link"><i class="fa fa-linkedin"><span class="hidden">linkedin</span></i></a></li>
+		<li><a href="#" class="social-link"><i class="fa fa-rss"><span class="hidden">rss</span></i></a></li>
+		<li><a href="#" class="social-link"><i class="fa fa-dribbble"><span class="hidden">dribbble</span></i></a></li>
+	</ul>
+</div>
+]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Footer bottom demo2]]></title>
+      <identifier><![CDATA[block_footer_bottom]]></identifier>
+      <content><![CDATA[<div class="row">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-mobile-12">
+		<div class="collapsible mobile-collapsible">
+			<h3 class="block-title"><label>Contact us</label></h3>
+                        <span class="toggle-tab mobile" style="display: none;"><span class="hidden">hidden</span></span>
+			<div class="block1 block-content-statick toggle-content">
+				<ul>
+					<li class="feature-icon first"><span class="icon-pointer icons"><span class="hidden">hidden</span></span>
+						<p class="no-margin">Great Store London Oxford Street 012 United Kingdom.</p>
+					</li>
+					<li class="feature-icon"><span class="icon-envelope-open icons"><span class="hidden">hidden</span></span>
+						<p><span>emailgreatstore@gmail.com</span>
+							<span>emailsupport@gmail.com</span></p>
+					</li>
+					<li class="feature-icon"><span class="icon-call-end icons"><span class="hidden">hidden</span></span>
+						<p><span>(+92) 3456 7890</span>
+							<span>(+92) 1234 5678</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-mobile-12">
+		<div class="collapsible mobile-collapsible">
+			<h3 class="block-title"><label>Our Offer</label></h3>
+                        <span class="toggle-tab mobile" style="display: none;"><span class="hidden">hidden</span></span>
+			<div class="block-content block-content-statick toggle-content">
+				<ul class="bullet">
+					<li><a href="#">My Account</a></li>
+					<li><a href="#">Order history</a></li>
+					<li><a href="#">Wish list</a></li>
+					<li><a href="#">Returns</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Site map</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-mobile-12">
+		<div class="collapsible mobile-collapsible">
+			<h3 class="block-title"><label>Information</label></h3>
+                        <span class="toggle-tab mobile" style="display: none;"><span class="hidden">hidden</span></span>
+			<div class="block-content block-content-statick toggle-content">
+				<ul class="bullet">
+					<li><a href="#">New collection</a></li>
+					<li><a href="#">Best sellers</a></li>
+					<li><a href="#">Manufacturers</a></li>
+					<li><a href="#">New products</a></li>
+					<li><a href="#">Suppliers</a></li>
+					<li><a href="#">Delivery & returns</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-mobile-12">
+		<h3 class="block-title"><label>Popular Tags</label></h3>
+                <span class="toggle-tab mobile" style="display: none;"><span class="hidden">hidden</span></span>
+		<div class="collapsible mobile-collapsible toggle-content">
+			<div class="block-newletter">{{block type="tag/popular" name="tags_popular" template="tag/popular.phtml"}}</div>
+		</div>
+	</div>
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Footer Paypal]]></title>
+      <identifier><![CDATA[block_footer_paypal]]></identifier>
+      <content><![CDATA[<ul class="list-paypal">
+	<li><a href="#" class="paypal-link"><img src="{{media url="wysiwyg/alothemes/static/paypal.png"}}" alt="" /></a></li>
+	<li><a href="#" class="paypal-link"><img src="{{media url="wysiwyg/alothemes/static/discover.png"}}" alt="" /></a></li>
+	<li><a href="#" class="paypal-link"><img src="{{media url="wysiwyg/alothemes/static/curus.png"}}" alt="" /></a></li>
+	<li><a href="#" class="paypal-link"><img src="{{media url="wysiwyg/alothemes/static/visa.png"}}" alt="" /></a></li>
+</ul>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Blog demo2]]></title>
+      <identifier><![CDATA[blog]]></identifier>
+      <content><![CDATA[<div>{{widget type="blog/slide" title="Latest Posts Blog" categories="1" blocks_count="5" slide="1" controls="1" speed="800" pause="1" row="1" portrait="1" landscape="2" tablet="2" desktop="3" visibleItems="3" marginColumn="30" showimg="1" widthImages="370" heightImages="205"}}</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Banner Top]]></title>
+      <identifier><![CDATA[block_banner_top]]></identifier>
+      <content><![CDATA[<div class="block-title-tabs block-banner-text">
+	<h2 class="title-none">Short Introduction About</h2>
+	<h3 class="section-title"><span>Welcome To Our Store</span></h3>
+	<div class="bery-hr">
+		<div class="icon-wrapper">
+			<i class="fa">&nbsp;</i>
+			<i class="fa large">&nbsp;</i> 
+			<i class="fa">&nbsp;</i>
+		</div>
+	</div>
+	<div class="text-banner-bottom">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip  commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. </p>
+	</div>
+</div>
+<div class="block block-banner-home">
+	<div class="container-content">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 padding-img">
+				<div class="banner-top banner1">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-top1.jpg"}}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3 padding-img">
+				<div class="banner-top banner2">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-top2.jpg"}}" alt="" />
+							<div class="text-banner text-banner-1">
+								<div class="banner-texthome">
+									<h2>Men’s Categories</h2>
+									<a class="btn-shop" href="#">Shop Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3 padding-img">
+				<div class="banner-top banner3">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-top3.jpg"}}" alt="" />
+<div class="text-banner text-banner-1">
+								<div class="banner-texthome">
+									<h2>Women Categories</h2>
+									<a class="btn-shop" href="#">Shop Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3 padding-img">
+				<div class="banner-top banner2">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-top4.jpg"}}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 padding-img">
+				<div class="banner-top banner1">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-top5.jpg"}}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3 padding-img">
+				<div class="banner-top banner3">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-top6.jpg"}}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Banner Bottom]]></title>
+      <identifier><![CDATA[block_banner_bottom]]></identifier>
+      <content><![CDATA[<div class="block block-banner-home">
+	<div class="container-content">
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3 banner-col2" >
+				<div class="col-xs-12 col-sm-12 col-md-12 padding-img">
+					<div class="banner-top banner-bottom1">
+						<div class="banner-inner">
+							<div class="banner-inner-content">
+								<a href="#" class="overlay">&nbsp;</a>
+								<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-bottom1.jpg"}}" alt="" />
+								<div class="banner-right-content">
+									<h2>sale off</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 padding-img">
+					<div class="banner-top banner-bottom2">
+						<div class="banner-inner">
+							<div class="banner-inner-content">
+								<a href="#" class="overlay">&nbsp;</a>
+								<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-bottom2.jpg"}}" alt="" />
+								<div class="text-banner-bottom">
+									<a class="specail" href="#">Specail</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 padding-img">
+				<div class="banner-top banner-bottom3">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-bottom3.jpg"}}" alt="" />
+							<div class="text-banner text-banner-1">
+								<div class="banner-texthome">
+									<h2>fashion men</h2>
+									<div class="center-off">
+										<h4>40% off</h4>
+									</div>
+									<a class="btn-shop" href="#">Show Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-12 col-sm-3 col-md-3  padding-img">
+				<div class="banner-top banner-bottom4">
+					<div class="banner-inner">
+						<div class="banner-inner-content">
+							<a href="#" class="overlay">&nbsp;</a>
+							<img class="img-responsive" src="{{media url="wysiwyg/alothemes/static/banner-bottom4.jpg"}}" alt="" />
+							<div class="text-banner text-banner-1">
+								<div class="banner-texthome">
+									<h2>fashion women</h2>
+									<h4>30% off</h4>
+								</div>
+							</div>
+							<div class="text-banner-bottom">
+								<a class="specail" href="#">Sale Off</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+    <cms_block>
+      <title><![CDATA[Block Map Contacts]]></title>
+      <identifier><![CDATA[block_map_contacts]]></identifier>
+      <content><![CDATA[<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.8277911385558!2d-0.13108129999999998!3d51.51637529999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b2d183f5ea3%3A0x8e1c5b00f1b16579!2zMTIgT3hmb3JkIFN0LCBTb2hvLCBMb25kb24gVzFELCBWxrDGoW5nIFF14buRYyBBbmg!5e0!3m2!1svi!2s!4v1434261501432" width="600" height="350" frameborder="0" style="border:0"></iframe>]]></content>
+      <is_active><![CDATA[1]]></is_active>
+    </cms_block>
+  </blocks>
+</root>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <magiccart module="blog">
+            <title>Magiccart</title>
+            <sort_order>89</sort_order>
+            <children>
+                <blog module="blog">
+                    <title>Blog</title>
+                    <sort_order>100</sort_order>
+                    <children>
+                        <new module="blog" translate="title">
+                            <title>Add Post</title>
+                            <sort_order>0</sort_order>
+                            <action>blog_admin/manage_blog/new</action>
+                        </new>
+                        <posts module="blog" translate="title">
+                            <title>Posts</title>
+                            <sort_order>10</sort_order>
+                            <action>blog_admin/manage_blog/index</action>
+                        </posts>
+                        <comment module="blog" translate="title">
+                            <title>Comments</title>
+                            <sort_order>20</sort_order>
+                            <action>blog_admin/manage_comment</action>
+                        </comment>
+                        <cat module="blog">
+                            <title>Categories</title>
+                            <sort_order>30</sort_order>
+                            <action>blog_admin/manage_cat</action>
+                        </cat>
+                        <settings translate="title" module="blog">
+                            <title>Settings</title>
+                            <action>adminhtml/system_config/edit/section/blog</action>
+                            <sort_order>40</sort_order>
+                        </settings>
+                    </children>
+                </blog>
+           </children>
+        </magiccart>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <blog>
+                                <title>Blog</title>
+                                <sort_order>100</sort_order>
+                                <children>
+                                    <posts>
+                                        <title>Manage Posts</title>
+                                        <sort_order>0</sort_order>
+                                    </posts>
+                                    <comment>
+                                        <title>Manage Comments</title>
+                                        <sort_order>1</sort_order>
+                                    </comment>
+                                    <cat>
+                                        <title>Manage Categories</title>
+                                        <sort_order>2</sort_order>
+                                    </cat>
+                                </children>
+                            </blog>
+                        </children>
+                    </magiccart>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <blog>
+                                        <title>Magiccart Blog</title>
+                                    </blog>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

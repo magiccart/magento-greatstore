@@ -1,0 +1,54 @@
+﻿
+(20/11/2015)
+ ^  Upgrade magento-1.9.2.2
+ 
+1.Custom Footer in Mobile:
+Add class
+	login admin => cms => Static Blocks =>block_footer_top
+	http://snag.gy/b2c9w.jpg
+	same with other parts in static block
+Style for them
+	link: \skin\frontend\alogreatstore\default(demo1,demo2...)\css\style.css
+	http://snag.gy/rAZIO.jpg
+
+	link: \skin\frontend\alogreatstore\default(demo1,demo2...)\css\responsive.css
+	http://snag.gy/mSk8T.jpg
+	http://snag.gy/lM2de.jpg
+	http://snag.gy/pU8lP.jpg
+2.Custom left sidebar category
+Add class
+	Link: \app\design\frontend\alogreatstore\default\template\catalog\layer\view.phtml
+	http://snag.gy/qNW86.jpg
+Style	
+	link: \skin\frontend\alogreatstore\default(demo1,demo2...)\css\style.css
+	http://snag.gy/rAZIO.jpg
+
+	link: \skin\frontend\alogreatstore\default(demo1,demo2...)\css\responsive.css
+	http://snag.gy/TN6jj.jpg
+	http://snag.gy/pU8lP.jpg
+	
+
+(04/12/2015)
+ 
+Fix bug from_key in register 1.9.2.2 => remove folder: app\design\frontend\\alogreatstore\default\template\persistent
+
+
+
+
+
+
+
+
+
+
+
+    
+ 
+    
+  
+  
+ 
+
+  
+   
+	

@@ -1,0 +1,46 @@
+/* Add by DVN */
+.ajax_loading{margin-left:48%;padding:0;position:absolute;z-index:1}
+.magictabs .item{float:left;color:#aaaaaa;display:inline-block;float:none;font-size:14px;height:33px;line-height:33px;margin:0;padding:0;background-color:#fff}
+.magictabs .item span{font-size:14px;text-transform:uppercase;cursor:pointer;padding:0 10px;border-left:1px solid #ebebeb;font-family:"montserrat"}
+.magictabs .item:first-child span{border-left:none;padding-left:0}
+.magictabs .item.active,.magiccategory .active,.magictabs .item:hover{color:#444444}
+ul.magictabs{padding:0}
+.content-products{clear:both}
+.content-products ul{padding:0;margin:0}
+.nbs-flexisel-item{line-height:20px}
+.flexisel-content .item{float:left;background-color:#fff;margin-bottom:30px;list-style:none;text-align:center}
+.flexisel-content .item ul{list-style:none}
+.nbs-flexisel-inner .item{box-shadow:none;background:none}
+.nbs-flexisel-inner{background:none;border:none;border-radius:0}
+.nbs-flexisel-item img{margin:0}
+.positionlef.bestsellers-positionlef .nbs-flexisel-nav{top:-40px}
+.nbs-flexisel-nav{background:none repeat scroll 0 0 #fff;padding-left:10px;position:absolute;right:0;top:-42px}
+.nbs-flexisel-nav-left,.nbs-flexisel-nav-right,.nbs-flexisel-nav-top,.nbs-flexisel-nav-bottom{width:27px;height:24px;border-radius:3px;-moz-border-radius:3px;transition:all 0.3s linear 0s;-moz-transition:all 0.3s linear 0s;-webkit-transition:all 0.3s linear 0s;-o-transition:all 0.3s linear 0s;background-color:#f2f2f2;background-position:0 0;background-repeat:no-repeat;opacity:1;position:static;float:left;margin:0 2px;border-bottom:1px solid #ebebeb}
+.nbs-flexisel-nav-left,.nbs-flexisel-nav-top{background-image:url("../images/button-previous.png")}
+.nbs-flexisel-nav-top:hover,.nbs-flexisel-nav-bottom:hover,.nbs-flexisel-nav-left:hover,.nbs-flexisel-nav-right:hover{background-position:0 -24px;background-color:#d6d6d6;border-bottom:1px solid #c4c4c4}
+.nbs-flexisel-nav-right,.nbs-flexisel-nav-bottom{background-image:url("../images/button-next.png")}
+.block-title-tabs{background-image:url("../images/border.png");background-color:transparent;background-repeat:repeat-x;background-position:0 17px}
+.alo-brands .nbs-flexisel-inner{position:relative;border-top:1px solid #f0f0f0;padding:5px 0}
+.alo-brands .nbs-flexisel-nav-left,.alo-brands .nbs-flexisel-nav-right{border:medium none;cursor:pointer;display:block;float:left;margin:0;outline:medium none;padding:0;position:absolute;text-indent:-999em;top:40%!important;transition:all 400ms ease-in-out 0s;z-index:999}
+.alo-brands .nbs-flexisel-nav-left{float:left;left:0}
+/* Products Rows2 */
+.products-rows2 .item .per-product{margin:0}
+.products-rows2 .item .per-product .images-container{float:left;width:50%}
+.products-rows2 .item .per-product .images-container a img{width:100%}
+.products-rows2 .item .per-product .products-textlink{padding:0 0 0 18px;width:50%;float:left}
+/* positionlef2 */
+.positionlef2 .nbs-flexisel-inner .item .per-product{margin:0}
+.positionlef2 .nbs-flexisel-inner .item .per-product .labelnew,.positionlef2 .nbs-flexisel-inner .item .per-product .labelsale{width:72px;height:72px;line-height:72px;padding:0;font-size:23px;color:#f8f8f8;background-color:#a5cc72;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%}
+.positionlef2 .nbs-flexisel-inner .item .per-product .sticker.top-right{right:20px;top:15px}
+.positionlef2 .nbs-flexisel-inner .item .per-product .sticker.top-left{left:20px;top:15px}
+/* Bestseller */
+.col-left .content-products.bestsellers-positionlef .mage-magictabs{height:640px}
+/* End add by DVN */
+.mage-producttabs  .item.first{margin-left:0}
+.mage-producttabs  .item{float:left;margin-bottom:30px;/*padding-left:30px;*/
+	-moz-box-sizing:border-box;box-sizing:border-box;-webkit-box-sizing:border-box}
+.mage-magictabs  .item-animate{opacity:0;filter:alpha(opacity = 0);position:relative}
+.mage-magictabs  .play .item-animate{opacity:1;filter:alpha(opacity = 100)}
+.mage-magictabs  .play .item-animate{-webkit-animation-play-state:running;-moz-animation-play-state:running;-o-animation-play-state:running;animation-play-state:running}
+.mage-magictabs  .zoomIn.play .item-animate{-webkit-animation:zoomIn 600ms ease both;-moz-animation:zoomIn 600ms ease both;-o-animation:zoomIn 600ms ease both;animation:zoomIn 600ms ease both}
+.mage-magictabs  .zoomOut.play .item-animate{-webkit-animation:zoomOut 600ms ease both;-moz-animation:zoomOut 600ms ease both;-o-animation:zoomOut 600ms ease both;animation:zoomOut 600ms ease both}

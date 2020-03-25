@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-15 19:04:59
+ * @@Modify Date: 2014-12-02 13:12:50
+ * @@Function:
+ */ 
+-->
+<config>
+	<modules>
+		<Magiccart_Magicsocial>
+			<version>0.1.0</version>
+		</Magiccart_Magicsocial>
+	</modules>
+	<frontend>
+		<routers>
+			<magicsocial>
+				<use>stardard</use>
+				<args>
+					<module>Magiccart_Magicsocial</module>
+					<frontName>magicsocial</frontName>
+				</args>
+			</magicsocial>
+		</routers>
+		<layout>
+			<updates>
+				<magicsocial>
+					<file>magiccart/magicsocial.xml</file>
+				</magicsocial>
+			</updates>
+		</layout>
+	</frontend>
+	<global>
+		<models>
+			<magicsocial>
+				<class>Magiccart_Magicsocial_Model</class>
+				<resourceModel>magicsocial_mysql4</resourceModel>
+			</magicsocial>
+		</models>
+		<blocks>
+			<magicsocial>
+				<class>Magiccart_Magicsocial_Block</class>
+			</magicsocial>
+		</blocks>
+		<helpers>
+			<magicsocial>
+				<class>Magiccart_Magicsocial_Helper</class>
+			</magicsocial>
+		</helpers>
+	</global>
+    <default>
+		<magicsocial>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>
+            </general>
+			<social>
+                <enabled>1</enabled>
+                <position>right</position>		
+                <marginTop>100</marginTop>		
+				<!-- <facebook_title>Follow via Facebook</facebook_title>			
+				<facebook_url>https://www.facebook.com</facebook_url>			
+				<linkedin_title>Follow via Linkedin</linkedin_title>
+				<twitter_title>Follow via Twitter</twitter_title>
+				<twitter_url>https://www.twitter.com</twitter_url>
+				<googleplus_title>Follow via Google +</googleplus_title>
+				<googleplus_url>https://www.plus.google.com</googleplus_url>
+				<youtube_title>Follow via Youtube</youtube_title>
+				<youtube_url>https://www.youtube.com</youtube_url>
+				<pinterest_title>Follow via Pinterest</pinterest_title>
+				<pinterest_url>https://www.pinterest.com/</pinterest_url> -->
+	            <instagram_title>Follow via Instagram</instagram_title>
+	            <tumblr_title>Follow via Tumblr</tumblr_title>
+	            <flickr_title>Follow via Flickr</flickr_title>
+	            <web_title>Go To</web_title>
+	            <webmail_title>Mail To</webmail_title>
+			</social>
+			<facebook>
+				<enabled>1</enabled>
+                <fb_page_url><![CDATA[1448170955454682]]></fb_page_url>
+                <!-- <fb_page_url><![CDATA[https://www.facebook.com/alothemes]]></fb_page_url> -->
+				<header>1</header>
+				<width>292</width>
+				<connection>10</connection>				
+			</facebook>
+			<twitter>
+				<enabled>1</enabled>
+		        <twitterid>alothemes</twitterid>
+		        <consumerkey>qnQn51Hl7L0g3sJyU4sOIK3iV</consumerkey>
+		        <consumersecret>7PYLSVDzRgwDSlxaJRcdYjRv8Qp4cs08l0jFjk8TgBpzmCZxya</consumersecret>
+		        <accesstoken>2653926222-AKAZOwcOxNAb3r6Xz0vGUT8i4QLUBrDuuAM88uA</accesstoken>
+		        <accesstokensecret>z5OaEIWwjBHvOIZTv2P1XrC4s3fkJ0Rb2HI5gi5fOJXuD</accesstokensecret>	
+				<numberoftweets>2</numberoftweets>		
+				<showlinks>1</showlinks>		
+				<usenofollow>0</usenofollow>		
+				<opennew>1</opennew>		
+				<attags>1</attags>		
+				<hashtags>1</hashtags>		
+				<showfollow>0</showfollow>		
+			</twitter>
+		</magicsocial>
+    </default>
+</config>
+

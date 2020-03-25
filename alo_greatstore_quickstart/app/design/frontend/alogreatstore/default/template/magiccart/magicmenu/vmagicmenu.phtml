@@ -1,0 +1,25 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-04-25 13:15:04
+ * @@Modify Date: 2015-03-24 15:59:58
+ * @@Function:
+ */
+?>
+<?php echo $this->getChildHtml('amenu') ?>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".nav-accordion").magicaccordion({
+            accordion:true,
+            speed: 400,
+            closedSign: 'collapse',
+            openedSign: 'expand',
+            easing: 'easeInOutQuad'
+        });
+    });
+</script>
+

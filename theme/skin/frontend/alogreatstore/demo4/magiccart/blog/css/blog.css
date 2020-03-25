@@ -1,0 +1,98 @@
+﻿.postWrapper{padding-bottom:25px;clear:both}
+.postTitle{margin:0}
+.postTitle h2{font-size:100%;font-weight:normal;margin:0;padding:10px 0;}
+.postTitle h2 a{font-size:22px;font-weight: 300;text-decoration:none;outline:none;line-height: 28px;}
+.postWrapper span{font-weight:300;margin:0;padding:0 0 0 20px;}
+.postDetails span.user{color:#ff0000;padding:0}
+.postDetails,.number{float:left}
+.number{padding:0 10px;}
+.postContent{text-align: left;}
+.blog_short_text{padding:18px 0 0;}
+.blog_short_text a span{font-size:16px;display:block;font-weight: 500;text-transform: capitalize;line-height: 20px;padding-bottom: 5px;padding-top: 10px;}
+.postContent p{font-weight:300}
+.postContent img{max-width:100%;height:auto;display:block}
+.postContent-detail img{padding:10px 0}
+.postContent .aw-blog-read-more{color: #6b869d;}
+.postContent .aw-blog-read-more:after {color: #6b869d;content: "";font-family: FontAwesome;padding-left: 10px;}
+.postcontent{text-align: left;}
+.post-title h4{background-color:#fff;color:#444444;display:inline-block;font-size:14px;margin:0 0 20px;padding:0 10px 0 0;text-transform:uppercase;font-weight:400}
+.commentWrapper{padding-bottom:15px}
+.commentContent{padding-bottom:0;font-weight:300}
+.commentDetails{margin-bottom:5px;padding:0;font-weight:300}
+.blog-postbox .form-list{margin:0}
+.blog-postbox .form-list li{margin:0}
+.blog-postbox .form-list .input-box{padding-bottom:22px}
+.blog-postbox p.required{float:right}
+.commentDetails h4.username{display:inline}
+.postError{font-size:16px}
+.postWrapper .tags{padding:6px 0;clear:both}
+.postWrapper .tags h4{display:inline-block;margin:0}
+.postWrapper .tags ul{padding:0;margin:0;display:inline-block}
+.postWrapper .tags ul li{display:inline-block}
+.postWrapper .tags ul li a,.postWrapper .tags h4,.postBookmarks h4,.postBookmarks a{font-weight:300;text-decoration:none;display:inline-block}
+.block.block-blog .block-title{display: none;}
+.menu-tags h5,.menu-categories h5,.menu-recent h5{color:#444;font-size:14px;font-weight:500;text-transform:uppercase}
+.block-blog .blog-title{  position: relative;margin-bottom: 0;}
+.block-blog .blog-title::before{border-top: 1px solid #ebebeb; bottom: 5px;content: ""; position: absolute;width: 100%;}
+
+.block-blog .blog-title h5{ color: #333;display: inline-block;font-size: 18px;font-weight: normal;line-height: 20px;margin: 0px;padding: 0 0 0;position: relative;text-align: left;text-transform: capitalize; background: #ffffff none repeat scroll 0 0;}
+.block-blog .blog-title h5:after{}
+.menu-tags{margin-bottom:0}
+.menu-tags .tagcloud{margin:0}
+.menu-categories ul,.menu-recent ul{margin-bottom:50px}
+.block-blog .menu-recent UL LI a,.block-blog .menu-categories UL LI a,.block-blog .menu-tags UL LI a{border-bottom: 1px solid #efefef;color:#333;display:block;font-size:13px;line-height:35px;outline:medium none;padding:0 0 0 0;text-decoration:none}
+.block-blog .menu-recent UL LI a:hover,.block-blog .menu-categories UL LI a:hover,.block-blog .menu-tags UL LI a:hover{color:#6b869d;}
+.block-blog .menu-recent UL LI a:before,.block-blog .menu-categories UL LI a:before,.block-blog .menu-tags UL LI a:before {/* content: "";font-family: FontAwesome;font-size: 13px;margin-right: 10px;text-align: left; width: 32px; */}
+.mc-blog .nbs-flexisel-container ul{padding:0;}
+.block-blog .menu-recent UL LI a{overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mc-blog .flexisel-content .item{margin-bottom:30px;}
+.tagcloud{/* text-align:center;*/}
+.tag-count-1{font-size:1em!important}
+.tag-count-2{font-size:1.2em!important}
+.tag-count-3{font-size:1.4em!important}
+.tag-count-4{font-size:1.6em!important}
+.tag-count-5{font-size:1.8em!important}
+.tag-count-6{font-size:2em!important}
+.tag-count-7{font-size:2em!important}
+.tag-count-8{font-size:2em!important}
+.tag-count-9{font-size:2em!important}
+.tag-count-10{font-size:2em!important}
+.block-blog .head h4{padding-left:20px}
+.postWrapper .poster{display:inline}
+.input-box.aw-blog-comment-area{width:100%}
+.widget-latest li{font-size:12px;padding:5px 10px}
+A.awblog_current_comment{text-decoration:none!important;font-weight:bold!important}
+/* Block:Latest Blog */
+.blog-static .flexisel-content .item{margin-bottom:40px;cursor:text}
+.blog-static .nbs-flexisel-nav{top:-46px}
+.blog-static{text-align:left}
+.blog-static .blog-column-slider{padding:0 0 45px 0}
+.blog-static .section-title{font-weight:normal;text-align:left;margin:0 0 15px;display:inline-block;padding-right:10px;background-color:#fff}
+.blog-static .blog_short_text{margin:6px 0 0 0;text-align:left}
+.blog-static .blog_short_text a{text-decoration:none}
+.blog-static .blog_short_text span.title{font-weight:300;color:#666;font-size:14px}
+.blog-static .blog_short_text p{font-size:13px;color:#888;margin:0;font-weight:300;line-height:16px}
+.blog-static .blog_short_text p span{color:#ccc!important}
+.blog-static .section-title span{font-size:14px;color:#555;text-transform:uppercase;line-height:38px;}
+.post-date{font-size:12px;color:#a1a1a1;margin:15px 0; padding:0 0 0 100px;overflow: hidden;font-style: italic;}
+.post-date * {font-size: 12px;}
+.post-date .fa{font-size:13px;}
+.post-date span{padding:0 5px;}
+.pr{margin-right:15px;}
+.blog_short_text p{color: #c9c9c9;font-size: 13px;}
+.shortcontent-text a{font-style: italic;font-family: "Open Sans";color: #666;}
+.blog-static .block-title-tabs{background-position:0 19px}
+/* Block:Blog */
+.blog-toolbar-top .toolbar{display:none}
+.blog-toolbar .sorter .sort-by{padding-left:0}
+
+/* Custom */
+.post-img {position: relative;}
+.post-date-bottom span {color: #ffffff; font-size: 18px;text-transform: uppercase; line-height: 1;}
+.post-date-bottom { background: #6b869d none repeat scroll 0 0; bottom: -30px; left: 0; padding: 12px 15px;  position: absolute;  text-align: center;border-right: 5px solid #ffffff; border-top: 5px solid #ffffff;}
+.post-date-bottom .date-home-day {  border-bottom: 1px solid #ffffff; display: inline-block;  margin-bottom: 5px;padding: 0 0 5px;}
+.post-date-bottom .date-home-month { display: block; padding: 0;}
+.blog-toolbar .toolbar {border-top: 1px solid #ebebeb;text-align: right;border-bottom:0;}
+
+
+@media (min-width:940px) and (max-width:1170px){.blog-static .blog_short_text span.title{font-size:12px}}

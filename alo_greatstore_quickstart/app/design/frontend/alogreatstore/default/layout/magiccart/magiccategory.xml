@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-02-10 14:19:57
+ * @@Function:
+ */ 
+-->
+<layout version="0.1.0">
+    <magiccategorydefault>
+        <reference name="head" ifconfig="magicshop/general/enabled">
+            <action method="addCss"><stylesheet>magiccart/plugin/css/animate.css</stylesheet></action>
+            <action method="addCss"><stylesheet>magiccart/plugin/css/jquery.bxslider.css</stylesheet></action>
+            <!-- <action method="addCss"><stylesheet>magiccart/magiccategory/css/magiccategory.css</stylesheet></action> -->
+            <action method="addItem" ifconfig="sales/msrp/enabled"><type>skin_js</type><name>js/msrp.js</name></action>
+            <action method="addJs" ifconfig="magiccategory/general/jquery"><script>magiccart/jquery.min.js</script></action>         
+            <action method="addJs" ifconfig="magiccategory/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>
+            <action method="addJs"><script>magiccart/plugin/jquery.bxslider.js</script></action>
+            <action method="addJs"><script>magiccart/magicproduct.js</script></action>
+        </reference>        
+    </magiccategorydefault>
+    <cms_index_index>
+        <update handle="magiccategorydefault" /> 
+    </cms_index_index>
+
+    <magiccategory_index_product>
+        <reference name="content">
+            <block type="magiccategory/product_list" name="magiccategory_list" template="catalog/product/list.phtml">
+                <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+				<action method="setColumnCount"><count>4</count></action>
+                <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+            </block>
+        </reference>
+    </magiccategory_index_product>
+
+    <magiccategory_index_ajax>  
+        <reference name="root">
+            <action method="setTemplate" ifconfig="magiccategory/general/enabled"><template>magiccart/magiccategory/ajax.phtml</template></action>
+            <block type="magiccategory/product_grid" name="magiccategory_grid" template="magiccart/magiccategory/product/grid.phtml" />
+        </reference>
+    </magiccategory_index_ajax>
+
+</layout> 
+

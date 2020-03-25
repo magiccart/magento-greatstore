@@ -1,0 +1,96 @@
+<?php
+/**
+ * Magiccart 
+ * @category  Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license   http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-05-28 10:10:00
+ * @@Modify Date: 2014-09-05 15:05:15
+ * @@Function:
+ */
+ ?>
+<?php
+
+class Magiccart_Magicmenu_Block_Adminhtml_Menu_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
+{
+
+  public function getCatTop()
+  {
+    $catTop = Mage::getModel('catalog/category')
+                    ->getCollection()
+                    ->addAttributeToSelect(array('entity_id','name'))
+                    ->addAttributeToFilter('level',2) // note: ->addAttributeToFilter('level',2) =! ->addLevelFilter(2)
+                    ->addIsActiveFilter()
+                    ->addOrderField('position');
+    $options = array(''=>Mage::helper('catalog')->__('Please select a category ...'));
+    foreach ($catTop as $cat) {
+      $options[$cat->getEntityId()] = $cat->getName();
+    }
+    return $options;
+  }
+  public function getStaticBlock()
+  {
+      $options = Mage::getResourceModel('cms/block_collection')->load()->toOptionArray();
+      array_unshift($options, array('value'=>'', 'label'=>Mage::helper('catalog')->__('Please select a static block ...')));
+      return $options;
+  }
+
+ protected function _prepareForm()
+{
+        $form = new Varien_Data_Form();
+        $this->setForm($form);
+ 
+        $fieldSet = $form->addFieldset('entity_form', array(
+            'legend'=>Mage::helper('magicmenu')->__('Entity Information')
+        ));
+ 
+        $status = $fieldSet->addField('status', 'select', array(
+            'label'     => Mage::helper('magicmenu')->__('Status'),
+            'name'      => 'status',
+            'values'    => array(
+                'Approved' => 'Approved',
+                'Denied'   => 'Denied'
+            )
+        ));
+ 
+        $denyReason = $fieldSet->addField('denial_reason', 'textarea', array(
+            'label'     => Mage::helper('magicmenu')->__('Denial Reason'),
+            'name'      => 'denial_reason'
+        ));
+ 
+        $approveInfo = $fieldSet->addField('approve_info', 'text', array(
+            'label'     => Mage::helper('magicmenu')->__('Approve Information'),
+            'name'      => 'approve_info'
+        ));
+        $_data = '';
+        if (Mage::getSingleton('adminhtml/session')->getFormData()) {
+            $_data = Mage::getSingleton('adminhtml/session')->getFormData();
+            Mage::getSingleton('adminhtml/session')->setFormData(null);
+        } elseif (Mage::registry('form_data')) {
+            $_data = Mage::registry('form_data')->getData();
+        }
+ 
+        $form->setValues($_data);
+ 
+        $this->setForm($form);
+        $this->setChild('form_after', $this->getLayout()->createBlock('adminhtml/widget_form_element_dependence')
+            ->addFieldMap($status->getHtmlId(), $status->getName())
+            ->addFieldMap($denyReason->getHtmlId(), $denyReason->getName())
+            ->addFieldMap($approveInfo->getHtmlId(), $approveInfo->getName())
+            ->addFieldDependence(
+                $approveInfo->getName(),
+                $status->getName(),
+                'Approved'
+            )
+            ->addFieldDependence(
+                $denyReason->getName(),
+                $status->getName(),
+                'Denied'
+            )
+        );
+ 
+        return parent::_prepareForm();
+}
+}
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+	<default>
+		<update handle="magicbranddefault" /> 
+<!-- 		<reference name="content">
+			<block type="magicbrand/brand" name="brand" after="-" template="magiccart/magicbrand/magicbrand.phtml" />
+		</reference> -->
+	</default>
+	<magicbranddefault>
+		<reference name="head" ifconfig="magicbrand/general/enabled">
+            <action method="addCss"><stylesheet>magiccart/plugin/css/jquery.bxslider.css</stylesheet></action>
+       <!--      <action method="addCss"><stylesheet>magiccart/magicbrand/css/magicbrand.css</stylesheet></action> -->
+            <action method="addJs" ifconfig="magicbrand/general/jquery"><script>magiccart/jquery.min.js</script></action>         
+            <action method="addJs" ifconfig="magicbrand/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>
+            <action method="addJs"><script>magiccart/plugin/jquery.bxslider.js</script></action>
+        </reference>		
+	</magicbranddefault>
+	
+</layout>
+

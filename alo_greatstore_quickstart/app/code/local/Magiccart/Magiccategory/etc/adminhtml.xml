@@ -1,0 +1,82 @@
+<?xml version="1.0"?> 
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart <team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-15 23:15:05
+ * @@Modify Date: 2015-04-18 20:08:40
+ * @@Function:
+ */ -->
+<config>
+    <menu>
+        <magiccart translate="title" module="magiccategory">
+            <title>Magiccart</title>
+            <sort_order>89</sort_order>               
+            <children>
+                <magiccategory translate="title" module="magiccategory">
+                    <title>Magic Category</title>
+                    <sort_order>40</sort_order>
+                    <action>magiccategory/adminhtml_manage</action>
+                </magiccategory>
+<!--                 <featuredproduct translate="title">
+                    <title>Featured Products</title>
+                    <sort_order>40</sort_order>
+                    <action>magiccategory/adminhtml_featured/index</action>
+                </featuredproduct> -->
+            </children>
+        </magiccart>
+    </menu>
+	<acl>
+		<resources>
+       <!--      <all>
+                <title>Allow Everything</title>
+            </all> -->
+			<admin>
+				<children>
+					<magiccart>
+						<children>
+							<config>
+								<children>
+									<magiccategory>
+										<title>Magic Category</title>
+									</magiccategory>
+								</children>
+							</config>
+						</children>
+					</magiccart>		
+					<magiccart translate="title" module="magiccategory">
+						<title>Magiccart</title>
+						<sort_order>89</sort_order>               
+						<children>
+							<magiccategory translate="title" module="magiccategory">
+								<title>Magic Category</title>
+								<sort_order>40</sort_order>
+								<children>
+									<configuration>
+										<title>Configuration</title>
+										<sort_order>1</sort_order>
+										<action>adminhtml/system_config/edit/section/magiccategory</action>
+									</configuration>
+								</children>
+							</magiccategory>
+						</children>
+					</magiccart>	
+					<system>
+						<children>
+							<config>
+								<children>
+									<magiccategory>
+										<title>Magic Category</title>
+									</magiccategory>
+								</children>
+							</config>
+						</children>
+					</system>					
+				</children>
+			</admin>
+        </resources>
+	</acl>
+</config>
+

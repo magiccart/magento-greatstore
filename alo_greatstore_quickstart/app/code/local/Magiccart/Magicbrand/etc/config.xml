@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2015-11-23 15:09:08
+ * @@Function:
+ */ -->
+<config>
+	<modules>
+		<Magiccart_Magicbrand>
+			<version>0.1.0</version>
+		</Magiccart_Magicbrand>
+	</modules>
+	<frontend>
+		<routers>
+			<magicbrand>
+				<use>stardard</use>
+				<args>
+					<module>Magiccart_Magicbrand</module>
+					<frontName>magicbrand</frontName>
+				</args>
+			</magicbrand>
+		</routers>
+		<layout>
+			<updates>
+				<magicbrand>
+					<file>magiccart/magicbrand.xml</file>
+				</magicbrand>
+			</updates>
+		</layout>
+	</frontend>
+	<admin>
+		<routers>
+			<magicbrand>
+				<use>admin</use>
+				<args>
+					<module>Magiccart_Magicbrand</module>
+					<frontName>magicbrand</frontName>
+				</args>
+			</magicbrand>
+		</routers>
+	</admin>
+	<global>
+		<models>
+			<magicbrand>
+				<class>Magiccart_Magicbrand_Model</class>
+				<resourceModel>magicbrand_mysql4</resourceModel>
+			</magicbrand>
+			<magicbrand_mysql4>
+				<class>Magiccart_Magicbrand_Model_Mysql4</class>
+				<entities>
+					<brand>
+						<table>magiccart_magicbrand</table>
+					</brand>
+				</entities>
+			</magicbrand_mysql4>
+		</models>
+		<resources>
+			<magicbrand_setup>
+				<setup>
+					<module>Magiccart_Magicbrand</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</magicbrand_setup>
+			<magicbrand_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</magicbrand_write>
+			<magicbrand_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</magicbrand_read>
+		</resources>
+		<blocks>
+			<magicbrand>
+				<class>Magiccart_Magicbrand_Block</class>
+			</magicbrand>
+		</blocks>
+		<helpers>
+			<magicbrand>
+				<class>Magiccart_Magicbrand_Helper</class>
+			</magicbrand>
+		</helpers>
+	</global>
+    <default>
+        <magicbrand>
+            <general>
+                <enabled>1</enabled>
+                <jquery>1</jquery>
+                <title>Brands</title>
+                <brand></brand>
+                <!-- Setting Display Slider -->
+                <animationSpeed>1000</animationSpeed>
+                <autoPlay>1</autoPlay>
+                <autoPlaySpeed>3000</autoPlaySpeed>
+                <clone>1</clone>
+                <enableResponsiveBreakpoints>1</enableResponsiveBreakpoints>
+                <pauseOnHover>1</pauseOnHover>
+
+                <!-- Setting Display Brands -->
+                <portrait>1</portrait>
+                <landscape>2</landscape>
+                <tablet>3</tablet>
+                <desktop>6</desktop>
+                <visibleItems>6</visibleItems>
+                <margin_columns>10</margin_columns>
+                <productDelay>500</productDelay>
+                <heightImages>100</heightImages>
+                <widthImages>150</widthImages>
+            </general>
+    	</magicbrand>
+    </default>
+</config>
+

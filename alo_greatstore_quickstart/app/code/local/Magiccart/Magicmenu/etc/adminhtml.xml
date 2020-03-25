@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2014-10-26 17:25:22
+ * @@Function:
+ */ 
+-->
+<config>
+	<menu>
+		<magiccart>
+			<title>Magiccart</title>
+			<sort_order>89</sort_order>
+			<children>
+				<magicmenu module="magicmenu">
+					<title>Magic Menu</title>
+					<sort_order>20</sort_order>
+						<children>
+						<menus module="magicmenu">
+							<title>Manage Menu</title>
+							<sort_order>1</sort_order>
+							<action>magicmenu/adminhtml_menu</action>
+						</menus>
+                        <extra module="magicmenu">
+                            <title>Manage Extra Menu</title>
+                            <sort_order>5</sort_order>
+                            <action>magicmenu/adminhtml_extra</action>
+                        </extra>
+					</children>			
+				</magicmenu>
+			</children>
+		</magiccart>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <magicmenu>
+                                <title>Magic Menu</title>
+                            </magicmenu>
+                        </children>
+                    </magiccart>
+                    <magiccart translate="title" module="magicmenu">
+                        <title>Magiccart</title>
+                        <sort_order>89</sort_order>               
+                        <children>
+                            <magicmenu translate="title" module="magicmenu">
+                                <title>Magic Menu</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <configuration>
+                                        <title>Configuration</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/magicmenu</action>
+                                    </configuration>
+                                </children>
+                            </magicmenu>
+                        </children>
+                    </magiccart>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicmenu>
+                                        <title>Magic Menu</title>
+                                    </magicmenu>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+

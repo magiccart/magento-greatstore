@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-09-10 10:42:49
+ * @@Modify Date: 2015-04-23 18:30:11
+ * @@Function:
+ */ -->
+<widgets>
+	<magicslider type="magicslider/widget_slide" translate="Add Slider into page/block" module="magicslider">
+		<name>Magicslider Widget</name>
+		<description type="desc">Add Slider into page/block</description>
+		<parameters>
+			<identifier translate="label comment">
+				<label>Select Slider</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>select</type>
+				<source_model>magicslider/widget_slide</source_model>
+			</identifier>
+			<template>  
+				<visible>0</visible>  
+				<value>magiccart/magicslider/magicslider.phtml</value>  
+			</template>			
+		</parameters>
+	</magicslider>
+</widgets>

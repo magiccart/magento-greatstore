@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-07-25 15:03:33
+ * @@Modify Date: 2015-11-06 17:20:58
+ * @@Function:
+ */
+ -->
+<config>
+    <menu>
+        <magiccart>
+            <title>Magiccart</title>
+            <sort_order>89</sort_order>
+            <children>
+                <magicinstall module="magicinstall">
+                    <title>Magic Install</title>
+                    <sort_order>5</sort_order>
+                    <children>
+                        <restore>
+                            <title>Magic Setup</title>
+                            <sort_order>10</sort_order>
+                            <children>
+                                <quickinstal translate="title">
+                                    <title>Setup</title>
+                                    <sort_order>5</sort_order>
+                                    <action>adminhtml/adminhtml_install</action>
+                                </quickinstal>
+                                <restore translate="title">
+                                    <title>Restore</title>
+                                    <sort_order>10</sort_order>
+                                    <action>adminhtml/adminhtml_restore</action>
+                                </restore>
+                            </children>
+                            
+                        </restore>
+                        <export translate="title">
+                            <title>Magic Export</title>
+                            <sort_order>20</sort_order>
+                            <children>
+                                <page translate="title">
+                                    <title>Export Page</title>
+                                    <sort_order>1</sort_order>
+                                    <action>adminhtml/adminhtml_page</action>
+                                </page>
+                                <block translate="title">
+                                    <title>Export Static Block</title>
+                                    <sort_order>2</sort_order>
+                                    <action>adminhtml/adminhtml_block</action>
+                                </block>
+                                <permissions translate="title">
+                                    <title>Export Permissions Blocks</title>
+                                    <sort_order>3</sort_order>
+                                    <action>adminhtml/adminhtml_permissions</action>
+                                </permissions>
+<!--                                 <widget translate="title">
+                                    <title>Export Widget</title>
+                                    <sort_order>3</sort_order>
+                                    <action>magicinstall/adminhtml_widget</action>
+                                </widget> -->
+                                <menu translate="title">
+                                    <title>Export Extra Menu</title>
+                                    <sort_order>4</sort_order>
+                                    <action>adminhtml/adminhtml_menu</action>
+                                </menu>
+                                <slide translate="title">
+                                    <title>Export Magicslider</title>
+                                    <sort_order>5</sort_order>
+                                    <action>adminhtml/adminhtml_slide</action>
+                                </slide>
+                                <system translate="title">
+                                    <title>Export System Config</title>
+                                    <sort_order>6</sort_order>
+                                    <action>adminhtml/adminhtml_system</action>
+                                </system>
+                            </children>
+                        </export>
+                    </children>
+                </magicinstall>
+            </children> 
+        </magiccart>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicinstall>
+                                        <title>Magic Install</title>
+                                    </magicinstall>
+                                </children>
+                            </config>
+                        </children>
+                    </magiccart>       
+                    <magiccart translate="title" module="magicinstall">
+                        <title>Magiccart</title>
+                        <sort_order>89</sort_order>               
+                        <children>
+                            <magicinstall translate="title" module="magicinstall">
+                                <title>Magic Install</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <configuration>
+                                        <title>Configuration</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/magicinstall</action>
+                                    </configuration>
+                                </children>
+                            </magicinstall>
+                        </children>
+                    </magiccart>   
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicinstall>
+                                        <title>Magic Install</title>
+                                    </magicinstall>
+                                </children>
+                            </config>
+                        </children>
+                    </system>                 
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

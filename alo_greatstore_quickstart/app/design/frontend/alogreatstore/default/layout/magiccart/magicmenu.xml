@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-04-25 13:12:59
+ * @@Modify Date: 2015-03-24 21:54:17
+ * @@Function:
+ */
+-->
+
+<layout version="0.1.0">
+	<default translate="label" module="page">
+		<reference name="head">
+            <!-- <action method="addCss" ifconfig="magicmenu/general/enabled"><stylesheet>magiccart/plugin/css/meanmenu.css</stylesheet></action>  -->
+            <action method="addCss" ifconfig="magicmenu/general/enabled"><stylesheet>magiccart/plugin/css/magicaccordion.css</stylesheet></action> 
+            <action method="addCss" ifconfig="magicmenu/general/enabled"><stylesheet>magiccart/magicmenu/css/magicmenu.css</stylesheet></action> 
+            <action method="addJs" ifconfig="magicmenu/general/jquery"><script>magiccart/jquery.min.js</script></action>
+            <action method="addJs" ifconfig="magicmenu/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>                
+            <action method="addJs" ifconfig="magicmenu/general/jquery"><script>magiccart/plugin/jquery.easing.min.js</script></action>                
+            <action method="addJs" ifconfig="magicmenu/general/enabled"><script>magiccart/plugin/jquery.meanmenu.hack.js</script></action>                
+            <action method="addJs" ifconfig="magicmenu/general/enabled"><script>magiccart/magicaccordion.js</script></action>                
+            <action method="addJs" ifconfig="magicmenu/general/enabled"><script>magiccart/magicmenu.js</script></action>                
+	    </reference>
+	 	<reference name="catalog.topnav">
+	    	<action method="setTemplate" ifconfig="magicmenu/general/enabled"><template>magiccart/magicmenu/magicmenu.phtml</template></action>
+			<block type="magicmenu/menu" name="mega.catalog.topnav" template="magiccart/magicmenu/topmenu.phtml"/>
+			<!-- <block type="magicmenu/menu" name="verticalmenu" template="magiccart/magicmenu/verticalmenu.phtml"/> -->
+	    </reference>
+	 	<reference name="left_top">
+            <block type="core/template" name="vmagicmenu" before="currency" template="magiccart/magicmenu/vmagicmenu.phtml">
+                <block type="page/html_topmenu" name="amenu" before="currency" template="magiccart/magicmenu/amenu.phtml"/>
+                <!--<block type="magicmenu/menu" name="vmenu" template="magiccart/magicmenu/vmenu.phtml"/>-->
+            </block>
+	    </reference>
+        
+
+	</default>
+	<!--<catalog_category_default>
+		 <reference name="right-top">
+            <block type="core/template" name="vmagicmenu" before="currency" template="magiccart/magicmenu/vmagicmenu.phtml">
+                <block type="page/html_topmenu" name="amenu" before="currency" template="magiccart/magicmenu/amenu.phtml"/>
+                <block type="magicmenu/menu" name="vmenu" template="magiccart/magicmenu/vmenu.phtml"/>
+            </block>
+        </reference>
+	</catalog_category_default>
+	<catalog_category_layered>
+		 <reference name="right-top">
+            <block type="core/template" name="vmagicmenu" before="currency" template="magiccart/magicmenu/vmagicmenu.phtml">
+                <block type="page/html_topmenu" name="amenu" before="currency" template="magiccart/magicmenu/amenu.phtml"/>
+                <block type="magicmenu/menu" name="vmenu" template="magiccart/magicmenu/vmenu.phtml"/>
+            </block>
+        </reference>
+	</catalog_category_layered>-->
+	
+</layout>
+

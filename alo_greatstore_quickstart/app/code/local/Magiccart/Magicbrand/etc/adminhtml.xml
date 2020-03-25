@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-03-23 18:59:34
+ * @@Modify Date: 2014-10-26 17:29:18
+ * @@Function:
+ */ -->
+<config>
+	<menu>
+		<magiccart>
+			<title>Magiccart</title>
+			<sort_order>89</sort_order>
+			<children>
+				<brand module="magicbrand">
+					<title>Magic Brand</title>
+					<sort_order>90</sort_order>
+					<action>magicbrand/adminhtml_brand</action>
+				</brand>
+			</children>	
+		</magiccart>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magiccart>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicbrand>
+                                        <title>Magic Brand</title>
+                                    </magicbrand>
+                                </children>
+                            </config>
+                        </children>
+                    </magiccart>       
+                    <magiccart translate="title" module="magicbrand">
+                        <title>Magiccart</title>
+                        <sort_order>89</sort_order>               
+                        <children>
+                            <magicbrand translate="title" module="magicbrand">
+                                <title>Magic Brand</title>
+                                <sort_order>90</sort_order>
+                                <children>
+                                    <configuration>
+                                        <title>Configuration</title>
+                                        <sort_order>1</sort_order>
+                                        <action>adminhtml/system_config/edit/section/magicbrand</action>
+                                    </configuration>
+                                </children>
+                            </magicbrand>
+                        </children>
+                    </magiccart>   
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <magicbrand>
+                                        <title>Magic Brand</title>
+                                    </magicbrand>
+                                </children>
+                            </config>
+                        </children>
+                    </system>                 
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
+

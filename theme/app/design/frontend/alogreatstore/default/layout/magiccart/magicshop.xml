@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-02-10 14:18:40
+ * @@Function:
+ */ 
+-->
+<layout>   
+    <!-- for ! ajaxcart -->
+    <default>
+        <update handle="magicshopdefault" /> 
+        <reference name="head"> 
+            <block type="magicshop/ajaxcart" ifconfig="magicshop/general/enabled" name="top.Js" as="topJs" template="magiccart/magicshop/jscfg.phtml"/>   
+        </reference>
+        <reference name="header">
+            <block type="checkout/cart_sidebar" name="ajaxcart" template="magiccart/magicshop/checkout/cart/mini_cart.phtml"/>
+        </reference>
+    </default>
+    <magicshopdefault>
+        <reference name="head" ifconfig="magicshop/general/enabled"> 
+            <action method="addCss"><stylesheet>magiccart/plugin/css/jquery.fancybox.css</stylesheet></action>
+            <action method="addCss"><stylesheet>magiccart/plugin/css/jquery.bxslider.css</stylesheet></action>
+            <action method="addCss"><stylesheet>magiccart/magicshop/css/ajaxcart.css</stylesheet></action> 
+            <action method="addCss"><stylesheet>magiccart/magicshop/css/quickview.css</stylesheet></action> 
+            <action method="addJs" ifconfig="magicshop/general/jquery"><script>magiccart/jquery.min.js</script></action>
+            <action method="addJs" ifconfig="magicshop/general/jquery"><script>magiccart/jquery.noconflict.js</script></action>
+            <action method="addJs"><script>magiccart/plugin/jquery.fancybox.pack.js</script></action>
+            <action method="addJs"><script>magiccart/plugin/jquery.bxslider.js</script></action>
+            <action method="addJs"><script>magiccart/quickview.js</script></action>
+            <action method="addJs"><script>magiccart/ajaxcart.js</script></action>
+
+            <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/configurable.js</script></action> 
+            <action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+             <!-- <block type="page/html" name="top.Js" as="topJs" template="magiccart/magicshop/jscfg.phtml"/> -->  
+        </reference>         
+    </magicshopdefault>   
+	<cms_page>
+        <update handle="magicshopdefault" /> 
+	</cms_page>
+
+    <catalogsearch_result_index>
+        <update handle="magicshopdefault" /> 
+    </catalogsearch_result_index>  
+    
+    <catalogsearch_advanced_result>
+        <update handle="magicshopdefault" /> 
+    </catalogsearch_advanced_result>
+	
+    <catalog_category_layered>
+        <update handle="magicshopdefault" /> 
+    </catalog_category_layered> 
+    
+    <checkout_cart_index>
+        <update handle="magicshopdefault" /> 
+    </checkout_cart_index>
+    <!-- end for ! ajaxcart -->
+    <!-- ajaxcart & quickview -->
+    <catalog_category_default>
+        <update handle="magicshopdefault" /> 
+    </catalog_category_default>  
+    <catalog_category_layered>
+        <update handle="magicshopdefault" />
+    </catalog_category_layered>  
+    <!-- end ajaxcart & quickview -->
+
+    <!-- for ! quickview -->
+    <cms_index_index>
+        <update handle="magicshopdefault" />
+    </cms_index_index>
+   <catalogsearch_result_index>
+        <update handle="magicshopdefault" />
+    </catalogsearch_result_index>
+
+    <catalogsearch_advanced_result>
+        <update handle="magicshopdefault" />
+    </catalogsearch_advanced_result>
+
+    <tag_product_list>
+        <update handle="magicshopdefault" />
+    </tag_product_list> 
+    
+    <magicshop_quickview_view>
+        <update handle="catalog_product_view"/>
+            <remove name="header"/>
+            <remove name="footer"/>
+            <!-- Mage_Catalog -->
+            <reference name="root">
+                <action method="setTemplate"><template>magiccart/magicshop/quickpage.phtml</template></action>
+            </reference>
+        <reference name="product.info">
+          <action method="setTemplate"><template>magiccart/magicshop/catalog/product/view.phtml</template></action>
+        </reference>
+            <reference name="product.info.media">
+                <action method="setTemplate"><template>magiccart/magicshop/catalog/product/view/media.phtml</template></action>
+            </reference>
+            <reference name="content">
+          <remove name="product.info.upsell"/>
+          <remove name="product.info.additional"/>
+          <remove name="product.description"/>
+          <remove name="product.attributes"/>
+          <!-- <remove name="product.info.addto"/> -->
+          <remove name="product.info.extrahint"/>
+        </reference>    
+    </magicshop_quickview_view>
+    <!-- for ! quickview -->
+</layout>
+

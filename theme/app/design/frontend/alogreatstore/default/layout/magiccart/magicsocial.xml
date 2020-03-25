@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magiccart 
+ * @category  Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license   http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-04-25 13:12:59
+ * @@Modify Date: 2014-10-24 21:44:24
+ * @@Function:
+ */
+-->
+
+<layout version="0.1.0">
+    <default>
+		<reference name="head"> 
+			<action method="addCss" ifconfig="magicsocial/general/enabled">
+				<stylesheet>magiccart/magicsocial/css/magicsocial.css</stylesheet>
+			</action>
+			<action method="addJs" ifconfig="magicsocial/general/jquery">
+				<script>magiccart/jquery.min.js</script>
+			</action>         
+			<action method="addJs" ifconfig="magicsocial/general/jquery">
+				<script>magiccart/jquery.noconflict.js</script>
+			</action>
+			<action method="addJs" ifconfig="magicsocial/general/enabled">
+				<script>magiccart/plugin/jquery.easing.min.js</script>
+			</action>
+		</reference>
+		
+		<block type="magicsocial/social" name="social" template="magiccart/magicsocial/social.phtml" />
+		<reference name="after_body_start">
+			<action ifconfig="magicsocial/social/enabled" method="insert">
+				<block>social</block>
+			</action>
+		</reference>
+    </default>
+    <magicsocial_index_index>   
+		<reference name="root">   
+			<action method="setTemplate"><template>page/1column.phtml</template></action>   
+		</reference>   
+		<reference name="content">   
+			<block type="magicsocial/social" name="magicsocial" template="magiccart/magicsocial/social.phtml"/>   
+		</reference>  
+    </magicsocial_index_index>
+</layout>
+

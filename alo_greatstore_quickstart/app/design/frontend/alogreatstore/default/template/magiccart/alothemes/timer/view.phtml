@@ -1,0 +1,63 @@
+<?php
+$helpTimer = $this->helper('timer');
+if(!$helpTimer->getConfig('enabled')) return;
+$title          = $helpTimer->getConfig('title');
+$titleColor    = $helpTimer->getConfig('titleColor');
+$caption 		= $helpTimer->getConfig('caption');
+$captionColor 	= $helpTimer->getConfig('captionColor');
+$timerColor 	= $helpTimer->getConfig('timerColor');
+
+$count = 1;
+$_product = $this->getProduct();
+$toDate = $_product->getSpecialToDate();
+?>
+
+<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+<ul class="add-to-links">
+<?php if ($this->helper('wishlist')->isAllow()) : ?>
+    <li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, '<?php echo $_wishlistSubmitUrl ?>'); return false;" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+<?php endif; ?>
+<?php
+    $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);
+?>
+<?php if ($_compareUrl) : ?>
+        <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+<?php endif; ?>
+</ul>
+
+<!--Condition for Timer Controllers goes here-->
+<?php if ($_product->getPrice() > $_product->getSpecialPrice()) : ?>
+<?php if ($_product->getSpecialPrice() != 0 || $_product->getSpecialPrice() != "") : ?>
+<?php if ($title != '') : ?>
+        <div id="heading<?php echo $count; ?>" style="color:#<?php echo $titleColor; ?>; font-size: 18px; font-weight:bold;padding-top:15px;clear: both;"><?php echo $title ?></div>
+<?php endif; ?>
+            <div id="countbox_<?php echo $count; ?>" class="timer-view"></div>
+<?php if ($caption) : ?>
+        <div class='clear'></div><div class='timerdate' id="caption<?php echo $count; ?>"><span class='hour' style='margin:1px 23px 0 0px'><?php echo $this->__('Days') ?></span><span class='hour' style='margin:1px 19px 0 15px'><?php echo $this->__('Hours') ?></span><span class='min'  style='margin:1px 20px 0 7px'><?php echo $this->__('Mins') ?></span><span class='sec' style='margin:1px 0 0 2px'><?php echo $this->__('Secs') ?></span></div>
+<?php endif;endif;endif; ?>
+
+<?php if ($_product->getPrice() > $_product->getSpecialPrice()) : ?>
+<?php if ($_product->getSpecialPrice() != 0 || $_product->getSpecialPrice() != "") : ?>
+    <script type="text/javascript">
+        (function (){
+            var dthen = new Date("<?php echo Date("m/d/y", strtotime($toDate)).' 11:59:00 PM'; ?>");
+            <?php $locale = new Mage_Core_Model_Locale; ?>
+            var start = "<?php echo Date("m/d/y h:i:s A", strtotime($locale->date(null, null, "en_US", true))); ?>";
+            var start_date = Date.parse(start);
+            var dnow = new Date(start_date);
+            if(CountStepper>0) ddiff= new Date((dnow)-(dthen));
+            else ddiff = new Date((dthen)-(dnow));
+            var gsecs = Math.floor(ddiff.valueOf()/1000);
+            var iid = "countbox_<?php echo $count; ?>";
+            CountBack(gsecs,iid, mcTimer);
+            mcTimer++;
+        })();
+    </script>
+<?php $count = $count + 1; ?>
+<?php endif;endif; ?>
+
+<!--Dynamic style changes goes here-->
+<style type="text/css">
+    .timer-view{color: #<?php echo $timerColor; ?>;}
+    .timerdate{color: #<?php echo $captionColor; ?>;} 
+</style>

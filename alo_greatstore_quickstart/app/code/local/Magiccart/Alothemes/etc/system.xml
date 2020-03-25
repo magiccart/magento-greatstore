@@ -1,0 +1,1561 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: Magiccart<team.magiccart@gmail.com>
+ * @@Create Date: 2014-06-07 12:27:23
+ * @@Modify Date: 2015-11-17 11:33:01
+ * @@Function:
+ */ 
+-->
+<config>
+    <tabs>
+        <magiccart translate="label comment">
+            <label>Magiccart</label>
+            <sort_order>100</sort_order>
+        </magiccart>
+    </tabs>
+    <sections>
+        <alothemes translate="label comment" module="alothemes">
+            <label>ALO Themes</label>
+            <tab>magiccart</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label comment">
+                    <label>General Setting</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                       <enabled translate="label comment">
+                            <label>Enabled: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </enabled>
+                    </fields>                   
+                </general>
+<!--                 <base>
+                    <label>General Base Config Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <focus translate="label comment">
+                            <label>Focus follow General Config Theme</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <comment><![CDATA[Focus follow General Config Theme.]]></comment>
+                        </focus>
+                        <imagehover translate="label comment">
+                            <label>Change image hover to product</label>
+                            <depends><focus>1</focus></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <comment><![CDATA[Change to image have posistion is 2 while hover to product.]]></comment>
+                        </imagehover>
+                        <action translate="label comment">
+                            <label>Show Action product</label>
+                            <depends><focus>1</focus></depends>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>alothemes/system_config_source_action</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Show Action as compare, addtocart, wishlist.]]></comment>
+                        </action>
+                    </fields>
+                </base> -->
+<!--                 <home>
+                    <label>Display in Home</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_home translate="label comment">
+                            <label>Setting Home</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_home>
+                        <disable translate="label comment">
+                            <label>None display static in home page: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_static</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                        </disable> 
+                    </fields>    
+                </home> -->
+                <list>
+                    <label>Display products on Category</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_product translate="label comment">
+                            <label>Setting Display Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_product>
+                        <mobile translate="label comment">
+                            <label><![CDATA[Display in Screen <= 360: ]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_col</source_model>
+                            <sort_order>42</sort_order>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Number product show in screen ( Size <= 360 ) ]]></comment>
+                        </mobile>
+                         <portrait translate="label comment">
+                            <label><![CDATA[Display in Screen ( 360, 480 ): ]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_col</source_model>
+                            <sort_order>44</sort_order>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Number product show in screen ( 360 < Size < 480 ) ]]></comment>
+                        </portrait>
+                        <landscape translate="label comment">
+                            <label><![CDATA[Display in Screen [ 480, 640 ): ]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_col</source_model>
+                            <sort_order>45</sort_order>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Number product show in screen ( 480 <= Size < 640 ) ]]></comment>
+                        </landscape>
+                        <tablet translate="label comment">
+                            <label><![CDATA[Display in Screen [ 640, 768 ): ]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_col</source_model>
+                            <sort_order>46</sort_order>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Number product show in screen ( 640 <= Size < 768 ) ]]></comment>
+                        </tablet>
+                        <desktop translate="label comment">
+                            <label><![CDATA[Display in Screen [ 768, 992 ): ]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_col</source_model>
+                            <sort_order>47</sort_order>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Number product show in screen ( 768 <= Size < 992 ) ]]></comment>
+                        </desktop> 
+                       <visibleItems translate="label comment">
+                            <label><![CDATA[Display in Screen Size >= 992: ]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_col</source_model>
+                            <sort_order>48</sort_order>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Number product show in screen ( Size >= 992 ) ]]></comment>
+                        </visibleItems>
+                        <padding translate="label comment">
+                            <label>Padding Left and Right</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>48</sort_order>
+                            <validate>required-entry validate-zero-or-greater</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Padding Left and Right</comment>
+                        </padding> 
+                        <widthImages translate="label comment">
+                            <label>Width of Images: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </widthImages>
+                        <heightImages translate="label comment">
+                            <label>Height of Images: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heightImages>  
+                      <!--   <action translate="label comment">
+                            <label>Show Action product: </label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>alothemes/system_config_source_action</source_model>
+                            <sort_order>56</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </action> -->
+                    </fields>    
+                </list>
+                <detail>
+                    <label>Display in Page Product Detail</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_zoom translate="label comment">
+                            <label>Setting product Zoom Images</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_zoom>
+                        <zoomWidth translate="label comment">
+                            <label>Zoom Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </zoomWidth>
+                        <zoomHeight translate="label comment">
+                            <label>Zoom Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </zoomHeight>
+                        <zoomInner translate="label comment">
+                            <label>Zoom Inner: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </zoomInner>
+                        <lightBox translate="label comment">
+                            <label>LightBox: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <comment>Popup image while click to image</comment>
+                        </lightBox>
+
+                        <heading_images translate="label comment">
+                            <label>Setting Product Images</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_images> 
+                        <imageWidth translate="label comment">
+                            <label>Image Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </imageWidth>
+                        <imageHeight translate="label comment">
+                            <label>Image Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-greater-than-zero</validate>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <comment>If empty height is auto</comment>
+                        </imageHeight>
+                        <thumbWidth translate="label comment">
+                            <label>Thumbnail Image Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>75</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </thumbWidth>
+                        <thumbHeight translate="label comment">
+                            <label>Thumbnail Image Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </thumbHeight>
+                        <heading_thumnailSlide translate="label">
+                            <label>Setting Slider Thumbnail</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_thumnailSlide>
+                        <slide translate="label comment">
+                            <label>Use Slider : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </slide>
+                        <vertical translate="label comment">
+                            <label>Mode Vetical slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>83</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </vertical>
+                        <auto translate="label comment">
+                            <label>Auto slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>84</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </auto>
+                        <controls translate="label comment">
+                            <label>Show Next/Back control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </controls>
+                        <pager translate="label comment">
+                            <label>Show Pager control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>86</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pager>
+<!--                         <speed translate="label comment">
+                            <label>Speed : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>87</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </speed>
+                        <pause translate="label comment">
+                            <label>Pause :</label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>88</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </pause>   --> 
+                        <slideMargin translate="label comment">
+                            <label>Slide Margin: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-zero-or-greater</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideMargin>
+                        <slideWidth translate="label comment">
+                            <label>Slide Width: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideWidth>
+
+                        <heading_responsive translate="label">
+                            <label>Setting Responsive Thumbnail</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_responsive>
+                        <portrait translate="label">
+                            <label>Display in Screen 480 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 480</comment>
+                        </portrait>
+                        <landscape translate="label">
+                            <label>Display in Screen 640 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>92</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 640</comment>
+                        </landscape>
+                        <tablet translate="label">
+                            <label>Display in Screen 768 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>93</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 768</comment>
+                        </tablet>
+                        <desktop translate="label comment">
+                            <label>Display in Screen 992 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>94</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 769 -> 992:</comment>
+                        </desktop>                        
+                        <visibleItems translate="label comment">
+                            <label>Item Visible : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <comment>Display Visible Items:</comment>
+                        </visibleItems>                                               
+                        <heading_other translate="label comment">
+                            <label>Setting Other</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_other>    
+                        <inforTabs translate="label comment">
+                            <label>Use Tabs for product info: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </inforTabs>
+                        <activeTab translate="label comment">
+                            <label>Tab active default: </label>
+                            <depends><inforTabs>1</inforTabs></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_tab</source_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                        </activeTab>                    
+                    </fields>
+                </detail>
+                <related>
+                    <label>Related Products</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>22</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_thumnailSlide translate="label">
+                            <label>Setting Slider Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_thumnailSlide>
+                        <slide translate="label comment">
+                            <label>Use Slider : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </slide>
+                        <vertical translate="label comment">
+                            <label>Mode Vetical slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>83</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </vertical>
+                        <auto translate="label comment">
+                            <label>Auto slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>84</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </auto>
+                        <controls translate="label comment">
+                            <label>Show Next/Back control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </controls>
+                        <pager translate="label comment">
+                            <label>Show Pager control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>86</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pager>
+                        <speed translate="label comment">
+                            <label>Speed : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>87</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </speed>
+                        <pause translate="label comment">
+                            <label>Pause :</label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>88</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </pause>   
+                        <slideMargin translate="label comment">
+                            <label>Slide Margin: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-zero-or-greater</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideMargin>
+                        <slideWidth translate="label comment">
+                            <label>Slide Width: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideWidth>
+
+                        <heading_responsive translate="label">
+                            <label>Setting Responsive Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_responsive>
+                        <portrait translate="label">
+                            <label>Display in Screen 480 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 480</comment>
+                        </portrait>
+                        <landscape translate="label">
+                            <label>Display in Screen 640 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>92</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 640</comment>
+                        </landscape>
+                        <tablet translate="label">
+                            <label>Display in Screen 768 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>93</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 768</comment>
+                        </tablet>
+                        <desktop translate="label comment">
+                            <label>Display in Screen 992 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>94</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 769 -> 992:</comment>
+                        </desktop>                        
+                        <visibleItems translate="label comment">
+                            <label>Item Visible : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <comment>Display Visible Items:</comment>
+                        </visibleItems>                        
+                    </fields>                    
+                </related>
+                <upsell>
+                    <label>Upsell Products</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>24</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_thumnailSlide translate="label">
+                            <label>Setting Slider Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_thumnailSlide>
+                        <slide translate="label comment">
+                            <label>Use Slider : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </slide>
+                        <vertical translate="label comment">
+                            <label>Mode Vetical slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>83</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </vertical>
+                        <auto translate="label comment">
+                            <label>Auto slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>84</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </auto>
+                        <controls translate="label comment">
+                            <label>Show Next/Back control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </controls>
+                        <pager translate="label comment">
+                            <label>Show Pager control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>86</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pager>
+                        <speed translate="label comment">
+                            <label>Speed : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>87</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </speed>
+                        <pause translate="label comment">
+                            <label>Pause :</label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>88</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </pause>   
+                        <slideMargin translate="label comment">
+                            <label>Slide Margin: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-zero-or-greater</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideMargin>
+                        <slideWidth translate="label comment">
+                            <label>Slide Width: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideWidth>
+
+                        <heading_responsive translate="label">
+                            <label>Setting Responsive Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_responsive>
+                        <portrait translate="label">
+                            <label>Display in Screen 480 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 480</comment>
+                        </portrait>
+                        <landscape translate="label">
+                            <label>Display in Screen 640 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>92</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 640</comment>
+                        </landscape>
+                        <tablet translate="label">
+                            <label>Display in Screen 768 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>93</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 768</comment>
+                        </tablet>
+                        <desktop translate="label comment">
+                            <label>Display in Screen 992 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>94</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 769 -> 992:</comment>
+                        </desktop>                        
+                        <visibleItems translate="label comment">
+                            <label>Item Visible : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <comment>Display Visible Items:</comment>
+                        </visibleItems>                        
+                    </fields>                    
+                </upsell>
+                <crosssell>
+                    <label>Cross-sells Products</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>25</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_thumnailSlide translate="label">
+                            <label>Setting Slider Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_thumnailSlide>
+                        <slide translate="label comment">
+                            <label>Use Slider : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </slide>
+                        <vertical translate="label comment">
+                            <label>Mode Vetical slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>83</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </vertical>
+                        <auto translate="label comment">
+                            <label>Auto slide : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>84</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </auto>
+                        <controls translate="label comment">
+                            <label>Show Next/Back control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </controls>
+                        <pager translate="label comment">
+                            <label>Show Pager control : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>86</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pager>
+                        <speed translate="label comment">
+                            <label>Speed : </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>87</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </speed>
+                        <pause translate="label comment">
+                            <label>Pause :</label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>88</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                        </pause>   
+                        <slideMargin translate="label comment">
+                            <label>Slide Margin: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-zero-or-greater</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideMargin>
+                        <slideWidth translate="label comment">
+                            <label>Slide Width: </label>
+                            <depends><slide>1</slide></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-greater-than-zero</validate>
+                            <sort_order>89</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_store>1</show_in_store>
+                            <show_in_website>1</show_in_website>
+                            <!-- <comment>If empty height is auto</comment> -->
+                        </slideWidth>
+
+                        <heading_responsive translate="label">
+                            <label>Setting Responsive Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_responsive>
+                        <portrait translate="label">
+                            <label>Display in Screen 480 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 480</comment>
+                        </portrait>
+                        <landscape translate="label">
+                            <label>Display in Screen 640 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>92</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 640</comment>
+                        </landscape>
+                        <tablet translate="label">
+                            <label>Display in Screen 768 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>93</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 768</comment>
+                        </tablet>
+                        <desktop translate="label comment">
+                            <label>Display in Screen 992 : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>94</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number product show in screen 769 -> 992:</comment>
+                        </desktop>                        
+                        <visibleItems translate="label comment">
+                            <label>Item Visible : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_column</source_model>
+                            <sort_order>95</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <comment>Display Visible Items:</comment>
+                        </visibleItems>                        
+                    </fields>                    
+                </crosssell>
+                <labels translate="label comment">
+                    <label>Labels</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>35</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <newLabel translate="label comment">
+                            <label>Show New Label: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </newLabel>
+                        <newText translate="label comment">
+                            <label>New Text Label: </label>
+                            <depends><newLabel>1</newLabel></depends>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry</validate>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </newText>
+                        <saleLabel translate="label comment">
+                            <label>Show Sale Label: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </saleLabel>
+                        <saleText translate="label comment">
+                            <label>Sale Text Label : </label>
+                            <depends><saleLabel>1</saleLabel></depends>
+                            <frontend_type>text</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </saleText> 
+                        <salePercent translate="label comment">
+                            <label>Sale Label Percent: </label>
+                            <depends><saleLabel>1</saleLabel></depends>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </salePercent>                     
+                    </fields>
+                </labels>
+                <timer translate="label comment">
+                    <label>Timer for Sale</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>38</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled:</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enabled Product Timer</comment>
+                        </enabled>
+                        <!--<title translate="label">
+                            <label>Title Timer:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <titleColor translate="label">
+                            <label>Title Color:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>color</validate>
+                            <comment>Please Click the text box to select color</comment>
+                        </titleColor>
+                        <timerColor translate="label">
+                            <label>Timer Color:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>color</validate>
+                            <comment>Please Click the text box to select color</comment>
+                        </timerColor>-->
+                        <caption translate="label">
+                            <label>Timer Caption:</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Timer Caption</comment>
+                        </caption>
+                       <!--<captionColor translate="label">
+                            <label>Timer Caption Text Color:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>color</validate>
+                            <comment>Please Click the text box to select color</comment>
+                        </captionColor>-->
+                    </fields>
+                </timer>
+                <categorysearch translate="label comment">
+                    <label>Category Search</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>80</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enabled : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                        </enabled>
+                        <select_category_on_category_pages translate="label">
+                            <label>Select Category On Category Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </select_category_on_category_pages>
+                        <show_subcategories translate="label">
+                            <label>Show Subcategories</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_subcategories>
+                        <subcategories_level translate="label">
+                            <label>Subcategory Level</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><show_subcategories>1</show_subcategories></depends>
+                        </subcategories_level>
+                        <indentation_text translate="label">
+                            <label>Subcategory Indentation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><show_subcategories>1</show_subcategories></depends>
+                        </indentation_text>
+                    </fields>
+                </categorysearch>
+              <newsletter translate="label comment">
+                    <label>Newsletter Popup</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_general translate="label comment">
+                            <label>Setting Newsletter</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_general>
+                        <enabled translate="label comment">
+                            <label>Enabled : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                        </enabled>
+                        <firstOnly translate="label comment">
+                            <label>First only display : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                        </firstOnly>
+                        <timeDelay translate="label comment">
+                            <label>Time Delay Popup :</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>17</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-zero-or-greater</validate>
+                        </timeDelay>
+                        <autoClose translate="label comment">
+                            <label>Auto Close : </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store> 
+                        </autoClose>
+                        <timeClose translate="label comment">
+                            <label>Time Close Popup :</label>
+                            <frontend_type>text</frontend_type>
+                            <depends><autoClose>1</autoClose></depends>
+                            <sort_order>19</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-greater-than-zero</validate>
+                        </timeClose>
+						<width translate="label comment">
+                            <label>Width Popup :</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-greater-than-zero</validate>
+                        </width>
+                        <height translate="label comment">
+                            <label>Height Popup :</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-greater-than-zero</validate>
+                        </height>
+<!--                         <infotext translate="label comment">
+                            <label>Info Text</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </infotext>
+                        <texteditor translate="label comment">
+                            <label>Info TextEditor</label>
+                            <frontend_type>editor</frontend_type>
+                            <frontend_model>alothemes/adminhtml_system_config_editor</frontend_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </texteditor> -->
+                        <overlayColor translate="label comment">
+                            <label>Overlay Color :</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>color</validate>
+                        </overlayColor>
+                        <background_color translate="label comment">
+                            <label>Background Color :</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>color</validate>
+                            <comment>Background Color for Newsletter</comment>
+                        </background_color>
+                        <background_image translate="label comment">
+                            <label>Background Image :</label>
+                            <comment>Allowed file types: jpg, jpeg, gif, png.</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">magiccart</upload_dir>
+                            <base_url type="media" scope_info="1">magiccart</base_url>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <show_in_store>1</show_in_store>
+                            <comment>Background Image for Newsletter</comment>
+                        </background_image>
+<!--                         <textContent translate="label comment">
+                            <label>Text Content</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Text Content in Newsletter Popup.</comment>
+                        </textContent> -->
+                    </fields>
+                </newsletter>
+                <font translate="label comment">
+                    <label>Font</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <size translate="label comment">
+                            <label>Basic Font Size</label>
+                            <comment>Size of the regular text. Font size of most of the other elements will be calculated relative to this value.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_design_font_size</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>font-size</validate>
+                        </size>
+                        <google translate="label comment">
+                            <label>Headings Font Family - Google Fonts</label>
+                            <comment>
+                                <![CDATA[Font preview is available on <a href="http://www.google.com/webfonts">Google Web Fonts</a>]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>alothemes/system_config_source_design_font_google</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>mc-fonts</validate>
+                        </google>
+                    </fields>
+                </font>
+            </groups>
+        </alothemes>
+        <alodesign translate="label comment" module="alothemes">
+            <label>Colors Theme</label>
+            <tab>magiccart</tab>
+            <sort_order>110</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label comment">
+                    <label>General Setting</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                       <developer translate="label comment">
+                            <label>Mode Developer Edit Selector: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Only use for developer</comment>                       
+                        </developer>
+                    </fields>
+                </general>
+                <base>
+                    <label>Base Color Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color translate="label comment">
+                            <label>Base color</label>
+                            <frontend_model>alothemes/adminhtml_system_config_form_field_exceptions</frontend_model>
+                            <backend_model>alothemes/system_config_backend_serialized_exceptions</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Setting Color.]]></comment>
+                        </color>
+                    </fields>
+                </base>
+                <header>
+                    <label>Header Color Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color translate="label comment">
+                            <label>Header color</label>
+                            <frontend_model>alothemes/adminhtml_system_config_form_field_exceptions</frontend_model>
+                            <backend_model>alothemes/system_config_backend_serialized_exceptions</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Setting Color.]]></comment>
+                        </color>
+                    </fields>
+                </header>
+                <left>
+                    <label>Left Color Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color translate="label comment">
+                            <label>Left Color</label>
+                            <frontend_model>alothemes/adminhtml_system_config_form_field_exceptions</frontend_model>
+                            <backend_model>alothemes/system_config_backend_serialized_exceptions</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Setting Color.]]></comment>
+                        </color>
+                    </fields>
+                </left>
+                <right>
+                    <label>Right Color Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color translate="label comment">
+                            <label>Right Color</label>
+                            <frontend_model>alothemes/adminhtml_system_config_form_field_exceptions</frontend_model>
+                            <backend_model>alothemes/system_config_backend_serialized_exceptions</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Setting Color.]]></comment>
+                        </color>
+                    </fields>
+                </right>
+                <content>
+                    <label>Content Color Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color translate="label comment">
+                            <label>Content Color</label>
+                            <frontend_model>alothemes/adminhtml_system_config_form_field_exceptions</frontend_model>
+                            <backend_model>alothemes/system_config_backend_serialized_exceptions</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Setting Color.]]></comment>
+                        </color>
+                    </fields>
+                </content>
+                <footer>
+                    <label>Footer Color Theme</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color translate="label comment">
+                            <label>Footer Color</label>
+                            <frontend_model>alothemes/adminhtml_system_config_form_field_exceptions</frontend_model>
+                            <backend_model>alothemes/system_config_backend_serialized_exceptions</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Setting Color.]]></comment>
+                        </color>
+                    </fields>
+                </footer>
+            </groups>
+        </alodesign>
+        <dev translate="label" module="core">
+            <groups>
+                <html translate="label">
+                    <label>HTML Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>120</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <minify_html_output translate="label">
+                            <label>Minify HTML Output</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </minify_html_output>
+                    </fields>
+                </html>
+            </groups>
+        </dev>
+    </sections>
+</config>

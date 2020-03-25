@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Magiccart_Magicmenu>
+			<active>true</active>
+			<codePool>local</codePool>	
+		</Magiccart_Magicmenu>
+	</modules>
+</config>
